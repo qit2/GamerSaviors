@@ -1,1 +1,58 @@
+h1 {
+    border-top:1px solid  rgb(0, 0, 0);                
+    border-bottom: thick double rgb(0, 0, 0);       
+    text-align: center; 
+    margin: 0;
+    padding: 1% 0;
+    font-variant: small-caps;
+    background-color:rgb(255, 192, 203);
+
+  }
+  .word{
+    margin-left: 400px;
+  }
+  .image{
+    margin-top:20px;
+    margin-left: 30px;
+    float:left
+  }
+  #songsdiv{
+    margin-top:20px;
+    background-color:rgb(179, 224, 226);
+}
+.albumcover{
+    height: 300px;
+    width: 300px;
+  }
+.songdiv1{
+    border-style: dotted;
+    border-radius: 50px 50px 50px 50px; 
+    margin-top: 50px;
+    margin-bottom: 180px;
+    font-size: 20px;
+    background-color: #ffe;
+  }
+
+  .songname{
+    font-variant: small-caps;
+    font-size: 130%;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  .artist{
+    font-weight: bold;
+    font-size: 120%;
+  }
+  .albumname{
+    font-style: italic;
+  }
+  .releasedate{
+    font-size: 100%;
+  }
+  .genres{
+    font-size: 100%;
+  }
+ 
 
