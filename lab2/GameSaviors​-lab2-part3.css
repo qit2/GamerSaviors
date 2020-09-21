@@ -1,58 +1,83 @@
-h1 {
+/*Universal Setups*/
+*{
+  font-family: Georgia,serif;
+}
+h1{
     border-top:1px solid  rgb(0, 0, 0);                
-    border-bottom: thick double rgb(0, 0, 0);       
+    border-bottom: 1px solid rgb(0, 0, 0);       
     text-align: center; 
     margin: 0;
     padding: 1% 0;
     font-variant: small-caps;
     background-color:rgb(255, 192, 203);
 
+}
+p{
+  margin:15px 0 15px 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Info / Description Setups*/
+.word{
+    margin-left: 270px;
+}
+.songname{
+    font-variant: small-caps;
+    font-size: 130%;
+}
+.artist{
+    font-weight: bold;
+    font-size: 120%;
+}
+.albumname{
+    font-style: italic;
+}
+.releasedate{
+    font-size: 82%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.genres{
+    font-size: 82%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+/*Album Cover Setups*/
+.albumcover{
+    height: 200px;
+    width: 200px;
   }
-  .word{
-    margin-left: 400px;
-  }
-  .image{
-    margin-top:20px;
+.imagegen1{
+    margin-top: 3px;
     margin-left: 30px;
-    float:left
-  }
-  #songsdiv{
-    margin-top:20px;
+    float:left;
+}
+.imagegen2{
+    margin-top: 12px;
+    margin-left: 30px;
+    float:left;
+}
+.imagegen3{
+    margin-top: 22px;
+    margin-left: 30px;
+    float:left;
+}
+
+/*Other Background Setups*/
+.songsbackground{
+    padding: 35px 0px 12.5px 0px;
     background-color:rgb(179, 224, 226);
 }
-.albumcover{
-    height: 280px;
-    width: 280px;
-  }
-.songdiv1{
+.songholder{
     border-style: dotted;
     border-radius: 50px 50px 50px 50px; 
-    margin-top: 50px;
-    margin-bottom: 180px;
     font-size: 20px;
     background-color: #ffe;
   }
 
-  .songname{
-    font-variant: small-caps;
-    font-size: 130%;
-  }
-  a{
-    text-decoration: none;
-    color: inherit;
-  }
-  .artist{
-    font-weight: bold;
-    font-size: 120%;
-  }
-  .albumname{
-    font-style: italic;
-  }
-  .releasedate{
-    font-size: 90%;
-  }
-  .genres{
-    font-size: 90%;
-  }
- 
-
+  
