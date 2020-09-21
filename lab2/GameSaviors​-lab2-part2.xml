@@ -1,1 +1,26 @@
-this is a test for github
+ <?xml version="1.0" encoding="UTF-8"?>
+<playlist>
+  <song>
+    <trackName> Old town Road(Remix) </trackName>
+    <artist> Artist: <artistLink xlink:type="simple" xlink:href="http://www.lilnasx.com/"> Lil Nas X </artistLink> </artist>
+    <albumName> Albumn: <albumLink xlink:type="simple" xlink:href="https://www.allmusic.com/album/7-mw0003293392"> 7 </albumLink> </albumName>
+    <albumCoverImage> <img src = "old_town_road.jpg" alt = "A human ride a horse toward the city in the night."/> </albumCoverImage>
+    <releaseDate> Release Date: April 5, 2019 </realeaseDate>
+    <genre> Southern hip hop </genre>
+    <genre> Country rap </genre>
+    <genre> Trap </genre>
+  </song>
+
+  <song>
+    <trackName> Cherry bomb </trackName>
+    <artist> Artist: <artistLink xlink:type="simple" xlink:href = "http://www.nct127official.com/#home">  NCT 127 </artistLink> </artist>
+    <albumName> Albumn: <albumLink xlink:type="simple" xlink:href="https://www.allmusic.com/album/cherry-bomb-the-3rd-mini-album-mw0003066988"> Cherry Bomb: The 3rd Mini Album </albumLink> </albumName>
+    <albumCoverImage> <img src = "cherry_bomb.jpg" alt = "A human ride a horse toward the city in the night."/> </albumCoverImage>
+    <releaseDate> Release Date: June 14, 2017 </realeaseDate>
+    <genre> Contemporary R&B </genre>
+    <genre> Trap music </genre>
+    <genre> K-pop </genre>
+  </song>
+
+
+</playlist>
