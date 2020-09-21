@@ -1,25 +1,100 @@
- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <playlist>
   <song>
     <trackName> Old town Road(Remix) </trackName>
-    <artist> Artist: <artistLink xlink:type="simple" xlink:href="http://www.lilnasx.com/"> Lil Nas X </artistLink> </artist>
-    <albumName> Albumn: <albumLink xlink:type="simple" xlink:href="https://www.allmusic.com/album/7-mw0003293392"> 7 </albumLink> </albumName>
+    <artist> Artist: <artistLink href="http://www.lilnasx.com/"> Lil Nas X </artistLink> </artist>
+    <albumName> Albumn: <albumLink href="https://www.allmusic.com/album/7-mw0003293392"> 7 </albumLink> </albumName>
     <albumCoverImage> <img src = "old_town_road.jpg" alt = "A human ride a horse toward the city in the night."/> </albumCoverImage>
-    <releaseDate> Release Date: April 5, 2019 </realeaseDate>
-    <genre> Southern hip hop </genre>
-    <genre> Country rap </genre>
-    <genre> Trap </genre>
+    <releaseDate> Release Date: April 5, 2019 </releaseDate>
+    <genre> -Southern hip hop </genre>
+    <genre> -Country rap </genre>
+    <genre> -Trap </genre>
   </song>
 
   <song>
     <trackName> Cherry bomb </trackName>
-    <artist> Artist: <artistLink xlink:type="simple" xlink:href = "http://www.nct127official.com/#home">  NCT 127 </artistLink> </artist>
-    <albumName> Albumn: <albumLink xlink:type="simple" xlink:href="https://www.allmusic.com/album/cherry-bomb-the-3rd-mini-album-mw0003066988"> Cherry Bomb: The 3rd Mini Album </albumLink> </albumName>
+    <artist> Artist: <artistLink href = "http://www.nct127official.com/#home">  NCT 127 </artistLink> </artist>
+    <albumName> Albumn: <albumLink href="https://www.allmusic.com/album/cherry-bomb-the-3rd-mini-album-mw0003066988"> Cherry Bomb: The 3rd Mini Album </albumLink> </albumName>
     <albumCoverImage> <img src = "cherry_bomb.jpg" alt = "A human ride a horse toward the city in the night."/> </albumCoverImage>
-    <releaseDate> Release Date: June 14, 2017 </realeaseDate>
-    <genre> Contemporary R&B </genre>
-    <genre> Trap music </genre>
-    <genre> K-pop </genre>
+    <releaseDate> Release Date: June 14, 2017 </releaseDate>
+    <genre> -Contemporary R&amp;B </genre>
+    <genre> -Trap music </genre>
+    <genre> -K-pop </genre>
+  </song>
+
+  <song>
+    <trackName> Adventures </trackName>
+    <artist> Artist: <artistLink href= "https://www.hyperpotions.com//">  Hyper Potions/Subtact</artistLink> </artist>
+    <albumName> Albumn: <albumLink href= "https://www.monstercat.com/release/MC023"> Monstercat 023 - Voyage </albumLink> </albumName>
+    <albumCoverImage> <img src = "adventures.jpg" alt = "A black cat with headphones sitting on a life ring floating on the river."/> </albumCoverImage>
+    <releaseDate> Release Date: Aug 17, 2015 </releaseDate>
+    <genre> -Dance/Electronic </genre>
+  </song>
+
+  <song>
+    <trackName> Hang Up(feat. Savoi) </trackName>
+    <artist> Artist: <artistLink href= "https://thewrldmusic.com/">  WRLD/Savoi </artistLink> </artist>
+    <albumName> Albumn: <albumLink href= "https://www.monstercat.com/release/MCIV1"> Monstercat Instinct Vol.1 </albumLink> </albumName>
+    <albumCoverImage> <img src = "hang_up.jpg" alt = "A black cat's head with eyes blurred and headphones off in a deserted grassland."/> </albumCoverImage>
+    <releaseDate> Release Date: April 6, 2018 </releaseDate>
+    <genre> —Indie Dance </genre>
+    <genre> —Nu Disco </genre>
+  </song>
+
+  <song>
+    <trackName> Faded Alan Walker </trackName>
+    <artist> Artist: <artistLink href= "https://alanwalker.no/"> Alan Walker </artistLink> </artist>
+    <albumName> Albumn: <albumLink href= "https://www.beatport.com/release/faded/1936729"> Faded </albumLink> </albumName>
+    <albumCoverImage> <img src = "faded.jpg" alt = "A man with bag and jacket walking in the middle of tunnel."/> </albumCoverImage>
+    <releaseDate> Release Date: Dec 4, 2015 </releaseDate>
+    <genre> —Dance </genre>
+    <genre> —Electro Pop </genre>
+  </song>
+
+  <song>
+    <trackName> Ghost Assassin(Original Mix) </trackName>
+    <artist> Artist: <artistLink href= "http://www.veelamusic.com/">  Maduk/Veela </artistLink> </artist>
+    <albumName> Albumn: <albumLink href= "https://www.beatport.com/release/straight-up-drum-and-bass%21-vol-4/1079208"> Straight Up Drum &amp; Bass! Vol.4 </albumLink> </albumName>
+    <albumCoverImage> <img src = "ghost_assassin.jpg" alt = "A blue picture with 'Straight up Drum &amp; Bass'inside."/> </albumCoverImage>
+    <releaseDate> Release Date: April 29, 2013 </releaseDate>
+    <genre> —Drum and Bass </genre>
+  </song>
+
+  <song>
+    <trackName> Where We Belong(Zomboy Remix) </trackName>
+    <artist> Artist: <artistLink href= "https://feddelegrand.com/"> Fedde Le Grand/Di-Rect/Zomboy </artistLink> </artist>
+    <albumName> Albumn: <albumLink href= "https://www.beatport.com/release/where-we-belong-the-remixes/1246681"> Where We Belong(The Remixes) </albumLink> </albumName>
+    <albumCoverImage> <img src = "where_we_belong.jpg" alt = "A large tree grown in the middle with names of all remixers."/> </albumCoverImage>
+    <releaseDate> Release Date: Feb 24, 2014 </releaseDate>
+    <genre> —Dubstep </genre>
+  </song>
+
+  <song>
+    <trackName> Divine </trackName>
+    <artist> Artist: <artistLink href= "https://www.au5music.com/"> Au5 </artistLink> </artist>
+    <albumName> Albumn: <albumLink href= "https://www.beatport.com/release/divinorum/2604669"> Divinorum </albumLink> </albumName>
+    <albumCoverImage> <img src = "divine.jpg" alt = "A silver triangular machine-like structure shining from the middle with twilight."/> </albumCoverImage>
+    <releaseDate> Release Date: May 24, 2019 </releaseDate>
+    <genre> —Electronica </genre>
+  </song>
+
+  <song>
+    <trackName> Beat It </trackName>
+    <artist> Artist: <artistLink href= "https://www.michaeljackson.com/"> Michael Jackson </artistLink> </artist>
+    <albumName> Albumn: <albumLink href= "https://www.allmusic.com/album/thriller-mw0000056882"> Thriller </albumLink> </albumName>
+    <albumCoverImage> <img src = "beatit.png" alt = "Michael Jackson laying on the floor and his signature along with the album name on the topleft."/> </albumCoverImage>
+    <releaseDate> Release Date: Nov 30, 1982 </releaseDate>
+    <genre> —R&amp;B </genre>
+    <genre> —Pop/Rock </genre>
+  </song>
+
+   <song>
+    <trackName> Blast From The Past </trackName>
+    <artist> Artist: <artistLink href= "http://zzz.zipheads.com/"> The Zipheads </artistLink> </artist>
+    <albumName> Albumn: <albumLink href= "https://thezipheads.bandcamp.com/album/prehistoric-beat-remastered-2018"> Prehistoric Beat (Remastered 2018) </albumLink> </albumName>
+    <albumCoverImage> <img src = "blast_from_the_past.jpg" alt = "A yellow picture featuring three members of The Zipheads."/> </albumCoverImage>
+    <releaseDate> Release Date: June 4, 2018 </releaseDate>
+    <genre> —Rock </genre>
   </song>
 
 
