@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- All ten songs are in the playlist tag and each song is in its own song tag--> 
 <playlist>
+
+  <!-- All ten songs are formatted the same way-->   
   <song>
+    <!-- This is the name of the song-->  
     <trackName> Old town Road(Remix) </trackName>
+    <!-- The artist with link-->  
     <artist> Artist: <artistLink href="http://www.lilnasx.com/"> Lil Nas X </artistLink> </artist>
+    <!-- The album with link-->  
     <albumName> Album: <albumLink href="https://www.allmusic.com/album/7-mw0003293392"> 7 </albumLink> </albumName>
+    <!-- album cover image-->  
     <albumCoverImage> <img src = "old_town_road.jpg" alt = "A human ride a horse toward the city in the night."/> </albumCoverImage>
+    <!-- release date-->  
     <releaseDate> Release Date: April 5, 2019 </releaseDate>
+    <!-- genres-->  
     <genre> -Southern hip hop </genre>
     <genre> -Country rap </genre>
     <genre> -Trap </genre>
