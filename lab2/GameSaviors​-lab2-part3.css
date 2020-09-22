@@ -10,7 +10,6 @@ h1{
     padding: 1% 0;
     font-variant: small-caps;
     background-color:rgb(255, 192, 203);
-
 }
 p{
   margin:15px 0 15px 0;
@@ -19,6 +18,9 @@ a{
     text-decoration: none;
     color: inherit;
 }
+/*#forall{
+
+}*/
 
 /*Info / Description Setups*/
 .word{
