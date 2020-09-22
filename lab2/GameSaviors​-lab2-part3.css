@@ -1,0 +1,279 @@
+/*Universal Setups*/
+*{
+  font-family: Georgia,serif;
+}
+h1{
+    border-top:1px solid  rgb(0, 0, 0);                
+    border-bottom: 1px solid rgb(0, 0, 0);       
+    text-align: center; 
+    margin: 0;
+    padding: 1% 0;
+    font-variant: small-caps;
+    background-image : linear-gradient(to bottom right, #e66465, #9198e5);
+    
+}
+p{
+  margin:15px 0 15px 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#forall{
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+/*Info / Description Setups*/
+.words{
+    margin-top: 120px;
+    margin-bottom: 100px;
+    text-align: center;
+ 
+    display:center;
+    float:left;
+}
+/*Individual Word Gap Setup*/
+#word0{
+    margin-left: 45px;
+}
+#word1{
+    margin-left: 120px;
+}
+#word2{
+    margin-left: 235px;
+}
+#word3{
+    margin-left: 245px;
+}
+#word4{
+    margin-left: 165px;
+}
+#word5{
+    margin-left: 100px;
+}
+#word6{
+    margin-left: 175px;
+}
+#word7{
+    margin-left: 125px;
+}
+#word8{
+    margin-left: 110px;
+}
+#word9{
+    margin-left: 160px;
+}
+#word10{
+    margin-left: 105px;
+}
+#word11{
+    margin-left: 115px;
+}
+#word12{
+    margin-left: 80px;
+}
+#word13{
+    margin-left: 150px;
+}
+#word14{
+    margin-left: 160px;
+}
+#word15{
+    margin-left: 72px;
+}
+#word16{
+    margin-left: 140px;
+}
+#word17{
+    margin-left: 165px;
+}
+#word18{
+    margin-left: 140px;
+}
+#word19{
+    margin-left: 170px;
+}
+#word20{
+    margin-left: 145px;
+}
+#word21{
+    margin-left: 180px;
+}
+#word22{
+    margin-left: 200px;
+}
+#word23{
+    margin-left: 230px;
+}
+#word24{
+    margin-left: 170px;
+}
+#word25{
+    margin-left: 50px;
+}
+#word26{
+    margin-left: 45px;
+}
+#word27{
+    margin-left: 85px;
+}
+#word28{
+    margin-left: 140px;
+}
+#word29{
+    margin-left: 155px;
+}
+#word30{
+    margin-left: 80px;
+}
+#word31{
+    margin-left: 65px;
+}
+#word32{
+    margin-left: 60px;
+}
+#word33{
+    margin-left: 155px;
+}
+#word34{
+    margin-left: 165px;
+}
+#word35{
+    margin-left: 125px;
+}
+#word36{
+    margin-left: 240px;
+}
+#word37{
+    margin-left: 215px;
+}
+#word38{
+    margin-left: 230px;
+}
+#word39{
+    margin-left: 165px;
+}
+#word40{
+    margin-left: 122px;
+}
+#word41{
+    margin-left: 170px;
+}
+#word42{
+    margin-left: 170px;
+}
+#word43{
+    margin-left: 246px;
+}
+#word44{
+    margin-left: 170px;
+}
+#word45{
+    margin-left: 60px;
+}
+#word46{
+    margin-left: 115px;
+}
+#word47{
+    margin-left: 160px;
+}
+#word48{
+    margin-left: 220px;
+}
+#word49{
+    margin-left: 180px;
+}
+
+
+
+.songname{
+    font-variant: small-caps;
+    font-size: 130%;
+}
+.artist{
+    font-weight: bold;
+    font-size: 120%;
+}
+.albumname{
+    font-style: italic;
+}
+.genres{
+    font-size: 82%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+ul {
+  list-style-type: none;
+}
+ul li:before {
+  content: '\2014';
+  position: absolute;
+  margin-left: -20px;
+}
+.nav{
+    display:block;
+    float:left;
+    font-size: 110%;
+    margin: -10px 100px 0px 120px;
+}
+
+
+/*Album Cover Setups*/
+.albumcover{
+    height: 200px;
+    width: 200px;
+    float: right;
+  }
+.imagegen1{
+    margin-top: 80px;
+    margin-right: 130px;
+    float: right;
+}
+.imagegen2{
+    margin-top: 60px;
+    margin-right: 130px;
+    float: right;
+}
+.imagegen3{
+    margin-top: 50px;
+    margin-right: 130px;
+    float: right;
+}
+.imagegen1:hover{
+    transform: perspective(2000px) rotate(-10deg);
+}
+.imagegen2:hover{
+    transform: perspective(2000px) rotate(-10deg);
+}
+.imagegen3:hover{
+    transform: perspective(2000px) rotate(-10deg);
+}
+
+/*Other Background Setups*/
+.songsbackground{
+    padding: 40px 0px 40px 0px;
+    margin: auto;
+    overflow: auto;
+    /*background-color:rgb(179, 224, 226);*/
+}
+.navbackground{
+    padding: 70px 0px 70px 0px;
+    margin: 0 0 20px 0;
+}
+.songholder{
+    border-style: dotted;
+    border-radius: 50px 50px 50px 50px; 
+    /*font-size: 20px;
+    background-color: #ffe;*/
+    box-shadow: 5px 10px #fbfbfb6f;
+}
+.end {
+    color: white;
+    font-size: 100;
+    font-style: italic;
+    text-align: center;    
+}
+
