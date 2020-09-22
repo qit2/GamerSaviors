@@ -77,6 +77,15 @@ ul li:before {
     margin-left: 30px;
     float:left;
 }
+.imagegen1:hover{
+    transform: perspective(2000px) rotate(-10deg);
+}
+.imagegen2:hover{
+    transform: perspective(2000px) rotate(-10deg);
+}
+.imagegen3:hover{
+    transform: perspective(2000px) rotate(-10deg);
+}
 
 /*Other Background Setups*/
 .songsbackground{
