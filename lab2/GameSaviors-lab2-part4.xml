@@ -23,7 +23,7 @@
   <song id="second">
     <trackName> Cherry bomb </trackName>
     <artist> Artist: NCT 127</artist>
-    <albumName> Album: Cherry Bomb: The 3rd Mini Album </albumName>
+    <albumName> Album: <a href="https://www.allmusic.com/album/cherry-bomb-the-3rd-mini-album-mw0003066988"> Cherry Bomb: The 3rd Mini Album </a> </albumName>
     <releaseDate> Release Date: June 14, 2017 </releaseDate>
     <genre>-Contemporary R&amp;B
 -Trap music
@@ -33,7 +33,7 @@
   <song id="third">
     <trackName> Adventures </trackName>
     <artist> Artist: Hyper Potions/Subtact</artist>
-    <albumName> Album: Monstercat 023 - Voyage </albumName>
+    <albumName> Album: <a href="https://www.monstercat.com/release/MC023"> Monstercat 023 - Voyage </a> </albumName>
     <releaseDate> Release Date: Aug 17, 2015 </releaseDate>
     <genre>-Dance/Electronic</genre>
   </song>
@@ -41,7 +41,7 @@
   <song id="fourth">
     <trackName> Hang Up(feat. Savoi) </trackName>
     <artist> Artist: WRLD/Savoi </artist>
-    <albumName> Album: Monstercat Instinct Vol.1 </albumName>
+    <albumName> Album: <a href="https://www.monstercat.com/release/MCIV1">  Monstercat Instinct Vol.1 </a> </albumName>
     <releaseDate> Release Date: April 6, 2018 </releaseDate>
     <genre>-Indie Dance
 -Nu Disco</genre>
@@ -50,7 +50,7 @@
   <song id="fifth">
     <trackName> Faded </trackName>
     <artist> Artist: Alan Walker </artist>
-    <albumName> Album: Faded </albumName>
+    <albumName> Album:<a href="https://www.beatport.com/release/faded/1936729"> Faded </a></albumName>
     <releaseDate> Release Date: Dec 4, 2015 </releaseDate>
     <genre>-Dance
 -Electro Pop</genre>
@@ -59,7 +59,7 @@
   <song id="sixth">
     <trackName> Ghost Assassin(Original Mix) </trackName>
     <artist> Artist: Maduk/Veela </artist>
-    <albumName> Album: Straight Up Drum &amp; Bass! Vol.4 </albumName>
+    <albumName> Album: <a href="https://www.beatport.com/release/straight-up-drum-and-bass%21-vol-4/1079208"> Straight Up Drum &amp; Bass! Vol.4 </a> </albumName>
     <releaseDate> Release Date: April 29, 2013 </releaseDate>
     <genre> -Drum and Bass </genre>
   </song>
@@ -67,7 +67,7 @@
   <song id="seventh">
     <trackName> Where We Belong(Zomboy Remix) </trackName>
     <artist> Artist: Fedde Le Grand/Di-Rect/Zomboy </artist>
-    <albumName> Album: Where We Belong(The Remixes) </albumName>
+    <albumName> Album: <a href="https://www.beatport.com/release/where-we-belong-the-remixes/1246681"> Where We Belong(The Remixes) </a> </albumName>
     <releaseDate> Release Date: Feb 24, 2014 </releaseDate>
     <genre> -Dubstep </genre>
   </song>
@@ -75,7 +75,7 @@
   <song id="eighth">
     <trackName> Divine </trackName>
     <artist> Artist: Au5 </artist>
-    <albumName> Album: Divinorum </albumName>
+    <albumName> Album: <a href="https://www.beatport.com/release/divinorum/2604669"> Divinorum </a> </albumName>
     <releaseDate> Release Date: May 24, 2019 </releaseDate>
     <genre> -Electronica </genre>
   </song>
@@ -83,7 +83,7 @@
   <song id="ninth">
     <trackName> Beat It </trackName>
     <artist> Artist: Michael Jackson </artist>
-    <albumName> Album: Thriller </albumName>
+    <albumName> Album: <a href="https://www.allmusic.com/album/thriller-mw0000056882"> Thriller </a> </albumName>
     <releaseDate> Release Date: Nov 30, 1982 </releaseDate>
     <genre>-R&amp;B
 -Pop/Rock</genre>
@@ -92,7 +92,7 @@
    <song id="tenth">
     <trackName> Blast From The Past </trackName>
     <artist> Artist: The Zipheads </artist>
-    <albumName> Album: Prehistoric Beat (Remastered 2018) </albumName>
+    <albumName> Album: <a href="https://thezipheads.bandcamp.com/album/prehistoric-beat-remastered-2018"> Prehistoric Beat (Remastered 2018) </a></albumName>
     <releaseDate> Release Date: June 4, 2018 </releaseDate>
     <genre> -Rock </genre>
   </song>
