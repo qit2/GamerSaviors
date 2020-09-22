@@ -9,7 +9,8 @@ h1{
     margin: 0;
     padding: 1% 0;
     font-variant: small-caps;
-    background-color:rgb(255, 192, 203);
+    background-image : linear-gradient(to bottom right, #e66465, #9198e5);
+    
 }
 p{
   margin:15px 0 15px 0;
@@ -18,9 +19,12 @@ a{
     text-decoration: none;
     color: inherit;
 }
-/*#forall{
-
-}*/
+#forall{
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    
+}
 
 /*Info / Description Setups*/
 .word{
@@ -90,13 +94,14 @@ ul li:before {
 /*Other Background Setups*/
 .songsbackground{
     padding: 35px 0px 12.5px 0px;
-    background-color:rgb(179, 224, 226);
+    /*background-color:rgb(179, 224, 226);*/
 }
 .songholder{
     border-style: dotted;
     border-radius: 50px 50px 50px 50px; 
     font-size: 20px;
-    background-color: #ffe;
+    /*background-color: #ffe;*/
+    box-shadow: 5px 10px #fbfbfb6f;
   }
 
   
