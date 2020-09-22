@@ -47,6 +47,14 @@ a{
     margin-top: 5px;
     margin-bottom: 5px;
 }
+ul {
+  list-style-type: none;
+}
+ul li:before {
+  content: '\2014';
+  position: absolute;
+  margin-left: -20px;
+}
 
 
 /*Album Cover Setups*/
