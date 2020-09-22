@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="GameSaviors-lab2-part4.css"?>
+<playlist xmlns:html="http://www.w3.org/1999/xhtml">
+<!-- All the 10 songs are in the playlist tag and each individual song info is in their own song tags-->  
+<playlist>
+  <!-- All song info for the 10 songs are placed in song tags-->  
+  <!-- Each song tags are the same format-->  
+  <song id="first">
+    <!-- The name of the song-->  
+    <trackName> Old town Road(Remix) </trackName>
+    <!-- The artist of the song-->  
+    <artist> Artist: Lil Nas X</artist>
+    <!-- This is the album-->  
+    <albumName> Album: <html><a href="https://www.allmusic.com/album/7-mw0003293392"> 7 </a></html></albumName>
+    <!-- Song release date-->  
+    <releaseDate> Release Date: April 5, 2019 </releaseDate>
+    <!-- genres of the song-->  
+    <genre> -Southern hip hop </genre>
+    <genre> -Country rap </genre>
+    <genre> -Trap </genre>
+  </song>
+
+  <song>
+    <trackName> Cherry bomb </trackName>
+    <artist> Artist: NCT 127</artist>
+    <albumName> Album: Cherry Bomb: The 3rd Mini Album </albumName>
+    <releaseDate> Release Date: June 14, 2017 </releaseDate>
+    <genre> -Contemporary R&amp;B </genre>
+    <genre> -Trap music </genre>
+    <genre> -K-pop </genre>
+  </song>
+
+  <song>
+    <trackName> Adventures </trackName>
+    <artist> Artist: Hyper Potions/Subtact</artist>
+    <albumName> Album: Monstercat 023 - Voyage </albumName>
+    <releaseDate> Release Date: Aug 17, 2015 </releaseDate>
+    <genre> -Dance/Electronic </genre>
+  </song>
+
+  <song>
+    <trackName> Hang Up(feat. Savoi) </trackName>
+    <artist> Artist: WRLD/Savoi </artist>
+    <albumName> Album: Monstercat Instinct Vol.1 </albumName>
+    <releaseDate> Release Date: April 6, 2018 </releaseDate>
+    <genre> -Indie Dance </genre>
+    <genre> -Nu Disco </genre>
+  </song>
+
+  <song>
+    <trackName> Faded Alan Walker </trackName>
+    <artist> Artist: Alan Walker </artist>
+    <albumName> Album: Faded </albumName>
+    <releaseDate> Release Date: Dec 4, 2015 </releaseDate>
+    <genre> -Dance </genre>
+    <genre> -Electro Pop </genre>
+  </song>
+
+  <song>
+    <trackName> Ghost Assassin(Original Mix) </trackName>
+    <artist> Artist: Maduk/Veela </artist>
+    <albumName> Album: Straight Up Drum &amp; Bass! Vol.4 </albumName>
+    <releaseDate> Release Date: April 29, 2013 </releaseDate>
+    <genre> -Drum and Bass </genre>
+  </song>
+
+  <song>
+    <trackName> Where We Belong(Zomboy Remix) </trackName>
+    <artist> Artist: Fedde Le Grand/Di-Rect/Zomboy </artist>
+    <albumName> Album: Where We Belong(The Remixes) </albumName>
+    <releaseDate> Release Date: Feb 24, 2014 </releaseDate>
+    <genre> -Dubstep </genre>
+  </song>
+
+  <song>
+    <trackName> Divine </trackName>
+    <artist> Artist: Au5 </artist>
+    <albumName> Album: Divinorum </albumName>
+    <releaseDate> Release Date: May 24, 2019 </releaseDate>
+    <genre> -Electronica </genre>
+  </song>
+
+  <song>
+    <trackName> Beat It </trackName>
+    <artist> Artist: Michael Jackson </artist>
+    <albumName> Album: Thriller </albumName>
+    <releaseDate> Release Date: Nov 30, 1982 </releaseDate>
+    <genre> -R&amp;B </genre>
+    <genre> -Pop/Rock </genre>
+  </song>
+
+   <song>
+    <trackName> Blast From The Past </trackName>
+    <artist> Artist: The Zipheads </artist>
+    <albumName> Album: Prehistoric Beat (Remastered 2018) </albumName>
+    <releaseDate> Release Date: June 4, 2018 </releaseDate>
+    <genre> -Rock </genre>
+  </song>
+</playlist>
+</playlist>

@@ -1,1 +1,25 @@
+song #first {
+	background-image: url("old_town_road.jpg")
+}
+
+trackName {
+	font-size: 0.8em;
+}
+
+artist {
+	color: blue;
+}
+
+albumName {
+	font-style: italic;
+}
+
+song::after {
+	content:"\a";
+	white-space: pre;
+}
+
+trackName, artist, albumName, releaseDate, genre {
+	display: block;
+}
 
