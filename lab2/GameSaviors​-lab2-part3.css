@@ -100,7 +100,7 @@ ul li:before {
     border-radius: 50px 50px 50px 50px; 
     font-size: 20px;
     /*background-color: #ffe;*/
-    box-shadow: 5px 10px #fbfbfb6f;
+    box-shadow: 5px 10px 10px #fbfbfb6f;
   }
 
   
