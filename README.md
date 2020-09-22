@@ -8,7 +8,7 @@ Part 2(David Fink):
   
 Part 3 (Ryan Zhou and Ryan Qi)    
   
-  For this part, Ryan Qi and Ryan Zhou worked on the html and CSS of html together. Actually, we made two version of the CSS. At the beginning, we didn't get the idea that we need to organize one song per line and make it look like a table. As the result, we make our first version as ten boxs which have their characteristics like song name, artist name, album name, release date, and genres. Each box have their own <div> tag 
+  For this part, Ryan Qi and Ryan Zhou worked on the HTML and CSS together. Actually, we made two versions of the CSS. At the beginning, we didn't get the idea that we need to organize one song per line and make it look like a table. As the result, we made our first version as ten boxs which have their characteristics like song name, artist name, album name, release date, and genres. Each box have their own <div> tag and everything was listed incorrectly, thanks to the professor's help, we've figured out an alternative way to achieve the goal and display the information as neatly as possible. 
   
 Part 4 (Eric Zhang):
 
