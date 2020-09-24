@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <title>XHTML Template Example - Intro ITWS</title>
+  <title>David's Resumé</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -28,11 +28,11 @@
       font-size: 3em
     }
 
-    .bot {
+    h3 {
       color: white;
     }
 
-    #title {
+    header {
       padding: 20px 0px 20px 20px;
       background-color: rgb(71, 71, 71);
     }
@@ -44,19 +44,22 @@
       border-bottom: 1px black solid;
     }
 
-    .top {
+    h3 {
+      font-size: 16px;
+    }
+
+    .col-lg-4 li {
       font-size: 1em;
-      font-weight: bold;
       list-style-type: none;
       margin-left: 0px;
     }
 
-    #right ul {
+    aside ul {
       margin: 0;
       padding: 0 0 10px 20px;
     }
 
-    #left ul {
+    article ul {
       margin: 0;
       padding: 0 0 10px 0;
     }
@@ -68,6 +71,12 @@
     }
 
     .date {
+      padding-left: 5px;
+      font-style: italic;
+      font-weight: lighter;
+    }
+
+    p {
       padding-left: 5px;
       font-style: italic;
       font-weight: lighter;
@@ -89,145 +98,166 @@
 
 <body>
 
-  <section id="title">
+  <header>
     <h1>David Finck</h1>
-    <p class="bot">Information Technology and Web Science dual with Computer Science</p>
-  </section>
+    <h3>Information Technology and Web Science dual with Computer Science</h3>
+  </header>
 
 
-  <section id="left"> 
-  <div class="col-lg-8">
-    <h2>Experience</h2>
-    <div class="col-lg-3">
-      <p class="date">2020-05 - Present</p>
-    </div>
-    <div class="col-lg-9">
-      <ul>
-        <li class="header">Mind Games LLC</li>
-        <li>Web Developer</li>
-        <li>The position required brainstorming ideas for new websites, developing websites with html and css, and aggregating media content and other digital assets for related projects.</li>
-      </ul>
-    </div>
-
-    <div class="col-lg-3">
-      <p class="date">2018-09 - Present</p>
-    </div>
-    <div class="col-lg-9">
-      <ul>
-        <li class="header">Golf Quest</li>
-        <li>Range Staff</li>
-        <li>Responsible for maintaining and coordinating the golf carts, and golf ball inventory.</li>
-      </ul>
-    </div>
+  <article> 
+    <section class="col-lg-8">
 
 
-    <div class="col-lg-3">
-      <p class="date">2019-04 - Present</p>
-    </div>
-    <div class="col-lg-9">
-      <ul>
-        <li class="header">Oviedo Home Remodeling</li>
-        <li>Contrator Assistant</li>
-        <li>Provided labor work consisting of electrical services, plumbing, roofing, painting/staining, and other
-          maintenance work for clients homes.</li>
-      </ul>
-    </div>
+      <h2>Experience</h2>
 
-    <div class="col-lg-3">
-      <p class="date">2019-04 - Present</p>
-    </div>
-    <div class="col-lg-9">
-      <ul>
-        <li class="header">NowTakeAction Comics</li>
-        <li>Online Marketer</li>
-        <li>Cofounder of an online marketing company focused on buying and selling comic books for profit. Inventory
-          consists of over 4000 comics to date with hundreds online.</li>
-      </ul>
-    </div>
+      <section class="col-lg-3">
+        <p>2020-05 - Present</p>
+      </section>
 
-    <h2>Projects</h2>
-    <div class="col-lg-3">
-      <p class="date">2019-04 - Present</p>
-    </div>
-    <div class="col-lg-9">
-      <ul>
-        <li class="header">Marketing and Promotional Websites</li>
-        <li>Group project</li>
-        <li></li>
-      </ul>
-      <ul>
-        <li class="header">Google by Association</li>
-        <li>Group project</li>
-        <li>Explain the what</li>
-      </ul>
-    </div>
-    
-    <h2>Education</h2>
+      <section class="col-lg-9">
+        <ul>
+          <li class="header">Mind Games LLC</li>
+          <li>Web Developer</li>
+          <li>The position required brainstorming ideas for new websites, developing websites with html and css, and aggregating media content and other digital assets for related projects.</li>
+        </ul>
+      </section>
 
-    <div class="col-lg-3">
-      <p class="date">2019-08 - Present</p>
-    </div>
-    <div class="col-lg-9">
-      <ul>
-        <li class="header">BA in Information Technology and Web Science dual with Computer Science</li>
-        <li>Rensselaer Polytechnic Institute</li>
-        <li>Expected, May 2023</li>
-        <li>3.7 GPA</li>
-      </ul>
-    </div>
-  </div>
+      <section class="col-lg-3">
+        <p>2018-09 - Present</p>
+      </section>
 
-  </section>
+      <section class="col-lg-9">
+        <ul>
+          <li class="header">Golf Quest</li>
+          <li>Range Staff</li>
+          <li>Responsible for maintaining and coordinating the golf carts, and golf ball inventory.</li>
+        </ul>
+      </section>
+
+      <section class="col-lg-3">
+        <p>2019-04 - Present</p>
+      </section>
+
+      <section class="col-lg-9">
+        <ul>
+          <li class="header">NowTakeAction Comics</li>
+          <li>Online Marketer</li>
+          <li>Cofounder of an online marketing company focused on buying and selling comic books for profit. Inventory
+            consists of over 4000 comics to date with hundreds online.</li>
+        </ul>
+      </section>
 
 
-  <section id="right">
-  <div class="col-lg-4" style="background-color: rgba(128, 128, 128, .3); height: 1000px;">
+      <h2>Projects</h2>
 
-    <h2>Personal Info</h2>
-    <ul>
-      <li class="top">Address</li>
-      <li class="bottom">125 Candlewood Lake Rd</li>
-      <li class="bottom">Brookfield, CT 06804</li>
-    </ul>
-    <ul>
-      <li class="top">Phone</li>
-      <li class="bottom">203-299-7739</li>
-    </ul>
-    <ul>
-      <li class="top">E-mail</li>
-      <li class="bottom">finckd@rpi.edu</li>
-    </ul>
-    
-    <h2>Related Coursework:</h2>
-    <ul>
-      <li>Introduction to ITWS</li>
-      <li>IT and Society</li>
-      <li>Web Systems Development</li>
-      <li>Computer Science 1</li>
-      <li>Data Structures</li>
-      <li>Foundations of Computer Science</li>
-      <li>Computer Orginization</li>
-    </ul>
+      <section class="col-lg-3">
+        <p>2019-04 - Present</p>
+      </section>
 
-    <h2>Skills</h2>
-    <ul>
-      <li class="top">Html</li>
-      <li class="top">Css</li>
-      <li class="top">Python</li>
-      <li class="top">C++</li>
-      <li class="top">JavaScript</li>
-      <li class="top">jQuery</li>
-      <li class="top">PHP</li>
-    </ul>
-
-    <h2>Extracurriculars</h2>
-    <ul>
-      <li>Alpha Sigma Phi Fraternity</li>
-      <li>Running club</li>
+      <section class="col-lg-9">
+        <ul>
+          <li class="header">Marketing and Promotional Websites</li>
+          <li>Group project</li>
+          <li></li>
+        </ul>
+        <ul>
+          <li class="header">Google by Association</li>
+          <li>Group project</li>
+          <li>Explain the what</li>
+        </ul>
+      </section>
       
-    </ul>
-  </div>
-</section>
+
+      <h2>Education</h2>
+
+      <section class="col-lg-3">
+        <p>2019-08 - Present</p>
+      </section>
+
+      <section class="col-lg-9">
+        <ul>
+          <li class="header"><a href="https://www.rpi.edu">Rensselaer Polytechnic Institute</a></li>
+          <li>BA in Information Technology and Web Science dual with Computer Science</li>
+          <li>Expected, May 2023</li>
+          <li>3.7 GPA</li>
+        </ul>
+      </section>
+
+      <section class="col-lg-3">
+        <p>2015-08 - 2019-06</p>
+      </section>
+
+      <section class="col-lg-9">
+        <ul>
+          <li class="header"><a href="https://www.brookfield.k12.ct.us">Brookfield High School</a></li>
+          <li>High school diploma</li>
+          <li>Captain of Cross Country and Track Team</li>
+          <li>President of the seaperch club</li>
+        </ul>
+      </section>
+
+    </section>
+  </article>
+
+
+  <aside>
+    <section class="col-lg-4" style="background-color: rgba(128, 128, 128, .3); height: 1000px;">
+
+      <h2>Personal Info</h2>
+
+      <ul>
+        <li><strong>Address</strong></li>
+        <li>125 Candlewood Lake Rd</li>
+        <li>Brookfield, CT 06804</li>
+      </ul>
+
+      <ul>
+        <li><strong>Phone</strong></li>
+        <li>203-299-7739</li>
+      </ul>
+
+      <ul>
+        <li><strong>E-mail</strong></li>
+        <li><a href="mailto:finckd@rpi.edu">finckd@rpi.edu</a></li>
+      </ul>
+      
+
+      <h2>Related Coursework:</h2>
+
+      <ul>
+        <li>Introduction to ITWS</li>
+        <li>IT and Society</li>
+        <li>Web Systems Development</li>
+        <li>Computer Science 1</li>
+        <li>Data Structures</li>
+        <li>Foundations of Computer Science</li>
+        <li>Computer Orginization</li>
+      </ul>
+
+
+      <h2>Skills</h2>
+
+      <ul>
+        <li>Html</li>
+        <li>Css</li>
+        <li>Python</li>
+        <li>C++</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+        <li>Camtasia</li>
+        <li>Photoshop</li>
+      </ul>
+
+
+      <h2>Extracurriculars</h2>
+
+      <ul>
+        <li>Alpha Sigma Phi Fraternity</li>
+        <li>Running club</li>
+      </ul>
+      
+    </section>
+  </aside>
 
 </body>
 
