@@ -1,0 +1,112 @@
+/*Environmental Settings*/
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  /*background color: rainbow-ish?*/
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+  background: #333;
+}
+h1{
+  display: block;
+  padding: 100px 0 100px 0;
+  text-align: center;
+  font-size: 475%;
+  background-color: cyan;
+}
+h2{
+  display: block;
+  font-family: Georgia,serif;
+  margin-bottom: 40px;
+}
+
+
+/*Overall Flip Card Settings*/
+.card{
+  cursor: pointer;
+  width: 20%;
+  height: 400px;
+}
+.middle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.front,.back{
+  width: 30%;
+  height: 70%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform .6s linear;
+}
+/*Card Front Settings*/
+.front img{
+  height: 100%;
+  width: 100%;
+}
+.front{
+  transform: perspective(600px) rotateY(0deg);
+}
+/*Card Back Settings*/
+.back{
+  background: #f1f1f1;
+  transform: perspective(600px) rotateY(-180deg);
+}
+.back-content{
+  color: #2c3e50;
+  text-align: center;
+  width: 100%;
+}
+.sm{
+  margin: 20px 0;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.sm i{
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: #2c3e50;
+  font-size: 18px;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+/*Card Animation Settings*/
+.sm:hover{
+  color: yellowgreen;
+}
+/*h1:hover{
+  Apply Rainbow Gradient Effect;
+}*/
+.card:hover > .front{
+  transform: perspective(600px) rotateY(180deg);
+}
+.card:hover > .back{
+  transform: perspective(600px) rotateY(0deg);
+}
+
+
+/*Individual Card Settings*/
+.one{
+  float: left;
+  margin: 100px 0px 300px 225px;
+}
+.two{
+  float: right;
+  margin: 100px 415px 300px 0px;
+}
+.three{
+  float: left;
+  margin: 100px 0px 355px 225px;
+}
+.four{
+  float: right;
+  margin: 100px 415px 355px 0px;
+}
