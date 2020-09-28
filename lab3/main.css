@@ -31,7 +31,7 @@ body{
     margin: 0;
     padding: 0;
     left: 25%;
-    top:150px;
+    top:140px;
     align-items: center;
     font-size: 6rem;
     color: white;
@@ -127,13 +127,16 @@ header{
     display: inline-block;
     padding: 0px 20px;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
     font-size: 16px;
     color: white;
-    text-decoration: none;
+    
 }
 
 .navs li a{
     transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: white;
 }
 
 .navs li a:hover{
