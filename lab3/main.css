@@ -31,17 +31,19 @@ body{
     margin: 0;
     padding: 0;
     left: 25%;
-    top:140px;
+    top:100px;
     align-items: center;
     font-size: 6rem;
-    color: white;
+    color: rgb(167, 156, 156);
     position: relative;
     width: 800px;
     height: 130px;
     display: flex;
     justify-content: center;
     border-radius: 50px;
-    background: linear-gradient(30deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background: white;
+    /*background: linear-gradient(30deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);*/
+    opacity: 0.85;
 }
 .box:before{
     content: "";
@@ -53,7 +55,6 @@ body{
     background: white;
     z-index: -2;
     filter: blur(40px);
-
 }
 .box:after{
     content: "";
@@ -65,7 +66,6 @@ body{
     background: white;
     z-index: -2;
     filter: blur(50px);
-
 }
 .box:before, .box:after{
     background: linear-gradient(45deg,#89ff00,yellow,#89ff00);
@@ -74,7 +74,7 @@ body{
     text-decoration: none;
     position: absolute;
     left: 50%;
-    top:120%;
+    top:150%;
     transform: translate(-50%, -50%);
     font-size: 24px;
     background: linear-gradient(60deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
@@ -116,7 +116,7 @@ header{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 20px 5%;
 }
 
 .navs{
@@ -125,16 +125,18 @@ header{
 
 .navs li{
     display: inline-block;
-    padding: 0px 20px;
-    font-family: 'Courier New', Courier, monospace;
+    padding: 0px 70px;
+    font-family: 'Indie Flower', cursive;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 46px;
     color: white;
     
 }
 
 .navs li a{
     transition: all 0.3s ease 0s;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
     text-decoration: none;
     color: white;
 }
