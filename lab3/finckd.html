@@ -4,6 +4,7 @@
 <head>
   <title>David's Resumé</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="style.css">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -13,99 +14,13 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
-  <style type="text/css">
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    h1 {
-      text-align: left;
-      margin: 0;
-      padding: 0;
-      font-variant: small-caps;
-      color: white;
-      font-size: 3em
-    }
-
-    h3 {
-      color: white;
-    }
-
-    header {
-      padding: 20px 0px 20px 20px;
-      background-color: rgb(71, 71, 71);
-    }
-
-    header img {
-      float: right;
-      padding-right: 20px;
-    }
-
-    h2 {
-      margin-left: 20px;
-      font-size: 1.2em;
-      font-weight: bolder;
-      border-bottom: 1px black solid;
-    }
-
-    h3 {
-      font-size: 16px;
-    }
-
-    .col-lg-3 li {
-      font-size: 1em;
-      list-style-type: none;
-      margin-left: 0px;
-    }
-
-    aside ul {
-      margin: 0;
-      padding: 0 0 10px 20px;
-    }
-
-    article ul {
-      margin: 0;
-      padding: 0 0 10px 0;
-    }
-
-    .header{
-      list-style-type: none;
-      margin-left: 0px;
-    }
-
-    .date {
-      padding-left: 5px;
-      font-style: italic;
-      font-weight: lighter;
-    }
-
-    p {
-      padding-left: 5px;
-      font-style: italic;
-      font-weight: lighter;
-    }
-
-    li {
-      margin-left: 15px;
-    }
-
-    .bottom {
-      margin-left: 0px;
-      list-style-type: none;
-    }
-
-    
-
-  </style>
 </head>
 
 <body>
 
   <!-- The header of the page -->
-  <header>
-    <h1>David Finck<img src="David Finck.jpg" alt="picture of David Finck" height="100"></h1>
-    <h3>Information Technology and Web Science dual with Computer Science</h3>
+  <header id="header">
+    <h1 id="name">David Finck<img src="David Finck.jpg" alt="picture of David Finck" height="100"></h1>
   </header>
 
 
@@ -114,7 +29,11 @@
     <!-- This section is taking up 9 parts of 12 -->
     <section class="col-lg-9">
       
-      <h2>Education</h2>
+      <section>
+        <p id="objective">I am currently a second year student at Rensselaer Polytechnic Institute seeking to increase my experience in the workforce with an internship. I am studying Information Technology and Web Science and dualing wih Computer Science and I am Interested in web development.</p>
+      </section>
+
+      <h2 class="resumeTitle">Education</h2>
 
       <!-- Here the 9 parts are divided into 3 parts, for the date, and 9 parts for the information-->
       <!-- This is the same format for the rest of this article tag-->
@@ -145,7 +64,7 @@
         </ul>
       </section>
 
-      <h2>Experience</h2>
+      <h2 class="resumeTitle">Experience</h2>
 
       <section class="col-lg-3">
         <p>2020-05 - 2020-08</p>
@@ -188,22 +107,22 @@
       </section>
 
 
-      <h2>Projects</h2>
+      <h2 class="resumeTitle">Projects</h2>
 
       <section class="col-lg-3">
       </section>
 
       <section class="col-lg-9">
         <ul>
-          <li class="header">Marketing and Promotional Websites</li>
-          <li>Group project</li>
+          <li class="header"><strong>Marketing and Promotional Websites</strong></li>
+          <li class="header">Group project</li>
           <li>With a group we Designed and programed two websites to promote an app.</li>
           <li>The first website, <a href="http://jointhemavericks.com">Jointhemavericks.com</a>, was created as an affiliate link to be able to track which current clients referred the new person to the app.</li>
           <li>The second website, <a href="http://mavericksuccessapp.com">Mavericksuccessapp.com</a>, was the promotioonal website used by the company to advertise on various social media platfoorms.</li>
         </ul>
         <ul>
-          <li class="header">Google by Association</li>
-          <li>Group project</li>
+          <li class="header"><strong>Google by Association</strong></li>
+          <li class="header">Group project</li>
           <li>This browser game uses Google api keys to provide six images of a hidden noun with a unique adjective given to each image. These images are found by searching “a random common adjective” + “the hidden noun.” Both words are taken from json files. The random adjective and an image of the adjective and noun are shown to the player. </li>
         </ul>
       </section>
@@ -215,9 +134,9 @@
   <!-- I used an aside tag because this information is just on the side of the main information-->
   <aside>
     <!-- This information is just taking up 3 parts of 12 and is located on the right side of the screen -->
-    <section class="col-lg-3" style="background-color: rgba(128, 128, 128, .3); height: 1000px;">
+    <section class="col-lg-3" style="background-color: rgba(128, 128, 128, .3); height: 1200px;">
 
-      <h2>Personal Info</h2>
+      <h2 class="resumeTitle">Personal Info</h2>
 
       <ul>
         <li><strong>Address</strong></li>
@@ -236,7 +155,7 @@
       </ul>
       
 
-      <h2>Related Coursework:</h2>
+      <h2 class="resumeTitle">Related Coursework:</h2>
 
       <ul>
         <li>Introduction to ITWS</li>
@@ -249,7 +168,7 @@
       </ul>
 
 
-      <h2>Skills</h2>
+      <h2 class="resumeTitle">Skills</h2>
 
       <ul>
         <li>Html</li>
@@ -263,7 +182,7 @@
       </ul>
 
 
-      <h2>Extracurriculars</h2>
+      <h2 class="resumeTitle">Extracurriculars</h2>
 
       <ul>
         <li>Alpha Sigma Phi Fraternity</li>
