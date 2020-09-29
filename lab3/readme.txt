@@ -1,7 +1,7 @@
 David Finck:
 
 My markup is semantically correct on my resume because each tag that I use has a reason for being there and it makes sense to the place where I put it.
-I did not just use div tags everywhere in my code. For thhe top section I used a header tag because I was the header of my resume page which had my name and
+I did not just use div tags everywhere in my code. For the top section I used a header tag because I was the header of my resume page which had my name and
 my personal information. After that I used an article tag to be around all of my main information like education, projects, and work experience. I then used an
 aside tag for all of the little information like related courses and skills. I put the aside tag because this inifoormation was just a side thing and wasn't
 meant to be the main focus. Inside these tags I kept a similar style that repeated for each section so I reuse the same tags a few times. The tags I reused were
@@ -17,3 +17,13 @@ are used are used for specific information. HCard provides tags that are specifi
 easy to read by both humans and computers.
 
 useful websites: https://microformats.org/wiki/hcard, https://zety.com/resume-examples
+
+Eric Zhang:
+
+My markup is semantically correct because the hCards are wrapped in an address tag, which is used for marking up personal information. Inside the address tag, there are no high-level tags like h1 or other header tags. Instead, there are only p tags, ul and li tags, and span tags. This makes sure that the text inside the hCard is not incorrectly interpreted as a header.
+
+I needed to use span tags for styling purposes. In the hCard adr class, I used spans to help mark up the region, locality, and postal code while maintaining a readable address when displayed on the page. Other than that, I used a p tag with a specified line-height to format the name of the hCard better.
+
+The information in an hCard is useful to both humans and computers because it specifies what they are looking at. If the human only had access to the HTML code, then they may need to dig around to find the personal information. The hCard tags help mitigate this by adding the wrapper around the personal information as well as tags for each section. This can be found quickly or skipped if they do not need to look at it. For computers, it helps them determine that the information it wraps is specifically personal information, and not document information. This helps the computers differentiate between information to display as main document information and personal information.
+
+Useful websites: https://dev.opera.com/articles/introduction-to-hcard-part-2-styling/
