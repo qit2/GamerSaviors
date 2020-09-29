@@ -41,8 +41,10 @@ other. Besides that, there is an animated gradient(rainbow-colored) background a
 portion of our works here(where we basically "break everything"): Classes crash into each other, environmental(*) settings overriding everything else, order of including CSS 
 files actually matters, ridiculous locations of elements and paddings larger then images themselves etc... 
 
-The hCard information included is beneficial for both humans and computers since they ease the process for both human readability of HTML and CSS files and the efficiency of 
-computers processing the HTML and CSS, mainly because there are specific tags that are easy for humans to understand, and computers can differenciate between information tags so they can be displayed more properly.
+Ryan Zhou: The hCard information included is beneficial for both humans and computers since they ease the process for both human readability of HTML and CSS files and the efficiency of computers processing the HTML and CSS, mainly because there are specific tags that are easy for humans to understand, and computers can differenciate between information tags so they can be displayed more properly.
+
+Ryan Qi: Aftering learning hcard, i found out that the hCard is a very useful styling format. hCard help both computer and human. For the user, when there is hCard on a page, they can simply download that hCard contact info instead of  having to copy and paste each individual name, email address, or link. the hCard has different tag which can help computer and human to recognize the right information which we want. In this way, the work can be done more efficient.
+
 
 External Resources:
 Flip Card Animation Tutorial: https://www.youtube.com/watch?v=uR7EbQImYmo
