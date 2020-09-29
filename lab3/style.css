@@ -105,6 +105,12 @@
     filter:blur(20px);
     z-index: -1;
 }
+
+.button a{
+  text-decoration: none;
+  color:white;
+}
+
 .button:hover::before{
     animation: func 8s infinite;
 }
