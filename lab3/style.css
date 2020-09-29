@@ -37,7 +37,7 @@ h2{
 }
 .front,.back{
   width: 30%;
-  height: 70%;
+  height: 85%;
   overflow: hidden;
   backface-visibility: hidden;
   position: absolute;
@@ -75,7 +75,6 @@ h2{
   align-items: center;
   color: #2c3e50;
   font-size: 18px;
-  transition: 0.4s;
   border-radius: 50%;
 }
 /*Card Animation Settings*/
@@ -86,114 +85,27 @@ h2{
   Apply Rainbow Gradient Effect;
 }*/
 .card:hover > .front{
-  transform: perspective(600px) rotateY(180deg);
+  transform: perspective(2500px) rotateY(180deg);
 }
 .card:hover > .back{
-  transform: perspective(600px) rotateY(0deg);
+  transform: perspective(2500px) rotateY(0deg);
 }
 
 
 /*Individual Card Settings*/
 .one{
   float: left;
-  margin: 100px 0px 300px 225px;
+  margin: 190px 0px 500px 225px;
 }
 .two{
   float: right;
-  margin: 100px 415px 300px 0px;
+  margin: 190px 415px 500px 0px;
 }
 .three{
   float: left;
-  margin: 100px 0px 355px 225px;
+  margin: 100px 0px 555px 225px;
 }
 .four{
   float: right;
-  margin: 100px 415px 355px 0px;
-}
-
-
-/* CSS for Resumés */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-#name {
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  font-variant: small-caps;
-  color: white;
-  font-size: 3em;
-  background-color: rgb(71, 71, 71);
-}
-
-#header {
-  height: 150px;
-  padding: 20px 0px 20px 20px;
-  background-color: rgb(71, 71, 71);
-}
-
-#header img {
-  float: right;
-  padding-right: 20px;
-}
-
-.resumeTitle {
-  margin-left: 20px;
-  font-size: 20px;
-  font-weight: bolder;
-  border-bottom: 1px black solid;
-}
-
-.col-lg-3 li {
-  font-size: 1em;
-  list-style-type: none;
-  margin-left: 0px;
-}
-
-aside ul {
-  margin: 0;
-  padding: 0 0 10px 20px;
-}
-
-article ul {
-  margin: 0;
-  padding: 0 0 10px 0;
-}
-
-.header{
-  list-style-type: none;
-  margin-left: 0px;
-}
-
-.date {
-  padding-left: 5px;
-  font-style: italic;
-  font-weight: lighter;
-}
-
-.col-lg-3 p {
-  padding-left: 5px;
-  font-style: italic;
-  font-weight: lighter;
-}
-
-article li {
-  margin-left: 15px;
-  font-size: 16px;
-}
-
-aside li {
-  margin-left: 15px;
-  font-size: 16px;
-}
-
-.bottom {
-  margin-left: 0px;
-  list-style-type: none;
-}
-
-#objective {
-  margin-left: 20px;
-  padding-top: 10px;
+  margin: 100px 415px 555px 0px;
 }
