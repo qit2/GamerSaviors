@@ -222,6 +222,56 @@ header{
     color: whitesmoke;
 }
 
+/*css for new_project.html*/
+.intro_title{
+  font-size: 25px;
+  margin-top: -30px;
+  margin-left: 50px;
+  font-family: 'Lobster', cursive;
+  color: whitesmoke;
+}
+
+.pro_content{
+  font-size: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  font-family: 'Lobster', cursive;
+  color: whitesmoke;
+}
+
+.the_end{
+  font-size: 50px;
+  margin-left: 550px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  font-family: 'Lobster', cursive;
+  color: whitesmoke;
+}
+
+.introup{
+  display: block;
+  padding: 80px 0 80px 0;
+  text-align: center;
+  font-size: 150px;
+  font-family: 'Bangers', cursive;
+}
+
+.new_pro_img{
+  margin-left: 30px;
+  margin-right: 70px;
+  float: right;
+  width:350px;
+  height: 200px;
+}
+
+.intro{
+  margin-top: 20px;
+  font-size: 100px;
+  color: white;
+  font-family: 'Anton', sans-serif;
+}
+
 /*New*/
 /*Environmental Settings*/
 #team{
