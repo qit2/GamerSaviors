@@ -27,3 +27,24 @@ I needed to use span tags for styling purposes. In the hCard adr class, I used s
 The information in an hCard is useful to both humans and computers because it specifies what they are looking at. If the human only had access to the HTML code, then they may need to dig around to find the personal information. The hCard tags help mitigate this by adding the wrapper around the personal information as well as tags for each section. This can be found quickly or skipped if they do not need to look at it. For computers, it helps them determine that the information it wraps is specifically personal information, and not document information. This helps the computers differentiate between information to display as main document information and personal information.
 
 Useful websites: https://dev.opera.com/articles/introduction-to-hcard-part-2-styling/
+
+
+Ryan Qi & Ryan Zhou:
+
+We've been working on overall HTML and CSS for both the index page and the team pages as well as links throughout the enitre lab. Some div tags are used in between section tags
+because we've decided not to have section tags all the way down the HTML(which is as annoying as div tags all the way down the HTML)，and merging those nested div and section 
+tags actually affects the appearance of the webpage greatly, but we've avoided span tags as much as we can by applying multiple classes to p tags.
+Thanks to some external resources providing cool icons and flip card animation tutorials(surprisingly applicable without JavaScript), we've applied most of the creative 
+ideas into semantically correct HTML: The i tag stands for "icon", and we've included css from external websites with the correct version, both the icons and the 
+information are included inside the anchor tag so it all come together to a valid link, then we added br tags to make sure those links are separated instead of squashing to each 
+other. Besides that, there is an animated gradient(rainbow-colored) background applied into the index page. However, the confliction between CSS files are the most challenging 
+portion of our works here(where we basically "break everything"): Classes crash into each other, environmental(*) settings overriding everything else, order of including CSS 
+files actually matters, ridiculous locations of elements and paddings larger then images themselves etc... 
+
+The hCard information included is beneficial for both humans and computers since they ease the process for both human readability of HTML and CSS files and the efficiency of 
+computers processing the HTML and CSS, mainly because there are specific tags that are easy for humans to understand, and computers can differenciate between information tags so they can be displayed more properly.
+
+External Resources:
+Flip Card Animation Tutorial: https://www.youtube.com/watch?v=uR7EbQImYmo
+Animated Gradient Background Tutorial: https://www.youtube.com/watch?v=fBRzD6dwJfw
+Icon Tags: https://fontawesome.com/
