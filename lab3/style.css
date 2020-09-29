@@ -11,7 +11,7 @@
 
 @keyframes change_background{
     0%{
-        background-position: 1 50%;
+        background-position: 100% 50%;
     }
     50%{
         background-position: 100% 50%;
@@ -317,7 +317,7 @@ h2{
 }
 .front,.back{
   width: 30%;
-  height: 85%;
+  height: 175%;
   overflow: hidden;
   backface-visibility: hidden;
   position: absolute;
