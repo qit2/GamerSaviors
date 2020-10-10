@@ -1,9 +1,11 @@
-#main{
+html, body{
     /*background: url("background.jpg") ;
-    background-repeat: no-repeat;*/
-    width:100%;
-    /*height:400px;*/
-    background: linear-gradient(-45deg,  rgb(21, 14, 235),rgb(75, 69, 252), rgb(69, 145, 252), #23A6D5);
+    background-repeat: no-repeat;
+    background-size: auto;*/
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(-45deg,  rgb(21, 14, 235),rgb(75, 69, 252), rgb(69, 145, 252), #23A6D5);
 }
 
 
@@ -20,7 +22,7 @@ header{
 
 .navs li{
     display: inline-block;
-    padding: 0px 80px;
+    padding: 0px 130px;
     font-family: 'Indie Flower', cursive;
     font-weight: 600;
     font-size: 46px;
@@ -41,22 +43,23 @@ header{
     text-decoration: none;
     position: absolute;
     left: 50%;
-    top:70%;
+    top: 55%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
+    font-size: 28px;
     background: linear-gradient(60deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
     background-size: 400%;
-    width:300px;
-    height: 100px;
+    width: 330px;
+    height: 110px;
+    margin: 700px, 0, 0, 200px;
     line-height: 90px;
     color: aliceblue;
     text-transform: uppercase;
     border-radius: 50px;
-    z-index: -1;
+    /*z-index: -1;*/
 }
 .button::before{
     content:"";
-    position: absolute;
+    /*position: absolute;*/
     left:-5px;
     right: -5px;
     top: -5px;
@@ -89,7 +92,7 @@ header{
 .dropdown .dropbutton{
     font-size: 20px;
     border: none;
-    outline:none;
+    outline: none;
     padding: 14px 16px;
    
     margin: 0;
@@ -116,28 +119,29 @@ header{
 
 .dropdown:hover .sign_op {
     display: block;
-  }
-
-.buttom_1{
-    z-index: 15;
-    opacity: 0.5;
-}
-
-.buttom_2{
-    z-index: 10;
-    opacity: 0.7;
-}
-
-.buttom_3{
-    z-index: 5;
 }
 
 .wave{
-    position: absolute;
+    position: fixed;
+    bottom: 0;
     left: 0;
-    width: 200%;
-    height: 100%;
+    height: 208px;
+    width: 100%;
     background-repeat: repeat no-repeat;
     background-position: 0 bottom;
-    transform-origin: center bottom;
+    /*transform-origin: center bottom;*/
+}
+.wave_1{
+    background-image: url(1.png);
+    opacity: 0.5;
+    /*z-index: 15;*/
+}
+.wave_2{
+    background-image: url(2.png);
+    opacity: 0.7;
+    /*z-index: 10;*/
+}
+.wave_3{
+    background-image: url(3.png);
+    /*z-index: 5;*/
 }
