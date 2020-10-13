@@ -21,7 +21,12 @@ Part 3:
 Besides the cloneNode() function which literally copies the element to a clone, the essense of finishing part 3 is determining whether the element mouse is joining or leaving is as same as the element that triggers the event. When the two matches, make the style changes to the element accordingly, and the for loop is used to make sure every element will have onmouseover and onmouseout events applied. 
 
 Creativity:
-First of all, adding a white dotted border around the whole page. Then for the title of each part, i change the color to blue and make it have a opacity of 0.5. Also I make text-aign stick to center, then the title will be always on the center. I also change the font style of the instruction content. For the id "part1b", I set the display to the none, so the return value of function 1b will not show on the page when we open the page. After clicking the bottom, the result will display.
+Ryan Qi: First of all, adding a white dotted border around the whole page. Then for the title of each part, i change the color to blue and make it have a opacity of 0.5. Also I make text-aign stick to center, then the title will be always on the center. I also change the font style of the instruction content. For the id "part1b", I set the display to the none, so the return value of function 1b will not show on the page when we open the page. After clicking the bottom, the result will display.
 
-David's Creativity:
-For my creativity I added css to make the button that we were using look more appealing. So I changed the color and added shadow and a border and much more.
+David: For my creativity I added css to make the button that we were using look more appealing. So I changed the color and added shadow and a border and much more.
+
+Ryan Zhou: Made a transformation from in-text JavaScript to the separate file, made some variables global therefore made sure all functions in part 1 has a return value for display.
+
+Other Explanations:
+1. It seems like the part 2 click event overrides the button_click function in JavaScript when the "Click me for part 1b content" once so when the button is clicked the first time, it will only show the part 2 alerts(not displaying the content), but a second click on the button can put a stop to this issue.
+2. There are some locations in div tags where onmouseover and onmouseout event keeps triggering for multiple times since part 3 only adds the two event listeners without providing the case when the mouse is already in the div element(not outside) but the onmouseout event also triggers, resulting in a fluctuating element experience.
