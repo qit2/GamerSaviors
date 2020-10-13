@@ -13,5 +13,4 @@ to get the code to run the way I needed it to.
 
 Part 2:
 I used the addEventListener method to add a click event listener to every tag that part 1a accessed. When I click on any element on the document, the alert box pops 
-up with the name of the tag that is clicked on. After that, it creates an alert box with the parent element, and then another with its parent if possible. This shows
-the bubbling because it bubbles up through the parent tags.
+up with the name of the tag that is clicked on. After that, it creates an alert box with the parent element, and then another with its parent if possible. This shows the bubbling because it bubbles up through the parent tags.
