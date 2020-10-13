@@ -23,3 +23,30 @@ h2{
 #part1b{
     display: none;
 }
+
+/* David's Creativity */
+.myButton {
+	box-shadow:inset 1px 1px 25px 0px #e184f3;
+	background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+	background-color:#c123de;
+	border-radius:42px;
+	border:6px solid #a511c0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:25px;
+	font-weight:bold;
+	font-style:italic;
+	padding:15px 49px;
+	text-decoration:none;
+    text-shadow:7px 7px 0px #9b14b3;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+	background-color:#a20dbd;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
