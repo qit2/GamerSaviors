@@ -16,8 +16,9 @@ function iterating1a(tag, indent) {
   /* This puts the tag name into the part2Tag variable*/
   var part2Tag = tag.tagName
   
-  /* This adds the click event listener to every tag, and pops up with an alert with the tag name*/
-  tag.addEventListener("click", function(){alert(part2Tag)});
+  /* This adds the click event listener to every tag, and pops up with an alert with the tag name
+     A confirm box also shows up with the amount of remaining elements, and will be my creativity - Eric*/
+  tag.addEventListener("click", function(){alert(part2Tag); confirm(indent + " element(s) remaining")});
 
   /* this then gets the name of the tag */
   result += (tag.tagName + "\n");
@@ -114,4 +115,3 @@ function part3(object){
   }
 }
 part3(document.body.children);
-
