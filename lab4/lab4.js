@@ -9,16 +9,19 @@ function iterating1a(tag, indent) {
   if(indent == 0){
       result = "";
   }
+  /* This for loop adds how much the tag is indented */
   for (i = 0; i < indent; i++) {
     result += "-";
   }
 
+  /* this then gets the name of the tag */
   result += (tag.tagName + "\n");
 
   var amount = tag.childElementCount;
   
   if (amount > 0) {
     var j = 0;
+    /* It goes through and gets all of the children by using the chileElementCount function*/
     for (j = 0; j < amount; j++) {
       result += iterating1a(tag.children[j], indent + 1);
     }
@@ -27,6 +30,7 @@ function iterating1a(tag, indent) {
   return result;
 }
 
+/* This is the same as the first function but slightly different for part 1b*/
 function iterating1b(tag, indent) {
   var result = "";
   var i;
@@ -50,6 +54,7 @@ function iterating1b(tag, indent) {
 
   return result;
 }
+
 /* Part 1a execution */
 var x = document.getElementsByTagName("html").item(0);
 document.getElementById("info").innerHTML = "";
