@@ -89,6 +89,7 @@ function quote_fav(){
 }
 quote_fav();
 
+/*part 3*/
 function part3(object){
   for(var i = 0; i < object.length; i++){
       object[i].addEventListener('mouseover',function(now){ 
