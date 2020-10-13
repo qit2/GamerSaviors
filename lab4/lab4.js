@@ -28,12 +28,3 @@ var x = document.getElementsByTagName("html").item(0);
 /*document.getElementById("info").innerHTML += "\n";*/
 iterating(x, 0);
 
-
-function quote_fav(){
-  var quote = "Be who you are and say what you feel, because those who mind don\'t matter and those who matter don\'t mind. \- Bernard M. Baruch"
-  var itm=document.getElementsByClassName("quote")[0];
-  var content = itm.cloneNode(true);
-  content.innerHTML = quote;
-  document.body.appendChild(content);
-}
-quote_fav();
