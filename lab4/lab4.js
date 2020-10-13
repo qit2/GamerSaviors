@@ -13,7 +13,10 @@ function iterating1a(tag, indent) {
   for (i = 0; i < indent; i++) {
     result += "-";
   }
+  /* This puts the tag name into the part2Tag variable*/
   var part2Tag = tag.tagName
+  
+  /* This adds the click event listener to every tag, and pops up with an alert with the tag name*/
   tag.addEventListener("click", function(){alert(part2Tag)});
 
   /* this then gets the name of the tag */
