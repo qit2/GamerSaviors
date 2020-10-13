@@ -13,6 +13,8 @@ function iterating1a(tag, indent) {
   for (i = 0; i < indent; i++) {
     result += "-";
   }
+  var part2Tag = tag.tagName
+  tag.addEventListener("click", function(){alert(part2Tag)});
 
   /* this then gets the name of the tag */
   result += (tag.tagName + "\n");
@@ -76,3 +78,7 @@ function button_click(){
     content.style.display = "none";
   }
 }
+
+// function part2(tag){
+//   alert(tag.tagName);
+// }
