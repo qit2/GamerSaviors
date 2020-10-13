@@ -78,7 +78,12 @@ function button_click(){
     content.style.display = "none";
   }
 }
-
-// function part2(tag){
-//   alert(tag.tagName);
-// }
+/*part 3 add a quote which we like at bottom of the page. */
+function quote_fav(){
+  var quote = "Be who you are and say what you feel, because those who mind don\'t matter and those who matter don\'t mind. \- Bernard M. Baruch"
+  var itm = document.getElementsByClassName("quote box")[0];
+  var content = itm.cloneNode(true);
+  content.innerHTML = quote;
+  document.body.appendChild(content);
+}
+quote_fav();
