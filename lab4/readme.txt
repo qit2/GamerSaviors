@@ -22,3 +22,6 @@ Besides the cloneNode() function which literally copies the element to a clone, 
 
 Creativity:
 First of all, adding a white dotted border around the whole page. Then for the title of each part, i change the color to blue and make it have a opacity of 0.5. Also I make text-aign stick to center, then the title will be always on the center. I also change the font style of the instruction content. For the id "part1b", I set the display to the none, so the return value of function 1b will not show on the page when we open the page. After clicking the bottom, the result will display.
+
+David's Creativity:
+For my creativity I added css to make the button that we were using look more appealing. So I changed the color and added shadow and a border and much more.
