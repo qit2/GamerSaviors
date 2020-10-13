@@ -3,6 +3,9 @@
 function iterating(tag, indent) {
   var i;
   var l;
+  if(indent == 0){
+      document.getElementById("info").innerHTML = "";
+  }
   for (i = 0; i < indent; i++) {
     document.getElementById("info").innerHTML += "-";
   }
@@ -21,4 +24,6 @@ function iterating(tag, indent) {
   return;
 }
 
-
+var x = document.getElementsByTagName("html").item(0);
+/*document.getElementById("info").innerHTML += "\n";*/
+iterating(x, 0);
