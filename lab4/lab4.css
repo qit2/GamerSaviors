@@ -1,0 +1,23 @@
+
+.whole{
+    border: 5px dotted #FF5733;
+    background: linear-gradient(-45deg, #9a22a7 , rgba(252,176,69,1), #E73C7E,#23A6D5);
+    font-family: 'Grenze', serif; /*web font from the google font*/
+}
+
+.title{
+    text-align: center;
+    color:rgb(0, 21, 255);
+    opacity: 0.5;
+}
+.quote{
+    margin:0;
+    padding: 0;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    border-radius: 50px;
+    font-family: 'Chilanka', cursive;
+    text-decoration: dashed;
+}
+
