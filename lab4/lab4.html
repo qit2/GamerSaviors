@@ -1,52 +1,44 @@
 <!doctype html>
-<html class="first">
-<head>
-  <title>Lab 4</title>
-  <link rel=stylesheet href="lab4Solution.css"/>
-  <script type="text/javascript" src="lab4.js"></script>
-</head>
-<body>
-  <h1>Lab #4 - JavaScript and the Document Object Model</h1>
-  <pre id="info">Lab #4 - JavaScript and the Document Object Model</pre>
-  <pre id="part1b">Lab #4 - JavaScript and the Document Object Model</pre>
-  <div class="quote">
-    <h2>Part 0: Setup</h2>
-    <p>Create a new folder for lab4, and confirm that it is being served by Apache. You may choose to serve this lab from a new virtual host, though doing so is not required to receive credit.</p>
-    <p>Ensure that you have a browser plugin capable of debugging JavaScript (you should be familiar with setting breakpoints and watch variables from your previous CS/IT courses). If you are stuck with this, review the help for <a href="https://developers.google.com/chrome-developer-tools/docs/javascript-debugging">Debugging JavaScript using Developer Tools for Chrome</a> as they are an excellent tool to learn with.</p>
-    <p>For this lab, you will be using <a href="Lab 4 instructions.html">an existing HTML document</a>. Save the document as lab4.html in your lab4 folder.</p>
-  </div>
-  <div class="quote">
-    <h2>Part 1: Iterating through the DOM</h2>
-    <p>Create the file lab4.js and use a &lt;script&gt; tag to reference it from your document.</p>
-    <p>Write a JavaScript function that iterates through the DOM of your document. For each <a href="http://www.w3schools.com/jsref/dom_obj_document.asp">Element node</a> starting with the &lt;html&gt; element, recursively print the name of each node in the tree in a text-based format, prefixing each item with a dash for each additional layer of depth. Newlines are escaped via \n.</p>
-    <p>The first few lines should look something like this:</p> 
-    <p>html<br/>-head<br/>--title<br/>-body</p>
-    <p>Finally, replace t
-      he innerHTML of the element with the id &quot;info&quot; with the return value of this function.</p>
-    <p><strong>To receive credit for Part 1:</strong> Show that your code iterates through the DOM and replaces the contents of #info with the resulting tree.</p>
-  </div>
-  <div class="quote">
-    <h2>Part 2: Event Listeners &amp; Event Bubbling</h2>
-    <p>Modify your function in Part 1 to add an onclick event listener to each element in the body. The function bound to this event listener should display an alert box with the element's tag name.</p>
-    <p>Note that there is a much more performant way of doing this; we will discuss how in another lecture.</p>
-    <p><strong>To receive credit for Part 2:</strong> Show how the onclick event bubbles through the DOM.</p>
-  </div>
-  <div class="quote">
-    <h2>Part 3: CSS Manipulation</h2>
-    <p>First, once the page has finished loading, copy your favorite quote (or some other text) to the end of the body using the cloneNode() and appendChild() methods on the appropriate Element objects.</p>
-    <p>Bind new onmouseover event listeners to each div (including the one you just copied), and in the function change the element's background color and move the element 10px to the right. For the onmouseout event for each element, change the background color back to white and reposition the element to its original location.</p>
-    <p><strong>To receive credit for Part 3:</strong> Demonstrate that your onmouseout and onmouseover listeners fire correctly.</p>
-  </div>
+<html class="quote">
+<head class="quote">
+  <title class="quote">Lab 4</title>
+  <link rel=stylesheet href="lab4.css"/>
   
-  <script>
-    var x = document.getElementsByTagName("html").item(0);
-    document.getElementById("info").innerHTML += "\n";
-    iterating(x, 0);
+</head>
+<body class="quote whole">
+  <h1 class="quote">Lab #4 - JavaScript and the Document Object Model</h1>
+  <pre id="info" class="quote">Lab #4 - JavaScript and the Document Object Model</pre>
+  <button class = "quote" onclick="button_click()">Click me for part1b content</button>
+  <p class="quote" id="part1b"></p>
+  <div class="quote box">
+    <h2 class="quote">Part 0: Setup</h2>
+    <p class="quote">Create a new folder for lab4, and confirm that it is being served by Apache. You may choose to serve this lab from a new virtual host, though doing so is not required to receive credit.</p>
+    <p class="quote">Ensure that you have a browser plugin capable of debugging JavaScript (you should be familiar with setting breakpoints and watch variables from your previous CS/IT courses). If you are stuck with this, review the help for <a href="https://developers.google.com/chrome-developer-tools/docs/javascript-debugging">Debugging JavaScript using Developer Tools for Chrome</a> as they are an excellent tool to learn with.</p>
+    <p class="quote">For this lab, you will be using <a href="Lab 4 instructions.html">an existing HTML document</a>. Save the document as lab4.html in your lab4 folder.</p>
+  </div>
+  <div class="quote box">
+    <h2 class="quote">Part 1: Iterating through the DOM</h2>
+    <p class="quote">Create the file lab4.js and use a &lt;script&gt; tag to reference it from your document.</p>
+    <p class="quote">Write a JavaScript function that iterates through the DOM of your document. For each <a href="http://www.w3schools.com/jsref/dom_obj_document.asp">Element node</a> starting with the &lt;html&gt; element, recursively print the name of each node in the tree in a text-based format, prefixing each item with a dash for each additional layer of depth. Newlines are escaped via \n.</p>
+    <p class="quote">The first few lines should look something like this:</p> 
+    <p class="quote">html<br class="quote"/>-head<br class="quote"/>--title<br class="quote"/>-body</p>
+    <p class="quote">Finally, replace the innerHTML of the element with the id &quot;info&quot; with the return value of this function.</p>
+    <p class="quote"><strong class="quote">To receive credit for Part 1:</strong> Show that your code iterates through the DOM and replaces the contents of #info with the resulting tree.</p>
+  </div>
+  <div class="quote box">
+    <h2 class="quote">Part 2: Event Listeners &amp; Event Bubbling</h2>
+    <p class="quote">Modify your function in Part 1 to add an onclick event listener to each element in the body. The function bound to this event listener should display an alert box with the element's tag name.</p>
+    <p class="quote">Note that there is a much more performant way of doing this; we will discuss how in another lecture.</p>
+    <p class="quote"><strong class="quote">To receive credit for Part 2:</strong> Show how the onclick event bubbles through the DOM.</p>
+  </div>
+  <div class="quote box">
+    <h2 class="quote">Part 3: CSS Manipulation</h2>
+    <p class="quote">First, once the page has finished loading, copy your favorite quote (or some other text) to the end of the body using the cloneNode() and appendChild() methods on the appropriate Element objects.</p>
+    <p class="quote">Bind new onmouseover event listeners to each div (including the one you just copied), and in the function change the element's background color and move the element 10px to the right. For the onmouseout event for each element, change the background color back to white and reposition the element to its original location.</p>
+    <p class="quote"><strong class="quote">To receive credit for Part 3:</strong> Demonstrate that your onmouseout and onmouseover listeners fire correctly.</p>
+  </div>
 
-    var y = document.getElementsByClassName("first")[0];
-    document.getElementById("part1b").innerHTML += "\n";
-    iterating2(y, 0);
-  </script>
+  <script class="quote box" type="text/javascript" src="lab4.js"></script>
   
 </body>
 </html>
