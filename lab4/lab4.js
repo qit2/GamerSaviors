@@ -61,3 +61,13 @@ var y = document.getElementsByClassName("quote");
 part1b = iterating1b(y[0], 0);
 document.getElementById("part1b").innerHTML = "";
 document.getElementById("part1b").innerHTML += part1b;
+
+function button_click(){
+  var content = document.getElementById("part1b")
+  if (content.style.display === "none") {
+    content.style.disply = "block";
+  }
+  else{
+    content.style.display = "none";
+  }
+}
