@@ -19,3 +19,6 @@ up with the name of the tag that is clicked on. After that, it creates an alert 
 
 Part 3: 
 Besides the cloneNode() function which literally copies the element to a clone, the essense of finishing part 3 is determining whether the element mouse is joining or leaving is as same as the element that triggers the event. When the two matches, make the style changes to the element accordingly, and the for loop is used to make sure every element will have onmouseover and onmouseout events applied. 
+
+David's Creativity:
+For my creativity I added css to make the button that we were using look more appealing. So I changed the color and added shadow and a border and much more.
