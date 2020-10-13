@@ -1,4 +1,3 @@
-
 .whole{
     border: 5px dotted #FF5733;
     background: linear-gradient(-45deg, #9a22a7 , rgba(252,176,69,1), #E73C7E,#23A6D5);
@@ -20,4 +19,6 @@
     font-family: 'Chilanka', cursive;
     text-decoration: dashed;
 }
-
+#part1b{
+    display: none;
+}
