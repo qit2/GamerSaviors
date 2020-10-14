@@ -1,13 +1,12 @@
-html, body{
-    /*background: url("background.jpg") ;
-    background-repeat: no-repeat;
-    background-size: auto;*/
-    width: 100%;
-    height: 100%;
-
-    background-image: linear-gradient(-45deg,  rgb(21, 14, 235),rgb(75, 69, 252), rgb(69, 145, 252), #23A6D5);
+*{
+    cursor:url(favicon.ico),auto;
 }
 
+html, body{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-45deg,  rgb(21, 14, 235),rgb(75, 69, 252), rgb(69, 145, 252), #23A6D5);
+}
 
 header{
     display:flex;
