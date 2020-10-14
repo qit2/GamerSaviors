@@ -176,3 +176,35 @@ header{
         transform: translateX(-50%) translateZ(0) scaleY(1) ;
     }
 }
+
+
+/* css for main.html */
+.slog {
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin: 50px 0px;
+    color: lightblue;
+}
+
+.search {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.gameSearch {
+    width: 85%;
+    padding: 10px 0;
+    font-size: 30px;
+    border-radius: 10px 0 0 0;
+
+}
+
+.submit {
+    width: 15%;
+    padding: 12px 0;
+    margin-left: -5px;
+    font-size: 30px;
+    border-radius: 0 10px 0 0;
+    border: none;
+}
