@@ -89,6 +89,15 @@ header{
     }
 }
 
+#cyan{
+    width: 20px;
+    height: 23px;
+    margin-left: 5px;
+    display: none;
+    float: right;
+    padding: 25px 0 0 5px;
+}
+
 .dropdown .dropbutton{
     font-size: 20px;
     border: none;
