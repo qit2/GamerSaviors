@@ -216,3 +216,27 @@ header{
     border-radius: 0 10px 0 0;
     border: none;
 }
+
+/* css for game page */
+.title {
+    color: white;
+    width: 900px;
+    float: left;
+}
+
+.gameImage {
+    width: 900px; 
+    height: auto;
+}
+
+.prices {
+    padding-top: 60px;
+    float: left;
+    display: inline-block;
+    color: white;
+    font-size: 30px;
+}
+
+a.store {
+    color: white;
+}
