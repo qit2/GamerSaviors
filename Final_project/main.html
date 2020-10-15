@@ -14,6 +14,8 @@
 
    <!-- Latest compiled JavaScript -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+   <script type="text/javascript" src="main.js"></script>
   </head>
 
   <body id="main">
@@ -51,14 +53,173 @@
             <input class="gameSearch" name="gameSearch" placeholder="Search for a Game" type="text" />
             <input class="submit" type="submit" value="Submit">
           </form>
+
+          <button class="asbutton" onclick="myFunction()">Advanced Search</button>
+
+          <div id="as">
+
+            <div class="col-lg-6 platform">
+              <h2>Platform</h2>
+              <form>
+                <input type="checkbox" name="PC" value="pc">
+                <label for="PC"> PC </label><br>
+                <input type="checkbox" name="XBOX" value="xbox">
+                <label for="XBOX"> XBOX </label><br>
+                <input type="checkbox" name="XBOX360" value="xbox360">
+                <label for="XBOX360"> XBOX 360 </label><br>
+                <input type="checkbox" name="XBOX1" value="xbox1">
+                <label for="XBOX1"> XBOX One </label><br>
+                <input type="checkbox" name="Playstation" value="playstation">
+                <label for="Playstation"> Playstation </label><br>
+                <input type="checkbox" name="Playstation2" value="playstation2">
+                <label for="Playstation2"> Playstation 2 </label><br>
+                <input type="checkbox" name="Playstation3" value="playstation3">
+                <label for="Playstation3"> Playstation 3 </label><br>
+                <input type="checkbox" name="Playstation4" value="playstation4">
+                <label for="Playstation4"> Playstation 4 </label><br>
+                <input type="checkbox" name="Nintendo" value="nintendo">
+                <label for="Nintendo"> Nintendo Entertainment System </label><br>
+                <input type="checkbox" name="Nintendo64" value="nintendo64">
+                <label for="Nintendo64"> Nintendo 64 </label><br>
+                <input type="checkbox" name="GameCube" value="GameCube">
+                <label for="GameCube"> GameCube </label><br>
+                <input type="checkbox" name="Wii" value="wii">
+                <label for="Wii"> Wii </label><br>
+                <input type="checkbox" name="WiiU" value="wiiu">
+                <label for="WiiU"> Wii U </label><br>
+                <input type="checkbox" name="Switch" value="switch">
+                <label for="Switch"> Nintendo Switch </label><br>
+              </form>
+            </div>
+
+            <div class="col-lg-6 genre">
+              <h2>Genre</h2>
+              <form>
+                <input type="checkbox" name="Action" value="action">
+                <label for="Action"> Action </label><br>
+                <input type="checkbox" name="Adventure" value="adventure">
+                <label for="Adventure"> Adventure </label><br>
+                <input type="checkbox" name="Battleroyale" value="battleroyale">
+                <label for="Battleroyale"> Battle Royale </label><br>
+                <input type="checkbox" name="Fighting" value="fighting">
+                <label for="Fighting"> Fighting </label><br>
+                <input type="checkbox" name="FPP" value="fpp">
+                <label for="FPP"> First Person Shooter (FPP) </label><br>
+                <input type="checkbox" name="Racing" value="racing">
+                <label for="Racing"> Racing </label><br>
+                <input type="checkbox" name="RTS" value="rts">
+                <label for="RTS"> Real-Time Strategy </label><br>
+                <input type="checkbox" name="RolePlaying" value="roleplaying">
+                <label for="RolePlaying"> Role-Playing </label><br>
+                <input type="checkbox" name="Simulation" value="simulation">
+                <label for="Simulation"> Simulation </label><br>
+                <input type="checkbox" name="Sports" value="sports">
+                <label for="Sports"> Sports </label><br>
+              </form>
+            </div>
+
+            <div class="col-lg-6 mode">
+              <h2>Mode</h2>
+              <form>
+                <input type="checkbox" name="Singleplayer" value="singleplayer">
+                <label for="Singleplayer"> Singleplayer </label><br>
+                <input type="checkbox" name="Multi" value="multi">
+                <label for="Multi"> Multiplayer </label><br>
+                <input type="checkbox" name="Online" value="online">
+                <label for="Online"> Online </label><br>
+                <input type="checkbox" name="Offline" value="offline">
+                <label for="Offline"> Offline </label><br>
+              </form>
+            </div>
+
+            <div class="col-lg-6 region">
+              <h2>Region</h2>
+              <form>
+                <input type="checkbox" name="NTSCJ" value="NTSCJ">
+                <label for="NTSC-J"> Japan and Asia (NTSC-J) </label><br>
+                <input type="checkbox" name="NTSC-U" value="NTSC-U">
+                <label for="NTSC-U"> North America and South America (NTSC-U) </label><br>
+                <input type="checkbox" name="PAL" value="PAL">
+                <label for="PAL"> Europe, New Zealand, Australia, Middle East, India, South Africa (PAL region) </label><br>
+                <input type="checkbox" name="NTSC-C" value="NTSC-C">
+                <label for="NTSC-C"> China (NTSC-C) </label><br>
+              </form>
+            </div>
+
+            <div class="col-lg-4 rating">
+              <h2>rating</h2>
+              <form>
+                <input type="checkbox" name="Everyone" value="everyone">
+                <label for="Everyone"> E = Everyone </label><br>
+                <input type="checkbox" name="Everyone10" value="everyone10">
+                <label for="Everyone10"> E10 = Everyone 10 and older </label><br>
+                <input type="checkbox" name="Teen" value="teen">
+                <label for="Teen"> T = Teen </label><br>
+                <input type="checkbox" name="Mature" value="mature">
+                <label for="Mature"> M = Mature </label><br>
+              </form>
+            </div>
+
+            <div class="col-lg-4 price">
+              <h2>Price</h2>
+              <form action="/action_page.php">
+                <label for="quantity">Amount:</label>
+                <input type="number" id="quantity" name="quantity" min="0" max="100" step="10" value="30"><br>
+                <input type="checkbox" name="Price" value="price">
+                <label for="Price"> Any Amount </label><br>
+              </form>
+            </div>
+
+            <div class="col-lg-4 date">
+              <h2>Release Date</h2>
+              <form action="/action_page.php">
+                <label for="datemax">Enter a date before 1980-01-01:</label>
+                <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+                <label for="datemin">Enter a date after 2000-01-01:</label>
+                <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
+              </form>
+            </div>
+
+          </div>
           
         </div>
       </div>
     </section>
 
+    <section id=games>
+      <div class="container">
+        <div class="row games">
+          <div class="col-lg-2">
+            <img src="Minecraft_cover.png" alt="minecraft image" height="250"> 
+          </div>
+          <div class="col-lg-2">
+            <h3>Platform:</h3>
+            <p>PC</p>
+            <p>XBOX</p>
+            <p>Playstation</p>
+            <p>Nintendo</p>
+          </div>
+          <div class="col-lg-2">
+            <h3>Genre:</h3> 
+            <p>Sandbox</p>
+            <p>Survival</p>
+          </div>
+          <div class="col-lg-2">
+            <h3>Rating:</h3> 
+            <p>4 Stars</p>
+          </div>
+          <div class="col-lg-2">
+            <h3>Price:</h3> 
+            <p>$29.99</p>
+          </div>
+          <div class="col-lg-2">
+            <h3>Description:</h3> 
+            <p style="height: 200px; overflow: auto;">In Minecraft, players explore a blocky, procedurally-generated 3D world with infinite terrain, and may discover and extract raw materials, craft tools and items, and build structures or earthworks. Depending on game mode, players can fight computer-controlled "mobs", as well as cooperate with or compete against other players in the same world. Game modes include a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources. Players can modify the game to create new gameplay mechanics, items, and assets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-    <button class = "button"><a href="">Join NOW!</a></button>
     <div class = "buttom_1">
         <div class = "wave wave_1"></div>
     </div>
@@ -71,4 +232,6 @@
     
   </body>
   </html>
+
+
 

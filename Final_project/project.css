@@ -191,13 +191,14 @@ header{
     background-color: white;
     text-align: center;
     border-radius: 10px;
-    margin: 50px 0px;
+    margin: 90px 0px 50px 0;
     color: lightblue;
 }
 
 .search {
     background-color: white;
     border-radius: 10px;
+    text-align: center;
 }
 
 .gameSearch {
@@ -205,6 +206,8 @@ header{
     padding: 10px 0;
     font-size: 30px;
     border-radius: 10px 0 0 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
 
 }
 
@@ -215,6 +218,85 @@ header{
     font-size: 30px;
     border-radius: 0 10px 0 0;
     border: none;
+}
+
+#as {
+    display: none;
+    text-align: left;
+}
+
+.asbutton {
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    padding: 5px;
+    background-color: lightpink;
+    text-shadow: 2px 2px white;
+}
+
+h2 {
+    text-align: left;
+}
+
+.platform {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    background-color: rgb(12, 245, 175);
+    height: 450px;
+}
+
+.genre {
+    border-top: 1px solid black;
+    background-color: rgb(12, 245, 175);
+    height: 450px;
+}
+
+.mode {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    background-color: rgb(12, 245, 175);
+    height: 200px;
+}
+
+.region {
+    border-top: 1px solid black;
+    background-color: rgb(12, 245, 175);
+    height: 200px;
+}
+
+.rating {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    background-color: rgb(12, 245, 175);
+    height: 200px;
+}
+
+.price {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    background-color: rgb(12, 245, 175);
+    height: 200px;
+}
+
+.date {
+    border-top: 1px solid black;
+    background-color: rgb(12, 245, 175);
+    height: 200px;
+}
+
+#as label {
+    margin-left: 20px;
+    
+}
+
+#games {
+    margin: 50px 0;
+}
+
+.games {
+    border: 1px solid black;
+    padding: 10px 10px;
 }
 
 /* css for game page */
