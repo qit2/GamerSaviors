@@ -7,17 +7,17 @@
    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap" rel="stylesheet">
    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+   <script src="sign.js"></script>
   </head>
   <body>
     <div class = "signin">
-        <form>
             <h1>Sign In</h1>
-            <input class="boxx" type = "text" placeholder="Enter Username">
-            <input class="boxx" type = "password" placeholder="Enter Password">
-            <button>Sign In</button>
-            <pre><input type = "checkbox" name = "Remember me">Remember Me<a href = "">                Forget Password?</a></pre>
-            <pre> Don't have account yet? <a class = "sign_up" href = "">SIGN UP NOW!</a></pre>
-        </form>
+            <input class="boxx" type = "text" id = "inname" placeholder="Enter Username" required>
+            <input class="boxx" type = "password" id = "inpasswd" placeholder="Enter Password" required>
+            <button ><a href="main.html">Sign In</a></button>
+            <pre><input type = "checkbox" name = "Remember me" checked = "checked">Remember Me<a href = "">                Forget Password?</a></pre>
+            <pre> Don't have an account yet? <a class = "sign_up" href = "sign_up.html">SIGN UP NOW!</a></pre>
+        
     </div>
 
     
