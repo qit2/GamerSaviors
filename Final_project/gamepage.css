@@ -213,12 +213,12 @@ header{
 /* css for game page */
 .title {
     color: white;
-    width: 900px;
+    width: 800px;
     float: left;
 }
 
 .gameImage {
-    width: 900px; 
+    width: 800px; 
     height: auto;
 }
 
