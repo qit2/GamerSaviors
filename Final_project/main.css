@@ -115,6 +115,7 @@ header{
     float: right;
     padding: 0 0 0 25px;
 }
+
 .dropdown .dropbutton{
     font-size: 20px;
     border: none;
@@ -337,9 +338,10 @@ h2 {
     box-shadow: 5px 10px #888888;
 }
 
-#as label {
+.marg {
     margin-left: 20px;
 }
+
 
 #games {
     margin: 50px 0;
