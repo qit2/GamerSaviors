@@ -213,9 +213,18 @@ h2 {
 
 .image img {
     border:2px solid #fff;
-    background: url(img/tiger.png) no-repeat;
     box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
     -moz-box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
     -webkit-box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
     -khtml-box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
+}
+
+.image img:hover {
+    margin-left: -10px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, .5);
+    -khtml-box-shadow: 0px 0px 0px rgba(0, 0, 0, .5);
+
 }
