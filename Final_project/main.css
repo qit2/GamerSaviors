@@ -189,6 +189,9 @@ h2 {
 .marg {
     margin-left: 20px;
 }
+#datemax, #datemin, #quantity{
+    color: black;
+}
 
 /*Row of Games settings*/
 #games {
