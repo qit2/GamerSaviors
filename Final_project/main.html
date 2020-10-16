@@ -38,7 +38,7 @@
         </nav>
     </header>
 
-    <section id=slogan>
+    <section id="slogan">
       <div class="container">
         <div class="row slog">
           <h1>Literally Game - Find The game you've been looking for!</h1>
@@ -46,16 +46,21 @@
       </div>
     </section>
 
-    <section id=search>
+    <section id="search">
       <div class="container">
         <div class="row search">
+          <button id="asbutton" onclick="myFunction()">Advanced Search &#9660;</button>
           <form>
             <input class="gameSearch" name="gameSearch" placeholder="Search for a Game" type="text" />
-            <input class="submit" type="submit" value="Submit">
+            <input id="submit" type="submit" value="Submit">
           </form>
+        </div>
+      </div>
+    </section>
 
-          <button class="asbutton" onclick="myFunction()">Advanced Search</button>
-
+    <section id="search">
+      <div class="container">
+        <div class="row search">
           <div id="as">
 
             <div class="col-lg-6 platform">
@@ -140,7 +145,7 @@
                 <input type="checkbox" name="NTSC-U" value="NTSC-U">
                 <label for="NTSC-U"> North America and South America (NTSC-U) </label><br>
                 <input type="checkbox" name="PAL" value="PAL">
-                <label for="PAL"> Europe, New Zealand, Australia, Middle East, India, South Africa (PAL region) </label><br>
+                <label for="PAL"> Europe, New Zealand, Australia, Middle East, India, South Africa</label><br>
                 <input type="checkbox" name="NTSC-C" value="NTSC-C">
                 <label for="NTSC-C"> China (NTSC-C) </label><br>
               </form>
@@ -189,8 +194,40 @@
     <section id=games>
       <div class="container">
         <div class="row games">
+          <div class="col-lg-2 image">
+            <img src="Minecraft_cover.png" alt="minecraft image" height="250" width="180"> 
+          </div>
           <div class="col-lg-2">
-            <img src="Minecraft_cover.png" alt="minecraft image" height="250"> 
+            <h3>Platform:</h3>
+            <p>PC</p>
+            <p>XBOX</p>
+            <p>Playstation</p>
+            <p>Nintendo</p>
+          </div>
+          <div class="col-lg-2">
+            <h3>Genre:</h3> 
+            <p>Sandbox</p>
+            <p>Survival</p>
+          </div>
+          <div class="col-lg-2">
+            <h3>Rating:</h3> 
+            <p>4 Stars</p>
+          </div>
+          <div class="col-lg-2">
+            <h3>Price:</h3> 
+            <p>$29.99</p>
+          </div>
+          <div class="col-lg-2">
+            <h3>Description:</h3> 
+            <p style="height: 200px; overflow: auto;">In Minecraft, players explore a blocky, procedurally-generated 3D world with infinite terrain, and may discover and extract raw materials, craft tools and items, and build structures or earthworks. Depending on game mode, players can fight computer-controlled "mobs", as well as cooperate with or compete against other players in the same world. Game modes include a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources. Players can modify the game to create new gameplay mechanics, items, and assets.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row games1">
+          <div class="col-lg-2 image">
+            <img src="game.png" alt="assasin's creed image" height="250" width="180"> 
           </div>
           <div class="col-lg-2">
             <h3>Platform:</h3>
