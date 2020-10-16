@@ -4,7 +4,7 @@
 
 html, body{
     width: 100%;
-    height: 165%;
+    height: 100%;
     background-image: linear-gradient(
         45deg,
         #CA4246 16.666%, 
@@ -32,7 +32,7 @@ header{
 
 .navs li{
     display: inline-block;
-    padding: 23px 130px;
+    padding: 0px 130px;
     font-family: 'Indie Flower', cursive;
     font-weight: 600;
     font-size: 46px;
@@ -105,11 +105,11 @@ header{
     margin-left: 5px;
     display: none;
     float: right;
-    margin: 25px 0 0 5px;
+    padding: 25px 0 0 5px;
 }
 
 #navimg{
-    width: 155px;
+    width: 130px;
     height: 130px;
     right: 55px;
     float: right;
@@ -203,169 +203,3 @@ header{
     }
 }
 
-
-/* css for main.html */
-.slog {
-    background-color: white;
-    text-align: center;
-    border-radius: 10px;
-    margin: 90px 0px 50px 0;
-    color: lightblue;
-}
-
-.search {
-    background-color: white;
-    border-radius: 10px 10px 0 10px;
-    text-align: center;
-}
-
-.gameSearch {
-    width: 75%;
-    padding: 11.25px 0 11.25px 20px;
-    font-size: 30px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, .5);
-}
-
-#submit {
-    width: 15%;
-    padding: 11.25px 0px;
-    margin-left:-6px;
-    font-size: 30px;
-    border-radius: 0 10px 0 0;
-    border: none;
-    border-bottom: 1px solid black;
-}
-
-#submit:hover {
-    color: white;
-}
-
-#as {
-    display: none;
-    text-align: left;
-}
-
-#asbutton {
-    width: 10%;
-    border: none;
-    border-bottom: 1px solid black;
-    border-radius: 10px 0 0 10px;
-    font-size: 15px;
-    height: 67px;
-    padding: 5px;
-    background-color: rgb(255, 182, 230);
-    text-shadow: 2px 2px white;
-    float: left;
-}
-
-#asbutton:hover {
-    background-color: lightpink;
-}
-
-h2 {
-    text-align: left;
-}
-
-.platform {
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 3px solid grey;
-    background-color: rgb(56, 104, 172);
-    color: white;
-    height: 450px;
-}
-
-.genre {
-    border-top: 1px solid black;
-    border-right: 3px solid gray;
-    background-color: rgb(56, 104, 172);
-    color: white;
-    height: 450px;
-}
-
-.mode {
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 1px solid grey;
-    background-color: rgb(56, 104, 172);
-    color: white;
-    height: 200px;
-}
-
-.region {
-    border-top: 1px solid black;
-    border-right: 3px solid gray;
-    background-color: rgb(56, 104, 172);
-    color: white;
-    height: 200px;
-}
-
-.rating {
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 3px solid grey;
-    border-bottom: 3px solid gray;
-    background-color: rgb(56, 104, 172);
-    color: white;
-    height: 200px;
-}
-
-.price {
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 3px solid gray;
-    background-color: rgb(56, 104, 172);
-    color: white;
-    height: 200px;
-}
-
-.date {
-    border-top: 1px solid black;
-    border-right: 3px solid gray;
-    border-bottom: 3px solid gray;
-    background-color: rgb(56, 104, 172);
-    color: white;
-    height: 200px;
-}
-
-#bor {
-    display: none;
-    border: 1px solid;
-    border-radius: 0;
-    padding: 10px;
-    box-shadow: 5px 10px #888888;
-}
-
-#as label {
-    margin-left: 20px;
-}
-
-#games {
-    margin: 50px 0;
-    padding-bottom: 200px;
-}
-
-.games {
-    border: 1px solid black;
-    padding: 10px 10px;
-    color: white;
-    background-color: #12d4d4;
-}
-
-.games1 {
-    border: 1px solid black;
-    padding: 10px 10px;
-    margin: 10px 0 0 0;
-    color: white;
-    background-color: #10b1b1; 
-}
-
-.image img {
-    border:2px solid #fff;
-    background: url(img/tiger.png) no-repeat;
-    box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
-    -khtml-box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
-}
