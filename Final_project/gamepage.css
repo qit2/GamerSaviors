@@ -213,7 +213,7 @@ header{
 /* css for game page */
 .title {
     color: white;
-    width: 700px;
+    width: 800px;
     float: left;
 }
 
@@ -224,7 +224,7 @@ header{
 
 .prices {
     padding-top: 60px;
-    float: right;
+    float: left;
     display: inline-block;
     color: white;
     font-size: 30px;
