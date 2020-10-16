@@ -2,11 +2,9 @@ function joinbutton(){
     alert("You've joined successfully?");
 }
 function Prankfunction(){
+    document.getElementById("teamname").innerHTML.style.color == "green";
     if (document.getElementById("teamname").innerHTML.style.color == "green"){
         document.getElementById("teamname").innerHTML.style.color == "white";
-    }
-    else{
-        document.getElementById("teamname").innerHTML.style.color == "green";
     }
 }
 function prankfunction(){
