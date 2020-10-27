@@ -70,7 +70,15 @@
       });
     });
 
-
+    function is_hexadecimal(x){
+      hex = /^[0-9a-fA-F]{1,2}$/;
+      if (hex.test(x)){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
 
     //This function is the three colored sliders for the game
     $( function() {
@@ -83,13 +91,19 @@
         max: 255,
         value: 0,
         slide: function( event, ui ) {
-          $( "#amountR" ).val( ui.value );
+          $( "#amountR" ).val( dectohex(ui.value) );
         }
       });
       $('#amountR').change(function(){
-        var value = this.value.substring(0);
+        var value = this.value;
         console.log(value);
-        $("#slider-horR").slider("value", parseInt(value));
+        if (value > 255 || value < 0 || !is_hexadecimal(value)) {
+          $("#amountR").css("background-color", "rgba(255, 0, 0, .5)");
+        }
+        else{
+          $("#slider-horR").slider("value", parseInt(hextodec(value)));
+          $("#amountR").css("background-color", "white");
+        }
       });
 
       $( "#slider-horR" ).css('background', 'rgb(255,204,203)');
@@ -105,14 +119,21 @@
         max: 255,
         value: 0,
         slide: function( event, ui ) {
-          $( "#amountG" ).val( ui.value );
+          $( "#amountG" ).val( dectohex(ui.value) );
         }
       });
+      
 
       $('#amountG').change(function(){
-        var value = this.value.substring(0);
+        var value = this.value;
         console.log(value);
-        $("#slider-horG").slider("value", parseInt(value));
+        if (value > 255 || value < 0 || !is_hexadecimal(value)) {
+          $("#amountG").css("background-color", "rgba(255, 0, 0, .3)");
+        }
+        else{
+          $("#slider-horG").slider("value", parseInt(hextodec(value)));
+          $("#amountG").css("background-color", "white");
+        }
       });
 
 
@@ -129,14 +150,21 @@
         max: 255,
         value: 0,
         slide: function( event, ui ) {
-          $( "#amountB" ).val( ui.value );
+          $( "#amountB" ).val( dectohex(ui.value) );
         }
       });
 
       $('#amountB').change(function(){
-        var value = this.value.substring(0);
+        var value = this.value;
         console.log(value);
-        $("#slider-horB").slider("value", parseInt(value));
+        if (value > 255 || value < 0 || !is_hexadecimal(value)) {
+          $("#amountB").css("background-color", "rgba(255, 0, 0, .5)");
+        }
+        else{
+          $("#slider-horB").slider("value", parseInt(hextodec(value)));
+          $("#amountB").css("background-color", "white");
+        }
+
       });
 
       $( "#amountB" ).val( $( "#slider-horB" ).slider( "value" ) );
