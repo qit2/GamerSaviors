@@ -39,23 +39,6 @@
       return resultscore;
     }
     
-    /*
-    function datimer(){
-      //Unfinished
-      var seconds = 20;
-      $("h1").text("You have "+ seconds + " seconds left");
-      var seccount = setInterval(runtime(seconds), 1000);
-      function runtime(seconds){
-        seconds-1;
-        $("h1").text("You have "+ seconds + " seconds left");
-        if (seconds == 0){
-          $("h1").text("Hexed");
-        }
-      }
-    
-    }
-    */
-
 
 
 //Gameplay Function Compilation
