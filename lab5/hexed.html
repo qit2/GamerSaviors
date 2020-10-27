@@ -9,36 +9,43 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src='hexed.js'></script>
+  <script src='hexjq.js'></script>
 </head>
 <body id = "game">
   <section id="header">
     <h1>Hexed!</h1>
   </section>
-
+  <section id="color">
+    <p id="colour">This is the default color so you can't guess now xD</p>
+  </section>
   <section id="slide">
     
-    <div id="slider-horR"></div>
+    <div class="sliders" id="slider-horR"></div>
 
     <p>
       <label for="amountR">Volume:</label>
       <input type="text" id="amountR">
     </p>
 
-    <div id="slider-horG"></div>
+    <div class="sliders" id="slider-horG"></div>
 
     <p>
       <label for="amountG">Volume:</label>
       <input type="text" id="amountG">
     </p>
     
-    <div id="slider-horB"></div>
+    <div class="sliders" id="slider-horB"></div>
 
     <p>
       <label for="amountB">Volume:</label>
       <input type="text" id="amountB">
     </p>
 
+  </section>
+  <section class="play">
+    <button id="get">Get a Color</button>
+    <button id="guess">Guess</button>
+    <button id="reset">RESET</button>
   </section>
 </body>
 </html>

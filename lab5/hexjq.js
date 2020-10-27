@@ -1,7 +1,9 @@
-
+//This file mainly focuses on jQuery
 (function ( $ ) {
  
   $.fn.hexed = function( settings ) {
+
+    //All Helper Functions
 
     function dectohex(num) {
       return num.toString(16).toUpperCase();
@@ -10,12 +12,69 @@
     function hextodec(num) {
       return parseInt(num, 16);
     }
+
+    function genandloadcolors(){
+      //Initialization
+      var output = [0,0,0,"rgb"];
+      var comma = ",";
+      var leftpar = "(";
+      var rightpar = ")";
+      output[0] = Math.floor(Math.random()*256);
+      output[1] = Math.floor(Math.random()*256);
+      output[2] = Math.floor(Math.random()*256);
+      //Generate Color String
+      output[3] += leftpar + output[0] + comma + output[1] + comma + output[2] + rightpar;
+      //Return the rgb String array with numbers
+      return output;
+    }
+
+    function dothecalc(guessarr, actualarr){
+
+      return resultarr;
+    }
     
+    //Gameplay Function Compilation
+    $( function() {
+      var counturns = 0;
+      var colorgot = [0,0,0];
+      var colorguess = [0,0,0];
+      var resultarr = [0,0,0];
+      //Get a random color and change the background
+      $("#get").click(function(){
+        var colorstr = genandloadcolors()[3];
+        for (var i = 0; i < 3; i++){
+          colorgot[i] = genandloadcolors()[i];
+        }
+        $("#colour").css('display', 'none');
+        $("#color").css('background', colorstr);
+      });
+      //Reset to default grid and clear data if any
+      $("#reset").click(function resetting(){
+        $("#colour").css('display', 'block');
+        $("#color").css('background', 'rgb(255,255,255)');//Default color here
+        colorgot = [0,0,0];
+        colorguess = [0,0,0];
+        resultarr = [0,0,0];
+      });
+      //Make the guess and output the result accordingly
+      $("#guess").click(function(){
+        if($("#colour").css('display') == "block"){}
+        else{
+
+          resultarr = dothecalc(colorgot, colorguess);
+        }
+        counturns++;
+        if(counturns == settings.turns){
+          resetting();
+        }
+      });
+    });
+
 
 
     //This function is the three colored sliders for the game
     $( function() {
-
+      
       //This is the red slider
       $( "#slider-horR" ).slider({
         orientation: "horizontal",
