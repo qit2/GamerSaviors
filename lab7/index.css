@@ -15,11 +15,6 @@ h1 {
 	margin-bottom: 0;
 }
 
-h1 > a {
-	text-decoration: none;
-	font-family: "Noto Sans", sans-serif;
-}
-
 .subtitle {
 	text-align: right;
 	margin: 0;
@@ -38,17 +33,8 @@ a, .subtitle {
 	color: #243b4a;
 }
 
-pre {
-	padding: .5em;
-	overflow: auto;
-}
-
 .navbar {
 	text-align: center;
-}
-
-.topbutton {
-	float: right;
 }
 
 #footer {
@@ -67,10 +53,6 @@ pre {
 }
 
 .game-buttons {
-	text-align: center;
-}
-
-.game-forms {
 	text-align: center;
 }
 
@@ -117,13 +99,7 @@ pre {
 	height: 200px;
 }
 
-.today-answers {
-	width: 50%;
-	height: 100%;
-	float: left;
-}
-
-.yesterday-answers {
+.answer {
 	width: 50%;
 	height: 100%;
 	float: left;
@@ -163,12 +139,6 @@ pre {
 	text-align: center;
 }
 
-.restart-random {
-	width: 50%;
-	float: left;
-	text-align: center;
-}
-
 img {
 	background: transparent;
 	position: absolute;
@@ -179,6 +149,13 @@ img.bg {
 	display: block;
 }
 
+img.fg{
+	width:60px;
+	height: 100px;
+}
+
 #dictionary {
 	text-align: right;
 }
+
+
