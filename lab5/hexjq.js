@@ -33,7 +33,7 @@
       var resultarr = [0,0,0];
       var resultscore = 0;
       for(var k = 0; k < 3; k++){
-        var temp = (Math.abs(actualarr[k] - guessarr[k]) / 255) * 100;
+        var temp = (Math.abs(actualarr[k] - hextodec(guessarr[k])) / 255) * 100;
         resultarr[k] = temp.toFixed(0);
       }
       //Special case for requiring percent off only
@@ -76,7 +76,7 @@
       $("#get").click(function(){
         //TIMER
         myVar = 0;
-        setInterval(function(){ $("h1").text("Timer: " + myVar.toFixed(1)); myVar+=.1;}, 100);
+        timer = setInterval(function(){ $("h1").text("Timer: " + myVar.toFixed(1)); myVar+=.1;}, 100);
 
         $("#get").css('display', 'none');
         $("#guess").css('display', 'block');
@@ -90,6 +90,9 @@
       });
       //Reset to default grid and clear data if any
       $("#reset").click(function(){
+        //Stop timer, reset h1
+        clearInterval(timer);
+        $("h1").text("Hexed!");
         //Resetting buttons
         $("#get").css('display', 'block');
         $("#guess").css('display', 'none');
