@@ -100,7 +100,7 @@
         //Resetting Turn Recorder
         counturns = 0;
 
-        //Resetting the sliders 
+        //Resetting the sliders (David plz do this both Ryans have no idea xD)
 
       });
       //Make the guess and output the result accordingly
@@ -112,16 +112,17 @@
         //Percent Off
         if($("#colour").css('display') == "block"){}
         else{
-          colorguess[0] = $("#amountR").val();
-          colorguess[1] = $("#amountG").val();
-          colorguess[2] = $("#amountB").val();
+          colorguess[0] = hextodec($("#amountR").val());
+          colorguess[1] = hextodec($("#amountG").val());
+          colorguess[2] = hextodec($("#amountB").val());
           resultarr = dothescore(colorguess, colorgot, 60);
           $("#redpercentoff").text("Red: "+resultarr[0]+" % off");
           $("#greenpercentoff").text("Green: "+resultarr[1]+" % off");
           $("#bluepercentoff").text("Blue: "+resultarr[2]+" % off");
           counturns++;
         }
-        //Final Score (tbc.)
+        //Final Score
+
       });
     });
 
