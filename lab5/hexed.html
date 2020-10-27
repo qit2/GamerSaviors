@@ -12,13 +12,17 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src='hexjq.js'></script>
 </head>
-<body id = "game">
+<body id="game">
   <section id="header">
     <h1>Hexed!</h1>
   </section>
-  <div class = "left">
+  <div class="left">
     <section id="results">
-      <p class = "play" id="rgbpercentoff">You've not made any guesses yet :(</p>
+      <p id="redpercentoff">You've not made any guesses yet :(</p>
+      <p id="greenpercentoff">You've not made any guesses yet :(</p>
+      <p id="bluepercentoff">You've not made any guesses yet :(</p>
+      <p id="score">Final Score: </p>
+      <p id="best">Best Score: </p>
     </section>
     <section id="color">
       <p id="colour">This is the default color so you can't guess now xD</p>
@@ -47,13 +51,23 @@
       </p>
     </section>
   </div>
-  <div class = "right">
+  <div class="right">
     <section class="play">
       <button id="get">New Game</button>
       <button id="guess">Guess</button>
       <button id="reset">RESET</button>
      
     </section>
+    <section id="settings">Settings:</section>
+    <p>
+      <label for="numTurns">Number of turns:</label>
+      <input type="text" id="numTurns">
+    </p>
+    <p>
+      <label for="playerName">Player Name:</label>
+      <input type="text" id="playerName">
+    </p>
+    <button id="changeSettings">Change Settings</button>
   </div>
 </body>
 </html>
