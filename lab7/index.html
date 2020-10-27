@@ -22,35 +22,39 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/png" href="../favicon.png" />
 	<title>Free Bee</title>
-	<link rel='stylesheet' type='text/css' media='screen' href='index.css'>
-	<script src='index.js'></script>
-    </head>
+  <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+  <script src="index.js"></script>
 
+    </head>
     <body>
-	<a name="top"></a>
-	<div id="main">
-	    <h1><a href="." title="Top">Free Bee</a></h1>
+	    <h1>Free Bee</h1>
 	    <p class="subtitle">Enhanced Free Software clone of The New York Times game Spelling Bee</p>
 	    <hr />
-		<div class="navbar">
-		    <a href="../index.html">Home</a> |
-		    <a href="#top">Play</a> |
-		    <a href="../download.html">Download</a> |
-		    <a href="../api.html">API</a>
-		</div>
+      <div class="navbar">
+          <a href="../index.html">Home</a> |
+          <a href="#top">Play</a> |
+          <a href="../download.html">Download</a> |
+          <a href="../api.html">API</a>
+      </div>
 	    <hr />
-	</div>
-    <h2 id="play">Play Free Bee on the Web</h2>
+      <h2 id="play">Play Free Bee on the Web</h2>
 
     <div id="game">
-      <div id="playfield">
-	<div id="playfield-bg">
-	  <img id="comb1" class="bg" src="comb.png"><img id="comb2" class="bg" src="comb.png"><img id="comb3" class="bg" src="comb.png"><img id="comb4" class="bg" src="comb.png"><img id="comb5" class="bg" src="comb.png"><img id="comb6" class="bg" src="comb.png"><img id="comb7" class="bg" src="comb-inv.png">
-	</div>
-	<div id="playfield-fg">
-	  <img id="play1" class="fg" width="60" height="100"><img id="play2" class="fg" width="60" height="100"><img id="play3" class="fg" width="60" height="100"><img id="play4" class="fg" width="60" height="100"><img id="play5" class="fg" width="60" height="100"><img id="play6" class="fg" width="60" height="100"><img id="play7" class="fg" width="60" height="100">
-	</div>
-      </div>
+          <img id="comb1" class="bg" src="comb.png">
+          <img id="comb2" class="bg" src="comb.png">
+          <img id="comb3" class="bg" src="comb.png">
+          <img id="comb4" class="bg" src="comb.png">
+          <img id="comb5" class="bg" src="comb.png">
+          <img id="comb6" class="bg" src="comb.png">
+          <img id="comb7" class="bg" src="comb-inv.png">
+   
+          <img id="play1" class="fg">
+          <img id="play2" class="fg">
+          <img id="play3" class="fg">
+          <img id="play4" class="fg">
+          <img id="play5" class="fg">
+          <img id="play6" class="fg">
+          <img id="play7" class="fg">
     </div>
 
     <br />
@@ -62,10 +66,10 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
     <br />
 
-    <div class="game-forms">
+    <div class="game-buttons">
       <form id="player-guess" onsubmit="check(); return false">
-	<input type="text" id="guess" placeholder="Enter word">
-	<input type="submit" value="Submit">
+        <input type="text" id="guess" placeholder="Enter word">
+        <input type="submit" value="Submit">
       </form>
     </div>
 
@@ -80,27 +84,27 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
     <div class="score">
       <div class="points">
-	<h4>Points</h4>
-	<span id="points-update">0</span>
+        <h4>Points</h4>
+        <span id="points-update">0</span>
       </div>
       <div class="rank">
-	<h4>Rank</h4>
-	<span id="rank-update">Newbie</span>
+        <h4>Rank</h4>
+        <span id="rank-update">Newbie</span>
       </div>
     </div>
 
     <br />
 
     <div class="wordlists">
-      <div class="today-answers">
-	<h4 class="answers">Words found</h4>
-	<div class="update-answers">
-	  <div id="answers-update"></div>
-	</div>
+      <div class="answer">
+        <h4 class="answers">Words found</h4>
+        <div class="update-answers">
+          <div id="answers-update"></div>
+        </div>
       </div>
-      <div class="yesterday-answers">
-	<h4 id="yesterday-or-random" class="answers">Yesterday's answers</h4>
-	<div id="update-random"></div>
+      <div class="answer">
+        <h4 id="yesterday-or-random" class="answers">Yesterday's answers</h4>
+        <div id="update-random"></div>
       </div>
     </div>
 
@@ -109,18 +113,19 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
     <div class="restart">
       <div class="restart-daily">
-	<button onclick="daily(0)">Restart daily game</button>
+	      <button onclick="daily(0)">Restart daily game</button>
       </div>
-      <div class="restart-random">
-	<button onclick="random()">New random game</button>
-	<div id="random-answers">
-	  <button onclick="show_random()">Show answers</button>
-	</div>
+      <div class="restart-daily">
+	      <button onclick="random()">New random game</button>
+        <div id="random-answers">
+          <button onclick="show_random()">Show answers</button>
+        </div>
       </div>
     </div>
 
     <br />
     <br />
+    
     <p id="dictionary">
       <a href="https://github.com/freebee-game/enable/issues">Request dictionary additions</a>
     </p>
