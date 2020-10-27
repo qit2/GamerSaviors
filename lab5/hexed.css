@@ -54,13 +54,15 @@ label {
   width: 30%;
   height: 60px;
   font-size: 1.1em;
+  margin-right: 5%;
+  float: left;
+  display: block;
   
 }
 #reset{
   width: 30%;
   height: 60px;
   font-size: 1.1em;
-  margin-left: 5%;
   margin-right: 5%;
   float: right;
 }
@@ -68,7 +70,10 @@ label {
   width: 30%;
   height: 60px;
   font-size: 1.1em;
-  float: right;
+  margin-right: 5%;
+  float: left;
+  display: none;
+  
 }
 #color{
   border-style: solid;

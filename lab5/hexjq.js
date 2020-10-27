@@ -28,9 +28,30 @@
       return output;
     }
 
-    function dothecalc(guessarr, actualarr){
+    function dothecalc(guessarr, actualarr, milliremain){
+      var resultarr = [0,0,0];
+      var resultscore = 0;
+      for(var k = 0; k < 3; k++){
+        var temp = (abs(actualarr[k] - guessarr[k]) / 255) * 100;
+        resultarr[k] = temp.toFixed(0);
+      }
+      resultscore = (300 - (resultarr[0] + resultarr[1] + resultarr[2])) * ((milliremain) < 0 ? 0 : (milliremain));
+      return resultscore;
+    }
 
-      return resultarr;
+    function datimer(){
+      //Unfinished
+      var seconds = 20;
+      $("h1").text("You have "+ seconds + " seconds left");
+      var seccount = setInterval(runtime(seconds), 1000);
+      function runtime(seconds){
+        seconds-1;
+        $("h1").text("You have "+ seconds + " seconds left");
+        if (seconds == 0){
+          $("h1").text("Hexed");
+        }
+      }
+    
     }
     
     //Gameplay Function Compilation
@@ -39,17 +60,23 @@
       var colorgot = [0,0,0];
       var colorguess = [0,0,0];
       var resultarr = [0,0,0];
-      //Get a random color and change the background
+      //Start a new Game
       $("#get").click(function(){
+        datimer();
+        $("#get").css('display', 'none');
+        $("#guess").css('display', 'block');
         var colorstr = genandloadcolors()[3];
         for (var i = 0; i < 3; i++){
           colorgot[i] = genandloadcolors()[i];
         }
         $("#colour").css('display', 'none');
         $("#color").css('background', colorstr);
+
       });
       //Reset to default grid and clear data if any
       $("#reset").click(function resetting(){
+        $("#get").css('display', 'block');
+        $("#guess").css('display', 'none');
         $("#colour").css('display', 'block');
         $("#color").css('background', 'linear-gradient(45deg,#e66465, #9198e5)');//Default color here
         colorgot = [0,0,0];
@@ -58,14 +85,10 @@
       });
       //Make the guess and output the result accordingly
       $("#guess").click(function(){
+        //if (counturns == 3)
         if($("#colour").css('display') == "block"){}
         else{
           alert("The actual color has rgb values: ("+colorgot[0]+", "+colorgot[1]+", "+colorgot[2]+").");
-          resultarr = dothecalc(colorgot, colorguess);
-        }
-        counturns++;
-        if(counturns == settings.turns){
-          resetting();
         }
       });
     });
