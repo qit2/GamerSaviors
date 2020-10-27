@@ -51,7 +51,7 @@
       //Reset to default grid and clear data if any
       $("#reset").click(function resetting(){
         $("#colour").css('display', 'block');
-        $("#color").css('background', 'rgb(255,255,255)');//Default color here
+        $("#color").css('background', 'linear-gradient(45deg,#e66465, #9198e5)');//Default color here
         colorgot = [0,0,0];
         colorguess = [0,0,0];
         resultarr = [0,0,0];
