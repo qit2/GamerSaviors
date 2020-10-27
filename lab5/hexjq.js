@@ -44,23 +44,6 @@
       //Common case for needing the score in the end
       return resultscore;
     }
-    
-    /*
-    function datimer(){
-      //Unfinished
-      var seconds = 20;
-      $("h1").text("You have "+ seconds + " seconds left");
-      var seccount = setInterval(runtime(seconds), 1000);
-      function runtime(seconds){
-        seconds-1;
-        $("h1").text("You have "+ seconds + " seconds left");
-        if (seconds == 0){
-          $("h1").text("Hexed");
-        }
-      }
-    
-    }
-    */
 
 
 
@@ -81,8 +64,17 @@
         myAudio.play();
       
         //TIMER
-        myVar = 0;
-        timer = setInterval(function(){ $("h1").text("Timer: " + myVar.toFixed(1)); myVar+=.1;}, 100);
+        countup = 0.0;
+        timer = setInterval(function(){ 
+          $("h1").text("Time Left: " + (20.0-countup).toFixed(1)); countup+=.1;
+          
+          if(countup >= 20.05){
+            $("h1").text("Times Up!");
+            clearInterval(timer);
+            $("#get").css('display', 'block');
+            $("#guess").css('display', 'none');
+          };
+        }, 100);
 
         $("#get").css('display', 'none');
         $("#guess").css('display', 'block');
@@ -92,6 +84,8 @@
         }
         $("#colour").css('display', 'none');
         $("#color").css('background', colorstr);
+
+      });
 
       });
       //Reset to default grid and clear data if any
@@ -106,9 +100,7 @@
         //Resetting colorboard
         $("#color").css('background', 'linear-gradient(45deg,#e66465, #9198e5)');
         //Resetting percentage off
-        $("#redpercentoff").text("You've not made any guesses yet :(");
-        $("#greenpercentoff").text("You've not made any guesses yet :(");
-        $("#bluepercentoff").text("You've not made any guesses yet :(");
+        $("#rgbpercentoff").text("You've not made any guesses yet :(");
         //Resetting score calculation data
         colorgot = [0,0,0];
         colorguess = [0,0,0];
@@ -143,9 +135,7 @@
           colorguess[1] = $("#amountG").val();
           colorguess[2] = $("#amountB").val();
           resultarr = dothescore(colorguess, colorgot, 60);
-          $("#redpercentoff").text("Red: "+resultarr[0]+" % off");
-          $("#greenpercentoff").text("Green: "+resultarr[1]+" % off");
-          $("#bluepercentoff").text("Blue: "+resultarr[2]+" % off");
+          $("#rgbpercentoff").text("Red: "+resultarr[0]+" % off \t Green: "+resultarr[1]+" % off \t Blue: "+resultarr[2]+" % off");
           counturns++;
         }
         //Final Score (tbc.)
