@@ -33,13 +33,13 @@ h1{
   margin-left:auto;
   margin-right:auto;
   float:left;
-  width:65%;
+  width:45%;
 }
 
 .right{
   margin-left:auto;
   margin-right:auto;
-  float:left;
+  float:right;
   width:35%;
 }
 
@@ -57,7 +57,7 @@ label {
 .sliders {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 700px;
 }
 
 .play{
@@ -99,8 +99,8 @@ label {
   border-width: 1%;
   background: linear-gradient(45deg,#e66465, #9198e5);/*Default color here: will be great if it's gradient*/
   color: white;
-  width: 420px;
-  height: 240px;
+  width: 600px;
+  height: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 35px;
@@ -113,3 +113,12 @@ label {
   font-size: 1.5em;
   font-family: Georgia,serif;
 }
+#rgbpercentoff{
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: 1.8em;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Georgia,serif;
+}  
