@@ -1,19 +1,19 @@
 //JavaScript Here
 var all;
-      var daily_play;
-      var found;
-      var foundlist = [];
-      var guess;
-      var letters = [], todayletters = [];
-      var points;
-      var rank1, rank2, rank3, rank4, rank5, rank6, rank7, rank8, rank9;
-      var replaying;
-      var total, todaytotal, yesterdaytotal;
-      var win;
-      var wordlist = [], todaywordlist = [], yesterdaywordlist = [];
-      var words, todaywords, yesterdaywords;
+var daily_play;
+var found;
+var foundlist = [];
+var guess;
+var letters = [], todayletters = [];
+var points;
+var rank1, rank2, rank3, rank4, rank5, rank6, rank7, rank8, rank9;
+var replaying;
+var total, todaytotal, yesterdaytotal;
+var win;
+var wordlist = [], todaywordlist = [], yesterdaywordlist = [];
+var words, todaywords, yesterdaywords;
 
-      function type(letter, combno) {
+function type(letter, combno) {
 	document.getElementById("no-message").style.display = "inline";
 	document.getElementById("pangram").style.display = "none";
 	document.getElementById("already-found").style.display = "none";
@@ -25,9 +25,9 @@ var all;
 	document.getElementById("comb" + combno).style.left = parseInt(document.getElementById("comb" + combno).style.left) + 10 + "px";
 	document.getElementById("comb" + combno).style.top = parseInt(document.getElementById("comb" + combno).style.top) + 10 + "px";
 	document.getElementById("guess").value = document.getElementById("guess").value + letter;
-      }
+}
 
-      function untype() {
+function untype() {
 	document.getElementById("comb1").style.height = "100px";
 	document.getElementById("comb1").style.width = "100px";
 	document.getElementById("comb1").style.left = "1px";
@@ -56,9 +56,9 @@ var all;
 	document.getElementById("comb7").style.width = "100px";
 	document.getElementById("comb7").style.left = "80px";
 	document.getElementById("comb7").style.top = "100px";
-      }
+}
 
-      function display() {
+function display() {
 	var didtouch = 0;
 
 	document.getElementById("play1").src = letters[0] + ".png";
@@ -137,9 +137,9 @@ var all;
 	document.getElementById("play7").ondragend = function() {untype()};
 	document.getElementById("play7").ontouchend = function() {untype()};
 	document.getElementById("play7").ontouchcancel = function() {untype()};
-      }
+}
 
-      function update_rank() {
+function update_rank() {
 	var rank;
 
 	if (points >= rank9) {
@@ -167,9 +167,9 @@ var all;
 	}
 
 	document.getElementById("rank-update").innerHTML = rank;
-      }
+}
 
-      function set_rank() {
+function set_rank() {
 	rank1 = 0;
 	rank2 = Math.floor(total * 0.02);
 	rank3 = Math.floor(total * 0.05);
@@ -179,13 +179,13 @@ var all;
 	rank7 = Math.floor(total * 0.40);
 	rank8 = Math.floor(total * 0.50);
 	rank9 = Math.floor(total * 0.70);
-      }
+}
 
-      function save_word() {
+function save_word() {
 	localStorage.setItem("foundwords", JSON.stringify(foundlist));
-      }
+}
 
-      function add_points() {
+function add_points() {
 	var one = 0, two = 0, three = 0, four = 0, five = 0, six = 0;
 	var i = 0, j = 0;
 
@@ -239,9 +239,9 @@ var all;
 	}
 
 	points = points + guess.length;
-      }
+}
 
-      function found_word() {
+function found_word() {
 	var i;
 
 	for (i = 0; i < found; i++) {
@@ -269,9 +269,9 @@ var all;
 	}
 
 	return 0;
-      }
+}
 
-      function check() {
+function check() {
 	var center = 0, i;
 
 	document.getElementById("no-message").style.display = "inline";
@@ -316,9 +316,9 @@ var all;
 	document.getElementById("not-in-list").style.display = "inline";
 
 	return 1;
-      }
+}
 
-      function replay_words() {
+function replay_words() {
 	var i, replay;
 
 	replaying = 1;
@@ -364,9 +364,9 @@ var all;
 	document.getElementById("not-in-list").style.display = "none";
 
 	replaying = 0;
-      }
+}
 
-      function daily(replay = 1) {
+function daily(replay = 1) {
 	var i;
 
 	daily_play = 1;
@@ -425,9 +425,9 @@ var all;
 		replay_words();
 	document.getElementById("update-random").innerHTML = yesterdaywordlist.join("<br />") + "<br />" + "<br />Total words:  " + yesterdaywords + "<br />Total points: " + yesterdaytotal + "<br />Points for Queen Bee: " + Math.floor(yesterdaytotal * 0.70);
 	display();
-      }
+}
 
-      function get_yesterday() {
+function get_yesterday() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
@@ -440,9 +440,9 @@ var all;
 
 	xhttp.open("GET", "yesterday", true);
 	xhttp.send();
-      }
+}
 
-      function get_today() {
+function get_today() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
@@ -463,9 +463,9 @@ var all;
 
 	xhttp.open("GET", "today", true);
 	xhttp.send();
-      }
+}
 
-      window.onload = function() {
+window.onload = function() {
 	document.getElementById("comb1").style.height = "100px";
 	document.getElementById("comb1").style.width = "100px";
 	document.getElementById("comb1").style.left = "1px";
@@ -496,9 +496,9 @@ var all;
 	document.getElementById("comb7").style.top = "100px";
 	get_yesterday();
 	get_today();
-      };
+};
 
-      function shuffle() {
+function shuffle() {
 	var i, j, t;
 
 	for (i = 5; i > 0; i--) {
@@ -509,9 +509,9 @@ var all;
 	}
 
 	display();
-      }
+}
 
-      function random() {
+function random() {
 	var xhttp = new XMLHttpRequest();
 	var i;
 
@@ -567,16 +567,16 @@ var all;
 
 	xhttp.open("GET", "../../cgi-bin/freebee-random", true);
 	xhttp.send();
-      }
+}
 
-      function show_random() {
+function show_random() {
 	document.getElementById("update-random").innerHTML = wordlist.join("<br />") + "<br />" + "<br />Total words:  " + words + "<br />Total points: " + total + "<br />Points for Queen Bee: " + Math.floor(total * 0.70);
-      }
+}
 
-      function delete_letter() {
+function delete_letter() {
 	var str = document.getElementById("guess").value;
 	var len = str.length;
 
 	str = str.slice(0, len - 1) + str.slice(len, len);
 	document.getElementById("guess").value = str;
-      }
+}
