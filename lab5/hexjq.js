@@ -62,8 +62,6 @@
     }
     */
 
-    
-
 
 
 //Gameplay Function Compilation
@@ -74,6 +72,14 @@
       var resultarr = [0,0,0];
       //Start a new Game
       $("#get").click(function(){
+        //Sound
+        var myAudio = new Audio("Jeopardy-theme-song.mp3");
+        myAudio.addEventListener('ended', function() {
+          this.currentTime = 0;
+          this.play();
+        }, false);
+        myAudio.play();
+      
         //TIMER
         myVar = 0;
         timer = setInterval(function(){ $("h1").text("Timer: " + myVar.toFixed(1)); myVar+=.1;}, 100);
@@ -124,6 +130,8 @@
       });
       //Make the guess and output the result accordingly
       $("#guess").click(function(){
+        var snd = new Audio("super-jump.mp3");
+        snd.play();
         if (counturns == 3){
           counturns = 0;
           return;
