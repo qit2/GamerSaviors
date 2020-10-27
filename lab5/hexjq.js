@@ -34,9 +34,7 @@
         var temp = (Math.abs(actualarr[k] - hextodec(guessarr[k])) / 255) * 100;
         resultarr[k] = temp.toFixed(0);
       }
-          $("#redpercentoff").text("Red: "+resultarr[0]+" % off");
-          $("#greenpercentoff").text("Green: "+resultarr[1]+" % off");
-          $("#bluepercentoff").text("Blue: "+resultarr[2]+" % off");
+      $("#rgbpercentoff").text("Red: "+resultarr[0]+" % off \t Green: "+resultarr[1]+" % off \t Blue: "+resultarr[2]+" % off");
       resultscore = (300 - (parseInt(resultarr[0],10) + parseInt(resultarr[1],10) + parseInt(resultarr[2],10))) * ((20000 - milliremain) < 0 ? 0 : (20000 - milliremain));
       return resultscore;
     }
@@ -84,8 +82,7 @@
         myAudio.play();
       
         //TIMER
-        myVar = 0;
-        var timesRun = 0;
+        var countup = 0.0;
         timer = setInterval(function(){ 
           $("h1").text("Time Left: " + (20.0-countup).toFixed(1)); countup+=.1;
           
@@ -126,9 +123,7 @@
         //Resetting colorboard
         $("#color").css('background', 'linear-gradient(45deg,#e66465, #9198e5)');
         //Resetting percentage off
-        $("#redpercentoff").text("You've not made any guesses yet :(");
-        $("#greenpercentoff").text("You've not made any guesses yet :(");
-        $("#bluepercentoff").text("You've not made any guesses yet :(");
+        $("#rgbpercentoff").text("You've not made any guesses yet :(");
         $("#score").text("Final Score: ");
         time = Date.now();
         //Resetting score calculation data
