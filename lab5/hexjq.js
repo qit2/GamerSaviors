@@ -84,10 +84,9 @@
         }
         $("#colour").css('display', 'none');
         $("#color").css('background', colorstr);
-
       });
 
-      });
+
       //Reset to default grid and clear data if any
       $("#reset").click(function(){
         //Stop timer, reset h1
