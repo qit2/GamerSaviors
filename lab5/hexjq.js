@@ -28,14 +28,20 @@
       return output;
     }
 
-    function dothecalc(guessarr, actualarr, milliremain){
+
+    function dothescore(guessarr, actualarr, milliremain){
       var resultarr = [0,0,0];
       var resultscore = 0;
       for(var k = 0; k < 3; k++){
-        var temp = (abs(actualarr[k] - guessarr[k]) / 255) * 100;
+        var temp = (Math.abs(actualarr[k] - guessarr[k]) / 255) * 100;
         resultarr[k] = temp.toFixed(0);
       }
+      //Special case for requiring percent off only
+      if(milliremain >= 50){
+        return resultarr;
+      }
       resultscore = (300 - (resultarr[0] + resultarr[1] + resultarr[2])) * ((milliremain) < 0 ? 0 : (milliremain));
+      //Common case for needing the score in the end
       return resultscore;
     }
 
@@ -53,8 +59,10 @@
       }
     
     }
-    
-    //Gameplay Function Compilation
+
+
+
+//Gameplay Function Compilation
     $( function() {
       var counturns = 0;
       var colorgot = [0,0,0];
@@ -74,28 +82,53 @@
 
       });
       //Reset to default grid and clear data if any
-      $("#reset").click(function resetting(){
+      $("#reset").click(function(){
+        //Resetting buttons
         $("#get").css('display', 'block');
         $("#guess").css('display', 'none');
         $("#colour").css('display', 'block');
-        $("#color").css('background', 'linear-gradient(45deg,#e66465, #9198e5)');//Default color here
+        //Resetting colorboard
+        $("#color").css('background', 'linear-gradient(45deg,#e66465, #9198e5)');
+        //Resetting percentage off
+        $("#redpercentoff").text("You've not made any guesses yet :(");
+        $("#greenpercentoff").text("You've not made any guesses yet :(");
+        $("#bluepercentoff").text("You've not made any guesses yet :(");
+        //Resetting score calculation data
         colorgot = [0,0,0];
         colorguess = [0,0,0];
         resultarr = [0,0,0];
+        //Resetting Turn Recorder
+        counturns = 0;
+
+        //Resetting the sliders 
+
       });
       //Make the guess and output the result accordingly
       $("#guess").click(function(){
-        //if (counturns == 3)
+        if (counturns == 3){
+          counturns = 0;
+          return;
+        }
+        //Percent Off
         if($("#colour").css('display') == "block"){}
         else{
-          alert("The actual color has rgb values: ("+colorgot[0]+", "+colorgot[1]+", "+colorgot[2]+").");
+          colorguess[0] = $("#amountR").val();
+          colorguess[1] = $("#amountG").val();
+          colorguess[2] = $("#amountB").val();
+          resultarr = dothescore(colorguess, colorgot, 60);
+          $("#redpercentoff").text("Red: "+resultarr[0]+" % off");
+          $("#greenpercentoff").text("Green: "+resultarr[1]+" % off");
+          $("#bluepercentoff").text("Blue: "+resultarr[2]+" % off");
+          counturns++;
         }
+        //Final Score (tbc.)
       });
     });
 
 
 
-    //This function is the three colored sliders for the game
+
+    //This function contains the three colored sliders for the game
     $( function() {
       
       //This is the red slider
@@ -166,6 +199,10 @@
       $( "#slider-horB" ).css('background', '#03a9f4');
       $( "#slider-horB .ui-slider-range" ).css('background', 'rgb(0,32,255)');
     } );
+
+    
+
+
 
   };
 
