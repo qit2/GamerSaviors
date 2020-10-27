@@ -44,7 +44,8 @@
       //Common case for needing the score in the end
       return resultscore;
     }
-
+    
+    /*
     function datimer(){
       //Unfinished
       var seconds = 20;
@@ -59,6 +60,9 @@
       }
     
     }
+    */
+
+    
 
 
 
@@ -70,7 +74,10 @@
       var resultarr = [0,0,0];
       //Start a new Game
       $("#get").click(function(){
-        datimer();
+        //TIMER
+        myVar = 0;
+        setInterval(function(){ $("h1").text("Timer: " + myVar.toFixed(1)); myVar+=.1;}, 100);
+
         $("#get").css('display', 'none');
         $("#guess").css('display', 'block');
         var colorstr = genandloadcolors()[3];
