@@ -101,6 +101,15 @@
         counturns = 0;
 
         //Resetting the sliders 
+        $("#slider-horR").slider("value", 0);
+        $("#slider-horG").slider("value", 0);
+        $("#slider-horB").slider("value", 0);
+        $( "#amountR" ).val( $( "#slider-horR" ).slider( "value" ) );
+        $( "#amountG" ).val( $( "#slider-horR" ).slider( "value" ) );
+        $( "#amountB" ).val( $( "#slider-horR" ).slider( "value" ) );
+
+
+
 
       });
       //Make the guess and output the result accordingly
