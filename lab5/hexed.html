@@ -47,7 +47,7 @@
   </div>
   <div class="right">
     <section id="results">
-      <p class = "play" id="rgbpercentoff">You've not made any guesses yet :(</p>
+      <pre id="rgbpercentoff">You've not made any guesses yet :(</pre>
       <p id="score">Final Score: </p>
       <p id="best">Best Score: </p>
     </section>
@@ -64,7 +64,11 @@
     </p>
     <p>
       <label for="playerName">Player Name:</label>
-      <input type="text" id="playerName">
+      <input type="text" id="playerName" required>
+    </p>
+    <p>
+      <label for="playerName">Easy Mode:</label>
+      <input type="checkbox" id="EasyMode">
     </p>
     <button id="changeSettings">Change Settings</button>
   </div>

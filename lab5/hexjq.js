@@ -34,10 +34,21 @@
         var temp = (Math.abs(actualarr[k] - hextodec(guessarr[k])) / 255) * 100;
         resultarr[k] = temp.toFixed(0);
       }
-      $("#rgbpercentoff").text("Red: "+resultarr[0]+" % off \t Green: "+resultarr[1]+" % off \t Blue: "+resultarr[2]+" % off");
-      resultscore = (300 - (parseInt(resultarr[0],10) + parseInt(resultarr[1],10) + parseInt(resultarr[2],10))) * ((20000 - milliremain) < 0 ? 0 : (20000 - milliremain));
+      $("#rgbpercentoff").text("Red: "+resultarr[0]+" % off  Green: "+resultarr[1]+" % off  Blue: "+resultarr[2]+" % off");
+      resultscore = (300 - (parseInt(resultarr[0],10) + parseInt(resultarr[1],10) + parseInt(resultarr[2],10))) * ((20000 - milliremain) < 0 ? 0 : (20000 - milliremain)).toFixed(0);
       return resultscore;
     }
+
+    /*function doeasyscore(guessarr, actualarr, milliremain){
+      var resultarr = [0,0,0];
+      for(var k = 0; k < 3; k++){
+        var temp = (Math.abs(actualarr[k] - hextodec(guessarr[k])) / 255) * 100;
+        resultarr[k] = temp.toFixed(0);
+      }
+      $("#rgbpercentoff").text("Red: "+resultarr[0]+" % off  Green: "+resultarr[1]+" % off  Blue: "+resultarr[2]+" % off");
+      resultscore = (300 - (parseInt(resultarr[0],10) + parseInt(resultarr[1],10) + parseInt(resultarr[2],10))) * ((45000 - milliremain) < 0 ? 0 : (45000 - milliremain));
+      return resultscore;
+    }*/
     
 
 
@@ -48,6 +59,7 @@
       var colorguess = [0,0,0];
       var resultarr = [0,0,0];
       var myAudio;
+      var EasyMode = false;
       var timer;
       var time = Date.now();
       var guessTime;
@@ -57,28 +69,58 @@
       //Start a new Game
       $("#get").click(function(){
         //Sound
-        myAudio = new Audio("Jeopardy-theme-song.mp3");
-        myAudio.addEventListener('ended', function() {
-          this.currentTime = 0;
-          this.play();
-        }, false);
-        myAudio.play();
-      
+        EasyMode = $('#EasyMode').is(":checked");
+
+        if(!EasyMode){//Normal mode music
+          myAudio = new Audio("Jeopardy-theme-song.mp3");
+          myAudio.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+          }, false);
+          myAudio.play();
+        }
+        else{//Easy mode music
+          myAudio = new Audio("Diversion-Henry-Stickmin.mp3");
+          myAudio.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+          }, false);
+          myAudio.play();
+        }
         //TIMER
         var countup = 0.0;
-        timer = setInterval(function(){ 
-          $("h1").text("Time Left: " + (20.0-countup).toFixed(1)); countup+=.1;
+        if(!EasyMode){//Normal gameplay
+          timer = setInterval(function(){
+           
+            $("h1").text("Time Left: " + (20.0-countup).toFixed(1)); countup+=.1;
           
-          if(countup >= 20.05){
-            $("h1").text("Times Up!");
-            clearInterval(timer);
-            myAudio.pause();
-            $("#get").css('display', 'block');
-            $("#guess").css('display', 'none');
-          };
-          guessTime = Date.now(); 
-          guess= guessTime - time;
-        }, 100);
+            if(countup >= 20.05){
+              $("h1").text("Times Up!");
+              clearInterval(timer);
+              myAudio.pause();
+              $("#get").css('display', 'block');
+              $("#guess").css('display', 'none');
+            };
+            guessTime = Date.now(); 
+            guess= guessTime - time;
+          }, 100);
+        }
+        else{//Easy mode gameplay
+          timer = setInterval(function(){
+           
+            $("h1").text("Time Left: " + (45.0-countup).toFixed(1)); countup+=.1;
+          
+            if(countup >= 45.05){
+              $("h1").text("Times Up!");
+              clearInterval(timer);
+              myAudio.pause();
+              $("#get").css('display', 'block');
+              $("#guess").css('display', 'none');
+            };
+            guessTime = Date.now(); 
+            guess= ((guessTime - time)*4/9).toFixed(1);
+          }, 100);
+        }
 
         time = Date.now()
 
@@ -131,6 +173,7 @@
       });
       //Make the guess and output the result accordingly
       $("#guess").click(function(){
+        //Sound
         var snd = new Audio("super-jump.mp3");
         snd.play();
         if (counturns == 3){
@@ -144,6 +187,7 @@
           colorguess[1] = $("#amountG").val();
           colorguess[2] = $("#amountB").val();
           resultscore = dothescore(colorguess, colorgot, guess);
+          
           if (resultscore > bestScore) {
             bestScore = resultscore;
             $("#best").text("Best Score: " + bestScore);
