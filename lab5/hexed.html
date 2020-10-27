@@ -3,10 +3,11 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Hexed!</title>
+  <title>Fun Game</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel='stylesheet' type='text/css' media='screen' href='hexed.css'>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src='hexjq.js'></script>
@@ -15,42 +16,41 @@
   <section id="header">
     <h1>Hexed!</h1>
   </section>
-  <section id="results">
-    <p id="redpercentoff">You've not made any guesses yet :(</p>
-    <p id="greenpercentoff">You've not made any guesses yet :(</p>
-    <p id="bluepercentoff">You've not made any guesses yet :(</p>
-  </section>
-  <section id="color">
-    <p id="colour">This is the default color so you can't guess now xD</p>
-  </section>
-  <section id="slide">
-    
-    <div class="sliders" id="slider-horR"></div>
+  <div class = "left">
+    <section id="color">
+      <p id="colour">This is the default color so you can't guess now xD</p>
+    </section>
+    <section id="slide">
+      
+      <div class="sliders" id="slider-horR"></div>
 
-    <p>
-      <label for="amountR">Red:</label>
-      <input type="text" id="amountR">
-    </p>
+      <p>
+        <label for="amountR">Volume:</label>
+        <input type="text" id="amountR">
+      </p>
 
-    <div class="sliders" id="slider-horG"></div>
+      <div class="sliders" id="slider-horG"></div>
 
-    <p>
-      <label for="amountG">Green:</label>
-      <input type="text" id="amountG">
-    </p>
-    
-    <div class="sliders" id="slider-horB"></div>
+      <p>
+        <label for="amountG">Volume:</label>
+        <input type="text" id="amountG">
+      </p>
+      
+      <div class="sliders" id="slider-horB"></div>
 
-    <p>
-      <label for="amountB">Blue:</label>
-      <input type="text" id="amountB">
-    </p>
-
-  </section>
-  <section class="play">
-    <button id="get">New Game</button>
-    <button id="guess">Guess</button>
-    <button id="reset">RESET</button>
-  </section>
+      <p>
+        <label for="amountB">Volume:</label>
+        <input type="text" id="amountB">
+      </p>
+    </section>
+  </div>
+  <div class = "right">
+    <section class="play">
+      <button id="get">New Game</button>
+      <button id="guess">Guess</button>
+      <button id="reset">RESET</button>
+     
+    </section>
+  </div>
 </body>
 </html>
