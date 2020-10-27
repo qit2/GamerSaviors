@@ -1,8 +1,9 @@
-//This file mainly focuses on jQuery
+//This file mainly focuses on jQuery/JavaScript
 (function ( $ ) {
  
   $.fn.hexed = function( settings ) {
-
+    //Super Global Variable
+    var info = ["",0];
     //All Helper Functions
 
     function dectohex(num) {
@@ -24,7 +25,7 @@
       output[2] = Math.floor(Math.random()*256);
       //Generate Color String
       output[3] += leftpar + output[0] + comma + output[1] + comma + output[2] + rightpar;
-      //Return the rgb String array with numbers
+      //Return the rgb string array with numbers
       return output;
     }
 
@@ -39,16 +40,37 @@
       return resultscore;
     }
 
-    /*function doeasyscore(guessarr, actualarr, milliremain){
-      var resultarr = [0,0,0];
-      for(var k = 0; k < 3; k++){
-        var temp = (Math.abs(actualarr[k] - hextodec(guessarr[k])) / 255) * 100;
-        resultarr[k] = temp.toFixed(0);
-      }
-      $("#rgbpercentoff").text("Red: "+resultarr[0]+" % off  Green: "+resultarr[1]+" % off  Blue: "+resultarr[2]+" % off");
-      resultscore = (300 - (parseInt(resultarr[0],10) + parseInt(resultarr[1],10) + parseInt(resultarr[2],10))) * ((45000 - milliremain) < 0 ? 0 : (45000 - milliremain));
-      return resultscore;
-    }*/
+    function encryptedentry() {
+      var playername = prompt("Please enter your name:", "");
+      var rulenum = 3;
+      if (playername == null || playername == "") {
+        return encryptedentry();
+      } 
+      else {
+        var turns = prompt("Please enter number of turns (1~5):", "3");
+        if(parseInt(turns) < 1){
+          rulenum = 1;
+        }
+        else if(parseInt(turns) > 5){
+          rulenum = 5;
+        }
+        else if(parseInt(turns) >= 1 && parseInt(turns) <= 5){
+          rulenum = parseInt(turns);
+        }
+        else if(turns == ""){}//Default # of turns = 3
+        else{
+          return encryptedentry();
+        }
+        info[0] = playername;
+        info[1] = rulenum;
+        alert("Information Recorded :P");
+      } 
+    }
+
+//"Encrypted" Entry (have to fill in the prompt properly before playing)
+    $(document).ready(function () {
+      encryptedentry();
+    });
     
 
 
@@ -57,7 +79,6 @@
       var counturns = 0;
       var colorgot = [0,0,0];
       var colorguess = [0,0,0];
-      var resultarr = [0,0,0];
       var myAudio;
       var EasyMode = false;
       var timer;
@@ -66,6 +87,7 @@
       var guess;
       var resultscore = 0;
       var bestScore = 0;
+      var numturns = info[1];
       //Start a new Game
       $("#get").click(function(){
         //Sound
@@ -135,8 +157,23 @@
         $("#color").css('background', colorstr);
 
       });
-      //Reset to default grid and clear data if any
+
+      //Reset to default grid and clear data if theres any
       $("#reset").click(function(){
+
+        /*Implementation Alert:
+          ALL game data will be CLEARED and the page will literally RELOAD, but
+          if RESET button is pressed, there will be a prompt for confirm though.
+          Also all the code after this implementation here will become useless.*/
+
+        /*var confirm = prompt("Are you sure you want to RESET the entire game('Y' to confirm)?\n(Pro Tip: If you confirm, data will be gone for a loooooong time!)");
+          if(confirm == "Y"){
+            location.reload();
+          }
+          else{}
+        */
+
+        //Delete The following if RESET selected
         //Stop timer, reset h1, stop music
         clearInterval(timer);
         myAudio.pause();
@@ -157,7 +194,7 @@
         colorguess = [0,0,0];
         resultarr = [0,0,0];
         //Resetting Turn Recorder
-        counturns = 0;
+        numturns = info[1];
 
         //Resetting the sliders 
         $("#slider-horR").slider("value", 0);
@@ -173,6 +210,7 @@
       });
       //Make the guess and output the result accordingly
       $("#guess").click(function(){
+        numturn--;
         //Sound
         var snd = new Audio("super-jump.mp3");
         snd.play();
