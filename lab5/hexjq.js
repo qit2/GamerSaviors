@@ -60,7 +60,7 @@
       $("#guess").click(function(){
         if($("#colour").css('display') == "block"){}
         else{
-
+          alert("The actual color has rgb values: ("+colorgot[0]+", "+colorgot[1]+", "+colorgot[2]+").");
           resultarr = dothecalc(colorgot, colorguess);
         }
         counturns++;
