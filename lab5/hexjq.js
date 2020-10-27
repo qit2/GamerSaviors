@@ -89,6 +89,7 @@
           if(countup >= 20.05){
             $("h1").text("Times Up!");
             clearInterval(timer);
+            myAudio.pause();
             $("#get").css('display', 'block');
             $("#guess").css('display', 'none');
           };
