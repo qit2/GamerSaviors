@@ -1,6 +1,10 @@
 Gamersaviors-lab5&6
 
+
+Ryan Qi and Ryan Zhou 
 For the creativity, we make an easy mode for the game which will give extra 20 seconds based on the original 20 seconds. This mode will make the gamer, who is not familiar with the color much easier. Then we make a pumpkin cursor which will make the whole thing more fun. Also, before the website is being loaded, it will asked the user name and turn first, then the gamer can access the game and play it.
+
+On our game page, we display the user name and the turn which user input. After each turn, it will go down one. Also it will show the current score and the best score.
 
 We put the ranking table on the page, but we don't have enough time to figure out the function which will achieve the requirment. 
 
