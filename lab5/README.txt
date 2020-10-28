@@ -28,3 +28,12 @@ imputted something else I made the slider not change and the box background turn
 Creativity:
 I added music to the background of the game when the new game button was clicked. I also added a sound for when the guess button is clicked. Then I also added some code to 
 the css to make the game look presentable.
+
+Eric Zhang:
+I used the functions David made to convert hex to decimal to correctly display how much the percent off was for each color. I also implemented the score 
+calculation correctly by using the parseInt() function to convert the percent off strings to integers. After that, I used Date.now() to calculate the time from 
+when the game was started to when the guesses were made. I then added the score to the side, and replaced the best score with the current score if the best score 
+was better than any previous score for that session.
+
+
+
