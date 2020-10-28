@@ -296,6 +296,10 @@
           $("#score").text("Final Score: " + resultscore);
         }
       });
+      $("#changeSettings").click(function(){
+        $("#dispname").text("Player Name: "+$("#playerName").val());
+        $("#dispnum").text("Number of turns: "+$("#numturns").val());
+      });
     });
 
     function is_hexadecimal(x){
