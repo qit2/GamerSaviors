@@ -169,3 +169,11 @@ label {
   margin-left: 37.5%;
   margin-right: auto;
 }
+
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+}
