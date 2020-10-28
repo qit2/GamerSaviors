@@ -18,8 +18,9 @@
   </section>
   <div class="left">
 
+    <p id="colour">This is the default color so you can't guess now xD</p>
     <section id="color">
-      <p id="colour">This is the default color so you can't guess now xD</p>
+      <!--<img id = "pumpkin" src = "favicon.ico">-->
     </section>
     <section id="slide">
       
@@ -44,32 +45,33 @@
         <input type="text" id="amountB">
       </p>
     </section>
+    <section id = "sett">
+    <p class="records" id="settings">Settings:{</p>
+    <p class="recordss">
+      <label for="playerName">Player Name:</label>
+      <input type="text" id="playerName"><br/>
+      <label for="numturns">Number of turns:</label>
+      <input type="text" id="numturns"><br/>
+      <label for="EasyMode">Easy Mode:</label>
+      <input type="checkbox" id="EasyMode"><br/>
+    </p>
+    <button id="changeSettings">Change Settings</button>
+    </section>
   </div>
   <div class="right">
     <section id="results">
       <pre id="rgbpercentoff">You've not made any guesses yet :(</pre>
       <p class="records" id="score">Final Score: </p>
       <p class="records" id="best">Best Score: </p>
+      <p class="records" id="dispnum">Number of turns:</p>
+      <p class="records" id="dispname">Player Name:</p>
+      <p class="records" id="dispcheck">Game Mode:</p>
     </section>
     <section id="play">
       <button id="get">New Game</button>
       <button id="guess">Guess</button>
       <button id="reset">RESET</button>
-     
     </section>
-    <section id="settings">Settings:</section>
-    <p class="records">
-      <label for="numTurns">Number of turns:</label>
-      <input type="text" id="numTurns">
-    </p>
-    <p class="records">
-      <label for="playerName">Player Name:</label>
-    </p>
-    <p class="records">
-      <label for="playerName">Easy Mode:</label>
-      <input type="checkbox" id="EasyMode">
-    </p>
-    <button id="changeSettings">Change Settings</button>
   </div>
 </body>
 </html>

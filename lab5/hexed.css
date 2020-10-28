@@ -89,32 +89,39 @@ label {
   margin-right: 5%;
   float: left;
   display: none;
-
 }
 #color{
   border-style: solid;
   border-width: 1%;
-  background: linear-gradient(45deg,#e66465, #9198e5);/*Default color here: will be great if it's gradient*/
-  color: white;
+  background: linear-gradient(45deg,#e66465, #9198e5);
+  position: relative;
   width: 600px;
   height: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 35px;
   margin-bottom: 40px;
+  z-index: 1;
+}
+#pumpkin{
+  width: 400px;
+  height: 200px;
+  margin-top: 0;
+  position: relative;
+  z-index: 2;
 }
 #colour{
   text-align: center;
   display: block;
-  padding-top: 17.5%;
+  position: relative;
   font-size: 1.5em;
   font-family: Georgia,serif;
+  z-index: 3;
 }
 #rgbpercentoff{
   width: 100%;
-  height: 60px;
-  text-align: center;
-  font-size: 1.8em;
+  height: 80px;
+  font-size: 2em;
   margin-left: auto;
   margin-right: auto;
   font-family: Georgia,serif;
@@ -127,11 +134,38 @@ label {
   height: 60px;
   font-size: 1.1em;
   margin-right: 5%;
+  margin-bottom: 15px;
   float: left;
   display: block;
 }
 .records{
   float: left;
-  margin-right: 35%;
+  margin-right: 30%;
   font-family: 'Turret Road', cursive;
+}
+.recordss{
+  float: left;
+  margin-left: 2%;
+  margin-right: 0%;
+  font-family: 'Turret Road', cursive;
+}
+#dispnum{
+  margin-right: 32%;
+}
+#settings{
+  text-align: center;
+  font-size: 4em;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: 17%;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+#changeSettings{
+  width: 25%;
+  height: 60px;
+  font-size: 1.1em;
+  margin-right: 5%;
+  margin-left: 37.5%;
+  margin-right: auto;
 }

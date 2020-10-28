@@ -35,7 +35,7 @@
         var temp = (Math.abs(actualarr[k] - hextodec(guessarr[k])) / 255) * 100;
         resultarr[k] = temp.toFixed(0);
       }
-      $("#rgbpercentoff").text("Red: "+resultarr[0]+" % off  Green: "+resultarr[1]+" % off  Blue: "+resultarr[2]+" % off");
+      $("#rgbpercentoff").text("Red: "+resultarr[0]+" % off     Green: "+resultarr[1]+" % off     Blue: "+resultarr[2]+" % off");
       resultscore = (300 - (parseInt(resultarr[0],10) + parseInt(resultarr[1],10) + parseInt(resultarr[2],10))) * ((20000 - milliremain) < 0 ? 0 : (20000 - milliremain)).toFixed(0);
       return resultscore;
     }
@@ -67,6 +67,42 @@
       } 
     }
 
+    function stopgame(n, count){
+
+        count = 100;
+        myAudio.pause();
+        $("h1").text("Hexed!");
+        //Resetting buttons
+        $("#get").css('display', 'block');
+        $("#changeSettings").css('display', 'block');
+        $("#guess").css('display', 'none');
+        $("#colour").css('display', 'block');
+        //Resetting colorboard
+        $("#color").css('background', 'linear-gradient(45deg,#e66465, #9198e5)');
+        //Resetting percentage off
+        $("#rgbpercentoff").text("You've not made any guesses yet :(");
+        $("#score").text("Final Score: ");
+        
+        //Resetting score calculation data
+        colorgot = [0,0,0];
+        colorguess = [0,0,0];
+        resultarr = [0,0,0];
+        //Resetting Turn Recorder
+        n = info[1];
+        //Resetting other settings
+        $("#dispcheck").text("Game Mode: Normal");
+        $("#sett").css('display', 'block');
+        time = Date.now();
+
+        //Resetting the sliders 
+        $("#slider-horR").slider("value", 0);
+        $("#slider-horG").slider("value", 0);
+        $("#slider-horB").slider("value", 0);
+        $( "#amountR" ).val( $( "#slider-horR" ).slider( "value" ) );
+        $( "#amountG" ).val( $( "#slider-horR" ).slider( "value" ) );
+        $( "#amountB" ).val( $( "#slider-horR" ).slider( "value" ) );
+    }
+
 //"Encrypted" Entry (have to fill in the prompt properly before playing)
     $(document).ready(function () {
       encryptedentry();
@@ -76,18 +112,29 @@
 
 //Gameplay Function Compilation
     $( function() {
-      var counturns = 0;
       var colorgot = [0,0,0];
       var colorguess = [0,0,0];
       var myAudio;
+      var countup = 0.0;
       var EasyMode = false;
-      var timer;
       var time = Date.now();
-      var guessTime;
-      var guess;
+      var timer, guessTime, guess;
       var resultscore = 0;
       var bestScore = 0;
       var numturns = info[1];
+      //Settings before game begins
+      $("#dispname").text("Player Name: "+info[0]);
+      $("#dispnum").text("Number of turns: "+info[1]);
+      $("#dispcheck").text("Game Mode: Normal");
+
+      $("#EasyMode").click(function(){
+        if($('#EasyMode').is(":checked")){
+          $("#dispcheck").text("Game Mode: Easy");
+        }
+        else{
+          $("#dispcheck").text("Game Mode: Normal");
+        }
+      });
       //Start a new Game
       $("#get").click(function(){
         //Sound
@@ -110,7 +157,7 @@
           myAudio.play();
         }
         //TIMER
-        var countup = 0.0;
+        countup = 0.0;
         if(!EasyMode){//Normal gameplay
           timer = setInterval(function(){
            
@@ -122,6 +169,7 @@
               myAudio.pause();
               $("#get").css('display', 'block');
               $("#guess").css('display', 'none');
+              $("#sett").css('display', 'block');
             };
             guessTime = Date.now(); 
             guess= guessTime - time;
@@ -138,6 +186,7 @@
               myAudio.pause();
               $("#get").css('display', 'block');
               $("#guess").css('display', 'none');
+              $("#sett").css('display', 'block');
             };
             guessTime = Date.now(); 
             guess= ((guessTime - time)*4/9).toFixed(1);
@@ -147,7 +196,7 @@
         time = Date.now()
 
         $("#get").css('display', 'none');
-        $("#changeSettings").css('display', 'none');
+        $("#sett").css('display', 'none');
         $("#guess").css('display', 'block');
         var colorstr = genandloadcolors()[3];
         for (var i = 0; i < 3; i++){
@@ -166,18 +215,27 @@
           if RESET button is pressed, there will be a prompt for confirm though.
           Also all the code after this implementation here will become useless.*/
 
-        /*var confirm = prompt("Are you sure you want to RESET the entire game('Y' to confirm)?\n(Pro Tip: If you confirm, data will be gone for a loooooong time!)");
+        var confirm = prompt("Are you sure you want to RESET the entire game('Y' to confirm, anything else to cancel)?\n(Pro Tip: If you confirm, data will be gone for a loooooong time!)");
           if(confirm == "Y"){
             location.reload();
           }
           else{}
-        */
 
-        //Delete The following if RESET selected
-        //Stop timer, reset h1, stop music
-        clearInterval(timer);
-        myAudio.pause();
-        $("h1").text("Hexed!");
+      });
+
+      //Make the guess and output the result accordingly
+      $("#guess").click(function(){
+        
+        //Sound
+        var snd = new Audio("super-jump.mp3");
+        
+        if (numturns == 0){
+          //Terminating current run
+          snd = null;
+          myAudio.pause();
+          countup = 100;
+          
+        
         //Resetting buttons
         $("#get").css('display', 'block');
         $("#changeSettings").css('display', 'block');
@@ -188,13 +246,17 @@
         //Resetting percentage off
         $("#rgbpercentoff").text("You've not made any guesses yet :(");
         $("#score").text("Final Score: ");
-        time = Date.now();
+        
         //Resetting score calculation data
         colorgot = [0,0,0];
         colorguess = [0,0,0];
         resultarr = [0,0,0];
         //Resetting Turn Recorder
-        numturns = info[1];
+        n = info[1];
+        //Resetting other settings
+        $("#dispcheck").text("Game Mode: Normal");
+        $("#sett").css('display', 'block');
+        time = Date.now();
 
         //Resetting the sliders 
         $("#slider-horR").slider("value", 0);
@@ -204,20 +266,20 @@
         $( "#amountG" ).val( $( "#slider-horR" ).slider( "value" ) );
         $( "#amountB" ).val( $( "#slider-horR" ).slider( "value" ) );
 
-
-
-
-      });
-      //Make the guess and output the result accordingly
-      $("#guess").click(function(){
-        numturn--;
-        //Sound
-        var snd = new Audio("super-jump.mp3");
-        snd.play();
-        if (counturns == 3){
-          counturns = 0;
-          return;
+        //Restore turn values
+        numturns = info[1];
+        $("#dispnum").text("Number of turns: "+info[1]);
         }
+        if (numturns == info[1]){
+          $("#guess").html("Guess");
+        }
+
+        //Actual Gameplay starts here
+        snd.play();
+        numturns--;
+        if (numturns == 0){$("#guess").html("Out of Guesses");}
+        
+        $("#dispnum").text("Number of turns: "+numturns);
         //Percent Off
         if($("#colour").css('display') == "block"){}
         else{
@@ -230,7 +292,7 @@
             bestScore = resultscore;
             $("#best").text("Best Score: " + bestScore);
           }
-          counturns++;
+          
           $("#score").text("Final Score: " + resultscore);
         }
       });
@@ -246,6 +308,9 @@
       }
     }
 
+    $( function(){
+
+    });
 
     //This function contains the three colored sliders for the game
     $( function() {
