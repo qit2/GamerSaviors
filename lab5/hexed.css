@@ -29,6 +29,11 @@ h1{
     font-size: 35px;
   }
 
+h2{
+  color:darkmagenta;
+  font-weight: bold;
+}
+
 .left{
   margin-left:auto;
   margin-right:auto;
