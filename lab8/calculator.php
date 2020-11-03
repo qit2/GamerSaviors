@@ -30,6 +30,43 @@ class Addition extends Operation {
 
 // Add subclasses for Subtraction, Multiplication and Division here
 
+// Addition subclass inherits from Operation
+class Subtraction extends Operation {
+  public function operate() {
+    return $this->operand_1 - $this->operand_2;
+  }
+  public function getEquation() {
+    return $this->operand_1 . ' - ' . $this->operand_2 . ' = ' . $this->operate();
+  }
+}
+
+class Multiplication extends Operation {
+  public function operate() {
+    return $this->operand_1 * $this->operand_2;
+  }
+  public function getEquation() {
+    return $this->operand_1 . ' * ' . $this->operand_2 . ' = ' . $this->operate();
+  }
+}
+
+class Division extends Operation {
+  public function operate() {
+    return $this->operand_1 / $this->operand_2;
+  }
+  public function getEquation() {
+    return $this->operand_1 . ' / ' . $this->operand_2 . ' = ' . $this->operate();
+  }
+}
+
+class Exponential extends Operation {
+  public function operate() {
+    return pow($this->operand_1, $this->operand_2);
+  }
+  public function getEquation() {
+    return $this->operand_1 . ' ^ ' . $this->operand_2 . ' = ' . $this->operate();
+  }
+}
+
 
 // Some debugs - uncomment these to see what is happening...
 // echo '$_POST print_r=>',print_r($_POST);
@@ -60,6 +97,18 @@ class Addition extends Operation {
   try {
     if (isset($_POST['add']) && $_POST['add'] == 'Add') {
       $op = new Addition($o1, $o2);
+    }
+    if (isset($_POST['sub']) && $_POST['sub'] == 'Subtract') {
+      $op = new Subtraction($o1, $o2);
+    }
+    if (isset($_POST['mult']) && $_POST['mult'] == 'Multiply') {
+      $op = new Multiplication($o1, $o2);
+    }
+    if (isset($_POST['divi']) && $_POST['divi'] == 'Divide') {
+      $op = new Division($o1, $o2);
+    }
+    if (isset($_POST['exponent']) && $_POST['exponent'] == 'x^y') {
+      $op = new Exponential($o1, $o2);
     }
 
 
@@ -102,7 +151,8 @@ class Addition extends Operation {
     <input type="submit" name="add" value="Add" />  
     <input type="submit" name="sub" value="Subtract" />  
     <input type="submit" name="mult" value="Multiply" />  
-    <input type="submit" name="divi" value="Divide" />  
+    <input type="submit" name="divi" value="Divide" />
+    <input type="submit" name="exponent" value="x^y" />   
   </form>
 </body>
 </html>
