@@ -217,7 +217,7 @@ class Tan extends OneOperation {
     if (isset($_POST['log10']) && $_POST['log10'] == 'log') {
       $op = new logBase10($o1);
     }
-    if (isset($_POST['logE']) && $_POST['logE'] == 'nl') {
+    if (isset($_POST['logE']) && $_POST['logE'] == 'ln') {
       $op = new logBaseE($o1);
     }
     if (isset($_POST['squareroot']) && $_POST['squareroot'] == 'Square root') {
@@ -248,9 +248,11 @@ class Tan extends OneOperation {
 <!doctype html>
 <html>
 <head>
-<title>PHP Calculator</title>
+    <link rel="stylesheet" type= "text/css" href="calculator.css">
+    <title>PHP Calculator</title>
 </head>
 <body>
+  <div id='calc-contain'>
   <pre id="result">
   <?php 
     if (isset($op)) {
@@ -268,8 +270,8 @@ class Tan extends OneOperation {
   ?>
   </pre>
   <form method="post" action="calculator.php">
-    <input type="text" name="op1" id="name" value="" />
-    <input type="text" name="op2" id="name" value="" />
+    <input type="text" name="op1" id="name_1" value="" />
+    <input type="text" name="op2" id="name_2" value="" />
     <br/>
     <!-- Only one of these will be set with their respective value at a time -->
     <input type="submit" name="add" value="Add" />  
@@ -288,6 +290,7 @@ class Tan extends OneOperation {
     <input type="submit" name="tan" value="Tan" /> 
     
   </form>
+    </div>
 </body>
 </html>
 
