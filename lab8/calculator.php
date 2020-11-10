@@ -17,6 +17,21 @@ abstract class Operation {
   public abstract function getEquation(); 
 }
 
+abstract class OneOperation {
+  protected $operand_1;
+  public function __construct($o1) {
+    // Make sure we're working with numbers...
+    if (!is_numeric($o1)) {
+      throw new Exception('Non-numeric operand.');
+    }
+    
+    // Assign passed values to member variables
+    $this->operand_1 = $o1;
+  }
+  public abstract function operate();
+  public abstract function getEquation(); 
+}
+
 // Addition subclass inherits from Operation
 class Addition extends Operation {
   public function operate() {
@@ -67,6 +82,52 @@ class Exponential extends Operation {
   }
 }
 
+//classes extending the OneOperation abstract class
+class Squared extends OneOperation {
+  public function operate() {
+    return pow($this->operand_1, 2);
+  }
+  public function getEquation() {
+    return $this->operand_1 . ' ^ ' . 2 . ' = ' . $this->operate();
+  }
+}
+
+class tenPow extends OneOperation {
+  public function operate() {
+    return pow(10, $this->operand_1);
+  }
+  public function getEquation() {
+    return 10 . ' ^ ' . $this->operand_1 . ' = ' . $this->operate();
+  }
+}
+
+class ePow extends OneOperation {
+  public function operate() {
+    return exp($this->operand_1);
+  }
+  public function getEquation() {
+    return 'e' . ' ^ ' . $this->operand_1 . ' = ' . $this->operate();
+  }
+}
+
+class logBase10 extends OneOperation {
+  public function operate() {
+    return log10($this->operand_1);
+  }
+  public function getEquation() {
+    return 'log' . ' _ ' . 10 . '(' . $this->operand_1 . ')' . ' = ' . $this->operate();
+  }
+}
+
+class logBaseE extends OneOperation {
+  public function operate() {
+    return log($this->operand_1);
+  }
+  public function getEquation() {
+    return 'log' . ' _ ' . 'e' . '(' . $this->operand_1 . ')' . ' = ' . $this->operate();
+  }
+}
+
 
 // Some debugs - uncomment these to see what is happening...
 // echo '$_POST print_r=>',print_r($_POST);
@@ -110,6 +171,21 @@ class Exponential extends Operation {
     if (isset($_POST['exponent']) && $_POST['exponent'] == 'x^y') {
       $op = new Exponential($o1, $o2);
     }
+    if (isset($_POST['squared']) && $_POST['squared'] == 'x^2') {
+      $op = new squared($o1);
+    }
+    if (isset($_POST['powTen']) && $_POST['powTen'] == '10^x') {
+      $op = new tenPow($o1);
+    }
+    if (isset($_POST['powE']) && $_POST['powE'] == 'e^x') {
+      $op = new ePow($o1);
+    }
+    if (isset($_POST['log10']) && $_POST['log10'] == 'log') {
+      $op = new logBase10($o1);
+    }
+    if (isset($_POST['logE']) && $_POST['logE'] == 'nl') {
+      $op = new logBaseE($o1);
+    }
 
 
 // Put code for subtraction, multiplication, and division here
@@ -152,7 +228,13 @@ class Exponential extends Operation {
     <input type="submit" name="sub" value="Subtract" />  
     <input type="submit" name="mult" value="Multiply" />  
     <input type="submit" name="divi" value="Divide" />
-    <input type="submit" name="exponent" value="x^y" />   
+    <input type="submit" name="exponent" value="x^y" />  
+    <input type="submit" name="squared" value="x^2" />
+    <input type="submit" name="powTen" value="10^x" />
+    <input type="submit" name="powE" value="e^x" />
+    <input type="submit" name="log10" value="log" />
+    <input type="submit" name="logE" value="nl" />
+    
   </form>
 </body>
 </html>
