@@ -98,6 +98,11 @@ class Division implements Operation {
       throw new Exception('Non-numeric operand.');
     }
     
+    // Make sure we're not divide anything by zero
+    if ($this->operand_2 == 0){
+      throw new Exception('Second operand cannnot be zero.');
+    }
+    
     // Assign passed values to member variables
     $this->operand_1 = $o1;
     $this->operand_2 = $o2;
