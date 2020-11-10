@@ -10,3 +10,6 @@ David Finck:
 I created the abstract class OneOperation so that I would be able to create all of the math functions that only needed and x instead of an x and y. I used the same
 structure for all of the functions but I changed up the math for each one. I then created new inputs in the form tag so that I can make the function run after the click
 of the type submit. I also worked on the creativity to make it so that the buttons changed when hovering over them.
+
+Ryan Qi:
+I wrote the function sin, cos, and tan, which use the abstract class OneOperation. Then I add css to the calculator. First of all, I put all the thing in a big dic with id which called calc-container
