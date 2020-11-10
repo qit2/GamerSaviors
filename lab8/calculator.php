@@ -128,6 +128,15 @@ class logBaseE extends OneOperation {
   }
 }
 
+class squareroot extends OneOperation {
+  public function operate() {
+    return pow($this->operand_1, .5);
+  }
+  public function getEquation() {
+    return $this->operand_1 . ' ^ ' . 1 . '/' . 2 . ' = ' . $this->operate();
+  }
+}
+
 
 // Some debugs - uncomment these to see what is happening...
 // echo '$_POST print_r=>',print_r($_POST);
@@ -186,6 +195,9 @@ class logBaseE extends OneOperation {
     if (isset($_POST['logE']) && $_POST['logE'] == 'nl') {
       $op = new logBaseE($o1);
     }
+    if (isset($_POST['squareroot']) && $_POST['squareroot'] == 'Square root') {
+      $op = new squareroot($o1);
+    }
 
 
 // Put code for subtraction, multiplication, and division here
@@ -233,7 +245,7 @@ class logBaseE extends OneOperation {
     <input type="submit" name="powTen" value="10^x" />
     <input type="submit" name="powE" value="e^x" />
     <input type="submit" name="log10" value="log" />
-    <input type="submit" name="logE" value="nl" />
+    <input type="submit" name="squareroot" value="Square root" />
     
   </form>
 </body>
