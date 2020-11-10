@@ -281,6 +281,7 @@ class Tan extends OneOperation {
     <input type="submit" name="powTen" value="10^x" />
     <input type="submit" name="powE" value="e^x" />
     <input type="submit" name="log10" value="log" />
+    <input type="submit" name="logE" value="ln" />
     <input type="submit" name="squareroot" value="Square root" />
     <input type="submit" name="sin" value="Sin" />  
     <input type="submit" name="cos" value="Cos" />  
