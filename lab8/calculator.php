@@ -13,7 +13,8 @@ abstract class OneOperation {
     if (!is_numeric($o1)) {
       throw new Exception('Non-numeric operand.');
     }
-    
+    // Firendly Reminder: second operand not needed
+    echo '<script>alert("Second operand does not matter here");</script>';
     // Assign passed values to member variables
     $this->operand_1 = $o1;
   }
