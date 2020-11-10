@@ -137,7 +137,32 @@ class squareroot extends OneOperation {
   }
 }
 
+class Sin extends SingleOperation {
+  public function operate() {
+    return sin($this->operand_1);
+  }
+  public function getEquation() {
+    return "Sin(" . $this->operand_1 . ') = ' . $this->operate();
+  }
+}
 
+class Cos extends SingleOperation {
+  public function operate() {
+    return cos($this->operand_1);
+  }
+  public function getEquation() {
+    return "Cos(" . $this->operand_1 . ') = ' . $this->operate();
+  }
+}
+
+class Tan extends SingleOperation {
+  public function operate() {
+    return tan($this->operand_1);
+  }
+  public function getEquation() {
+    return "Tan(" . $this->operand_1 . ') = ' . $this->operate();
+  }
+}
 // Some debugs - uncomment these to see what is happening...
 // echo '$_POST print_r=>',print_r($_POST);
 // echo "<br>",'$_POST vardump=>',var_dump($_POST);
@@ -198,6 +223,17 @@ class squareroot extends OneOperation {
     if (isset($_POST['squareroot']) && $_POST['squareroot'] == 'Square root') {
       $op = new squareroot($o1);
     }
+    if (isset($_POST['sin']) && $_POST['sin'] == 'Sin') {
+      $op = new Sin($o1);
+    }
+
+    if (isset($_POST['cos']) && $_POST['cos'] == 'Cos') {
+      $op = new Cos($o1);
+    }
+
+    if (isset($_POST['tan']) && $_POST['tan'] == 'Tan') {
+      $op = new Tan($o1);
+    }
 
 
 // Put code for subtraction, multiplication, and division here
@@ -246,6 +282,9 @@ class squareroot extends OneOperation {
     <input type="submit" name="powE" value="e^x" />
     <input type="submit" name="log10" value="log" />
     <input type="submit" name="squareroot" value="Square root" />
+    <input type="submit" name="sin" value="Sin" />  
+    <input type="submit" name="cos" value="Cos" />  
+    <input type="submit" name="tan" value="Tan" /> 
     
   </form>
 </body>
