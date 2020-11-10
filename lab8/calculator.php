@@ -1,20 +1,9 @@
 <?php 
 
-abstract class Operation {
-  protected $operand_1;
-  protected $operand_2;
-  public function __construct($o1, $o2) {
-    // Make sure we're working with numbers...
-    if (!is_numeric($o1) || !is_numeric($o2)) {
-      throw new Exception('Non-numeric operand.');
-    }
-    
-    // Assign passed values to member variables
-    $this->operand_1 = $o1;
-    $this->operand_2 = $o2;
-  }
-  public abstract function operate();
-  public abstract function getEquation(); 
+interface Operation {
+  public function __construct($o1, $o2); 
+  public function operate();
+  public function getEquation(); 
 }
 
 abstract class OneOperation {
@@ -33,7 +22,19 @@ abstract class OneOperation {
 }
 
 // Addition subclass inherits from Operation
-class Addition extends Operation {
+class Addition implements Operation {
+  protected $operand_1;
+  protected $operand_2;
+  public function __construct($o1, $o2) {
+    // Make sure we're working with numbers...
+    if (!is_numeric($o1) || !is_numeric($o2)) {
+      throw new Exception('Non-numeric operand.');
+    }
+    
+    // Assign passed values to member variables
+    $this->operand_1 = $o1;
+    $this->operand_2 = $o2;
+  }
   public function operate() {
     return $this->operand_1 + $this->operand_2;
   }
@@ -45,8 +46,20 @@ class Addition extends Operation {
 
 // Add subclasses for Subtraction, Multiplication and Division here
 
-// Addition subclass inherits from Operation
-class Subtraction extends Operation {
+// Subtraction subclass inherits from Operation
+class Subtraction implements Operation {
+  protected $operand_1;
+  protected $operand_2;
+  public function __construct($o1, $o2) {
+    // Make sure we're working with numbers...
+    if (!is_numeric($o1) || !is_numeric($o2)) {
+      throw new Exception('Non-numeric operand.');
+    }
+    
+    // Assign passed values to member variables
+    $this->operand_1 = $o1;
+    $this->operand_2 = $o2;
+  }
   public function operate() {
     return $this->operand_1 - $this->operand_2;
   }
@@ -55,7 +68,19 @@ class Subtraction extends Operation {
   }
 }
 
-class Multiplication extends Operation {
+class Multiplication implements Operation {
+  protected $operand_1;
+  protected $operand_2;
+  public function __construct($o1, $o2) {
+    // Make sure we're working with numbers...
+    if (!is_numeric($o1) || !is_numeric($o2)) {
+      throw new Exception('Non-numeric operand.');
+    }
+    
+    // Assign passed values to member variables
+    $this->operand_1 = $o1;
+    $this->operand_2 = $o2;
+  }
   public function operate() {
     return $this->operand_1 * $this->operand_2;
   }
@@ -64,7 +89,19 @@ class Multiplication extends Operation {
   }
 }
 
-class Division extends Operation {
+class Division implements Operation {
+  protected $operand_1;
+  protected $operand_2;
+  public function __construct($o1, $o2) {
+    // Make sure we're working with numbers...
+    if (!is_numeric($o1) || !is_numeric($o2)) {
+      throw new Exception('Non-numeric operand.');
+    }
+    
+    // Assign passed values to member variables
+    $this->operand_1 = $o1;
+    $this->operand_2 = $o2;
+  }
   public function operate() {
     return $this->operand_1 / $this->operand_2;
   }
@@ -73,7 +110,19 @@ class Division extends Operation {
   }
 }
 
-class Exponential extends Operation {
+class Exponential implements Operation {
+  protected $operand_1;
+  protected $operand_2;
+  public function __construct($o1, $o2) {
+    // Make sure we're working with numbers...
+    if (!is_numeric($o1) || !is_numeric($o2)) {
+      throw new Exception('Non-numeric operand.');
+    }
+    
+    // Assign passed values to member variables
+    $this->operand_1 = $o1;
+    $this->operand_2 = $o2;
+  }
   public function operate() {
     return pow($this->operand_1, $this->operand_2);
   }
@@ -293,4 +342,3 @@ class Tan extends OneOperation {
     </div>
 </body>
 </html>
-
