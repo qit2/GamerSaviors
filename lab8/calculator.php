@@ -307,7 +307,7 @@ class Tan extends OneOperation {
     <title>PHP Calculator</title>
 </head>
 <body>
-  <div id='calc-contain'>
+  <div id='calc-container'>
   <pre id="result">
   <?php 
     if (isset($op)) {
