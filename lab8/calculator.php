@@ -13,7 +13,8 @@ abstract class OneOperation {
     if (!is_numeric($o1)) {
       throw new Exception('Non-numeric operand.');
     }
-    
+    // Tell user second operand not needed
+    echo '<script>alert("Second operand does not matter here");</script>';
     // Assign passed values to member variables
     $this->operand_1 = $o1;
   }
@@ -97,7 +98,10 @@ class Division implements Operation {
     if (!is_numeric($o1) || !is_numeric($o2)) {
       throw new Exception('Non-numeric operand.');
     }
-    
+    // Make sure we're not divide anything by zero
+    if ($this->operand_2 == 0){
+      throw new Exception('Second operand cannnot be zero.');
+    }
     // Assign passed values to member variables
     $this->operand_1 = $o1;
     $this->operand_2 = $o2;
