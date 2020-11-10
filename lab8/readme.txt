@@ -12,4 +12,10 @@ structure for all of the functions but I changed up the math for each one. I the
 of the type submit. I also worked on the creativity to make it so that the buttons changed when hovering over them.
 
 Ryan Qi:
-I wrote the function sin, cos, and tan, which use the abstract class OneOperation. Then I add css to the calculator. First of all, I put all the thing in a big dic with id which called calc-container
+I wrote the function sin, cos, and tan, which use the abstract class OneOperation. Then I add css to the calculator. 
+First of all, I put all the thing in a big dic with id which called calc-container. In this div, I make the calculator stay in the middle of page and give the calculator 
+a background. Then I make the result box having a boarder and I also change the font size and font weight to make the calculator easier to read.
+Also, I make all the input botton lines in twe line and I change the color of them into blue.
+
+Ryan Zhou:
+First of all, I wrote alert which will shows that the didvide function cannot 
