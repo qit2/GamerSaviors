@@ -137,7 +137,7 @@ class squareroot extends OneOperation {
   }
 }
 
-class Sin extends SingleOperation {
+class Sin extends OneOperation {
   public function operate() {
     return sin($this->operand_1);
   }
@@ -146,7 +146,7 @@ class Sin extends SingleOperation {
   }
 }
 
-class Cos extends SingleOperation {
+class Cos extends OneOperation {
   public function operate() {
     return cos($this->operand_1);
   }
@@ -155,7 +155,7 @@ class Cos extends SingleOperation {
   }
 }
 
-class Tan extends SingleOperation {
+class Tan extends OneOperation {
   public function operate() {
     return tan($this->operand_1);
   }
