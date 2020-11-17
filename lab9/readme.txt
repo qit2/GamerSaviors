@@ -117,7 +117,7 @@ I also add buttom and use javascript. The form will be hided in the beginning, t
 Eric Zhang:
 I created the HTML base web page to house all of the PHP that David would be writing. I interpreted the directions as being able to add the columns through the 
 page itself, so I created buttons to add columns to rows as well as create new tables. I also created an input for each part of the forms that would need to be filled
-when adding students, courses, or grades. I then created another section underneath the forms where the information in the tables could be displayed.
+when adding students, courses, or grades.
 
 David Finck:
 I worked on part 3 of this lab and mainly did the php files. I worked on using php to obtain the data base and put all the information from the data base onto a
