@@ -109,35 +109,35 @@
     <title>SQL Gradebook - Students</title>
 </head>
 <body>
-    <nav id = "bar">
-    <a href = "course.php" class = "navlink">Courses</a>
-    <a href = "#.php" class = "navlink">Students</a>
-    <a href = "grade.php" class = "navlink">Grades</a>
-  </nav>
     <h1>Student Information</h1>
-<div class = "overall" id='main'>
+<div id="main">
+<nav id = "bar">
+    <a href = "course.php" class = "navlink">Courses</a>
+    <a href = "#" class = "navlink">Students</a>
+    <a href = "grade.php" class = "navlink">Grades</a>
+</nav>
 <form method="post" action="student.php">
   <fieldset>
     <label class="field" for="rin">RIN:</label>
-    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div>
     <label class="field" for="rcsid">RCSID:</label>
-    <div class="value"><input type="text" name="rcsid" id="rcsid" placeholder="RCSID" value="<?php if($havePost && $errors != '') { echo $rcsid; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="rcsid" id="rcsid" placeholder="RCSID" value="<?php if($havePost && $errors != '') { echo $rcsid; } ?>"/></div>
     <label class="field" for="firstName">First Name:</label>
-    <div class="value"><input type="text" name="firstName" id="firstName" placeholder="First&nbsp;Name" value="<?php if($havePost && $errors != '') { echo $firstName; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="firstName" id="firstName" placeholder="First&nbsp;Name" value="<?php if($havePost && $errors != '') { echo $firstName; } ?>"/></div>
     <label class="field" for="lastName">Last Name:</label>
-    <div class="value"><input type="text" name="lastName" id="lastName" placeholder="Last&nbsp;Name" value="<?php if($havePost && $errors != '') { echo $lastName; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="lastName" id="lastName" placeholder="Last&nbsp;Name" value="<?php if($havePost && $errors != '') { echo $lastName; } ?>"/></div>
     <label class="field" for="alias">Alias:</label>
-    <div class="value"><input type="text" name="alias" id="alias" placeholder="Alias" value="<?php if($havePost && $errors != '') { echo $alias; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="alias" id="alias" placeholder="Alias" value="<?php if($havePost && $errors != '') { echo $alias; } ?>"/></div>
     <label class="field" for="phone">Phone:</label>
-    <div class="value"><input type="text" name="phone" id="phone" placeholder="Phone&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $phone; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="phone" id="phone" placeholder="Phone&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $phone; } ?>"/></div>
     <label class="field" for="street">Street:</label>
-    <div class="value"><input type="text" name="street" id="street" placeholder="Street" value="<?php if($havePost && $errors != '') { echo $street; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="street" id="street" placeholder="Street" value="<?php if($havePost && $errors != '') { echo $street; } ?>"/></div>
     <label class="field" for="city">City:</label>
-    <div class="value"><input type="text" name="city" id="city" placeholder="City" value="<?php if($havePost && $errors != '') { echo $city; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="city" id="city" placeholder="City" value="<?php if($havePost && $errors != '') { echo $city; } ?>"/></div>
     <label class="field" for="state">State:</label>
-    <div class="value"><input type="text" name="state" id="state" placeholder="State" value="<?php if($havePost && $errors != '') { echo $state; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="state" id="state" placeholder="State" value="<?php if($havePost && $errors != '') { echo $state; } ?>"/></div>
     <label class="field" for="zip">Zip:</label>
-    <div class="value"><input type="text" name="zip" id="zip" placeholder="Zip" value="<?php if($havePost && $errors != '') { echo $zip; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="zip" id="zip" placeholder="Zip" value="<?php if($havePost && $errors != '') { echo $zip; } ?>"/></div>
     <br/>
     <input type="submit"  value="save" id="save" name="save" />
   </fieldset>
@@ -147,6 +147,7 @@
 </body>
 </html>
 
+<h3>Students Table with order by RIN then last_name then RCS then first_name</h3>
 <?php
 $sql = "SELECT * FROM students ORDER BY RIN, Last_Name, RCSID, First_Name";
 if($result = mysqli_query($db, $sql)){
@@ -188,3 +189,60 @@ if($result = mysqli_query($db, $sql)){
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);
 }
 ?>
+
+<h3>List all students RIN, name, and address if their grade in any course was higher than a 90</h3>
+<table id="studentmenu">
+<?php
+	if ($dbOk) {
+
+    $query = 'select * from students';
+    $studentlist = $db->query($query);
+
+    $query = 'select * from grades';
+    $gradelist = $db->query($query);
+
+    $query = 'select * from courses';
+    $courselist = $db->query($query);
+
+    $numRecords = $studentlist->num_rows;
+    $num = $gradelist->num_rows;
+    
+    echo '<tr>
+          <th>RIN</th>
+          <th>RCSID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          </tr>';
+    for ($i=0; $i < $numRecords; $i++) {
+      $record = $studentlist->fetch_assoc();
+     	$q = 'select * from grades where find_in_set('.$record['RIN'].',RIN)';
+ 		  $gradelist = $db->query($q);
+ 		  $num = $gradelist->num_rows;
+ 	  	for ($j= 0; $j<$num; $j++){
+ 	  	$a = $gradelist->fetch_assoc();
+	 		if($a['Grade']>=90){
+        echo "\n".'<tr id="student' . $record['RIN'] . '"><td>';
+        echo htmlspecialchars($record['RIN']);
+        echo '</td><td>';
+        echo htmlspecialchars($record['RCSID']);
+        echo '</td><td>';
+        echo htmlspecialchars($record['First_name']);
+        echo '</td><td>';
+        echo htmlspecialchars($record['Last_name']);
+        echo '</td><td>';
+        echo htmlspecialchars($record['Street']).',';
+        echo htmlspecialchars($record['City']).',';
+		 		echo htmlspecialchars($record['State']).',';
+		 		echo htmlspecialchars($record['Zip']);
+		 		echo '</td><td>';
+		 		break;
+		 	}
+ 		}
+      echo '</td></tr>';
+    }
+    $studentlist->free();
+    $db->close();
+  }
+?>
+</table>
