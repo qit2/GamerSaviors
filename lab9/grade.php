@@ -64,25 +64,29 @@
 <html>
 <head>
     <link rel="stylesheet" type= "text/css" href="gradebook.css">
+    <script src = "gradebook.js"></script>
     <title>SQL Gradebook - Grades</title>
 </head>
 <body>
-    <div id="main">
-    <nav id = "bar">
+  <nav id = "bar">
     <a href = "course.php" class = "navlink">Courses</a>
     <a href = "student.php" class = "navlink">Students</a>
     <a href = "#" class = "navlink">Grades</a>
-    </nav>
+  </nav>
+  <h1>Grades Information</h1>
+    <div class = "overall" id='main'>
     <form method="post" action="grade.php">
     <fieldset>
     <label class="field" for="rin">CRN:</label>
-    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div>
+    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div><br/>
     <label class="field" for="rin">RIN of Student:</label>
-    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div>
+    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div><br/>
     <label class="field" for="grade">Grade of the class:</label>
-    <div class="value"><input type="text" name="grade" id="grade" placeholder="Grade" value="<?php if($havePost && $errors != '') { echo $grade; } ?>"/></div>
+    <div class="value"><input type="text" name="grade" id="grade" placeholder="Grade" value="<?php if($havePost && $errors != '') { echo $grade; } ?>"/></div><br/>
     <br/>
-    <input type="submit"  value="save" id="save" name="save" />
+    <input type="submit"  value="Save" id="save" name="save" />
+    <button value="" onclick = "displaythr()">Display Average Grade</button>
+    <button value="" onclick = "displayfou()">Display Numer of Students</button>
   </fieldset>
   </form>
   </div>
@@ -95,7 +99,7 @@
 <?php
 $q = "SELECT CRN, AVG(grade) FROM grades Group by CRN";
 $result = mysqli_query($db, $q);
-echo '<tr>
+echo '<tr id="avgrade">
 <th>CRN</th>
 <th>Average</th>
 </tr>';
@@ -114,7 +118,7 @@ while($row = $result->fetch_assoc()) {
 <?php
 $qu = "SELECT CRN, COUNT(RIN) as TotalStudent FROM grades Group by CRN";
 $result = mysqli_query($db, $qu);
-echo '<tr>
+echo '<tr id="numstudent">
 <th>RIN</th>
 <th>Totalnumber</th>
 </tr>';

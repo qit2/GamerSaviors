@@ -37,4 +37,22 @@ form{
 }
 h1{
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+#betterthan90{
+    display: none;
+}
+#studentable{
+    display: none;
+}
+#avgrade{
+    display: none;
+}
+#numstudent{
+    display: none;
+}
+button{
+    height: 60px;
+    width: 80px;
+    margin-top: 5px;
 }
