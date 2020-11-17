@@ -107,7 +107,7 @@ $query = "SELECT CRN, COUNT(RIN) as TotalStudent FROM grades Group by CRN";
 if($result = mysqli_query($db, $query)){
     if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){
-            echo "The average grade of ". $row['CRN']. " is ".$row['TotalStudent'];
+            echo "Class ". $row['CRN']. " have ".$row['TotalStudent']." student";
             echo "<br />";
         }
     } 
