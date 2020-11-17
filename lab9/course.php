@@ -78,74 +78,35 @@
 <html>
 <head>
     <link rel="stylesheet" type= "text/css" href="gradebook.css">
-    <title>SQL Gradebook - Courses</title>
+    <title>SQL Gradebook - courses</title>
 </head>
-<body>
-  <nav id = "bar">
+<nav id = "bar">
     <a href = "#" class = "navlink">Courses</a>
     <a href = "student.php" class = "navlink">Students</a>
     <a href = "grade.php" class = "navlink">Grades</a>
   </nav>
-  <h1>Course Information</h1>
-  <div class = "overall" id="main">
+<body>
+  <div id='main'>
+
+
   <form method="post" action="course.php" method="post" onsubmit="return validate(this);">
     <fieldset>
     <label class="field" for="crn">CRN:</label>
-    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div>
     <label class="field" for="prefix">Prefix:</label>
-    <div class="value"><input type="text" name="prefix" id="prefix" placeholder="Prefix" value="<?php if($havePost && $errors != '') { echo $prefix; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="prefix" id="prefix" placeholder="Prefix" value="<?php if($havePost && $errors != '') { echo $prefix; } ?>"/></div>
     <label class="field" for="number">Number:</label>
-    <div class="value"><input type="text" name="number" id="number" placeholder="Number" value="<?php if($havePost && $errors != '') { echo $number; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="number" id="number" placeholder="Number" value="<?php if($havePost && $errors != '') { echo $number; } ?>"/></div>
     <label class="field" for="title">Title:</label>
-    <div class="value"><input type="text" name="title" id="title" placeholder="Title" value="<?php if($havePost && $errors != '') { echo $title; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="title" id="title" placeholder="Title" value="<?php if($havePost && $errors != '') { echo $title; } ?>"/></div>
     <label class="field" for="section">Section:</label>
-    <div class="value"><input type="text" name="section" id="section" placeholder="Section" value="<?php if($havePost && $errors != '') { echo $section; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="section" id="section" placeholder="Section" value="<?php if($havePost && $errors != '') { echo $section; } ?>"/></div>
     <label class="field" for="year">Year:</label>
-    <div class="value"><input type="text" name="year" id="year" placeholder="Year" value="<?php if($havePost && $errors != '') { echo $year; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="year" id="year" placeholder="Year" value="<?php if($havePost && $errors != '') { echo $year; } ?>"/></div>
     <br/>
     <input type="submit"  value="save" id="save" name="save" />
     </fieldset>
   </form>
-
-  <form method="post" action="gradebook.php">
-  <fieldset>
-    <input type="text" name="gradesCRN" id="gradesCRN" placeholder="Course&nbsp;Registration&nbsp;Number" />
-    <input type="text" name="gradesRIN" id="gradesRIN" placeholder="RIN" />
-    <input type="text" name="grade" id="grade" placeholder="Grade" />
-    <br/>
-    <input type="submit" name="addGrades" value="Insert&nbsp;Grade" />
-  </fieldset>
-  </form>
-  <br/>
-      
-    <form method="post" action="gradebook.php">
-    <input type="submit" name="address" value="Add&nbsp;Address" />  
-    <input type="submit" name="section" value="Add&nbsp;Section/Year" />  
-    <input type="submit" name="grades" value="Create&nbsp;Grades" />  
-  </form>
-      
-    </div>
-    <div class = "overall" id="lists">
-      <p id="lexicographic">
-        <?php 
-
-        ?>
-      </p>
-      <p id="overNinety">
-        <?php
-
-        ?>
-      </p>
-      <p id="averageGrade">
-        <?php
-
-        ?>
-      </p>
-      <p id="numStudents">
-        <?php
-
-        ?>
-      </p>
-    </div>
 </body>
 </html>
+
