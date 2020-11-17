@@ -13,7 +13,11 @@
     <input type="text" name="title" id="title" placeholder="Title" />
     <input type="text" name="section" id="section" placeholder="Section" />
     <input type="text" name="year" id="year" placeholder="Year" />
-
+      <br/>
+    <input type="submit" name="courses" value="Insert&nbsp;Course" />
+      </form>
+      <br/>
+      <form method="post" action="gradebook.php">
     <input type="text" name="rin" id="rin" placeholder="RIN" />
     <input type="text" name="rcsid" id="rcsid" placeholder="RCSID" />
     <input type="text" name="first" id="first" placeholder="First&nbsp;Name" />
@@ -24,21 +28,25 @@
     <input type="text" name="city" id="city" placeholder="City" />
     <input type="text" name="state" id="state" placeholder="State" />
     <input type="text" name="zip" id="zip" placeholder="Zip" />
-
+          <br/>
+    <input type="submit" name="students" value="Insert&nbsp;Student" />
+      </form>
+      <br/>
+      <form method="post" action="gradebook.php">
     <input type="text" name="gradesCRN" id="gradesCRN" placeholder="Course&nbsp;Registration&nbsp;Number" />
     <input type="text" name="gradesRIN" id="gradesRIN" placeholder="RIN" />
     <input type="text" name="grade" id="grade" placeholder="Grade" />
-
+          <br/>
+    <input type="submit" name="addGrades" value="Insert&nbsp;Grade" />
+      </form>
     <br/>
-    <!-- Only one of these will be set with their respective value at a time -->
+      
+    <form method="post" action="gradebook.php">
     <input type="submit" name="address" value="Add&nbsp;Address" />  
     <input type="submit" name="section" value="Add&nbsp;Section/Year" />  
     <input type="submit" name="grades" value="Create&nbsp;Grades" />  
-    <input type="submit" name="courses" value="Insert&nbsp;Courses" />
-    <input type="submit" name="students" value="Insert&nbsp;Students" />  
-    <input type="submit" name="addGrades" value="Insert&nbsp;Grades" />
-    
   </form>
+      
     </div>
     <div id="lists">
       <p id="lexicographic">
