@@ -108,4 +108,6 @@ I created the HTML base web page to house all of the PHP that David would be wri
 page itself, so I created buttons to add columns to rows as well as create new tables. I also created an input for each part of the forms that would need to be filled
 when adding students, courses, or grades. I then created another section underneath the forms where the information in the tables could be displayed.
 
-
+David Finck:
+I worked on part 3 of this lab and mainly did the php files. I worked on using php to obtain the data base and put all the information from the data base onto a
+web page. I also created 3 different forms that when filled out would add directly to the database.
