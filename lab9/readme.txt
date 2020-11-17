@@ -101,7 +101,18 @@ SELECT CRN, COUNT(RIN) as TotalStudent
 FROM grades
 Group by CRN
 
+Ryan Qi:
+I work on part 2 and part 3 of this lab. 
+For the part 2, based on the command line which we learn from the class, I do all the thing easily.
+I divide the guidebook into three sperate page, which contain student information, course information and grade of the student. 
+I use php to insert the data into the right place in the database. 
+Also I wrote the alart which will warm people if the database was not connected or there are some info is not properly filled.
+Then I also work on lexicographic, over 90, average grade, and num students parts of the part 3. 
+For each form, I get the data from the database and use them in proper way to get the result. 
 
+Ryan Zhou:
+I worked on part1, css, and page optimazation for this lab. First of all, I create a navagation bar at the top of the page which can help people go to each form easily. 
+I also add buttom and use javascript. The form will be hided in the beginning, then by clicking the button the content will show up
 
 Eric Zhang:
 I created the HTML base web page to house all of the PHP that David would be writing. I interpreted the directions as being able to add the columns through the 
