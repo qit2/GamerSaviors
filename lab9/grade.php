@@ -67,21 +67,20 @@
     <title>SQL Gradebook - Grades</title>
 </head>
 <body>
-  <nav id = "bar">
+    <div id="main">
+    <nav id = "bar">
     <a href = "course.php" class = "navlink">Courses</a>
     <a href = "student.php" class = "navlink">Students</a>
     <a href = "#" class = "navlink">Grades</a>
-  </nav>
-  <h1>Grades Information</h1>
-    <div class = "overall" id='main'>
+    </nav>
     <form method="post" action="grade.php">
     <fieldset>
     <label class="field" for="rin">CRN:</label>
-    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div>
     <label class="field" for="rin">RIN of Student:</label>
-    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div>
     <label class="field" for="grade">Grade of the class:</label>
-    <div class="value"><input type="text" name="grade" id="grade" placeholder="Grade" value="<?php if($havePost && $errors != '') { echo $grade; } ?>"/></div><br/>
+    <div class="value"><input type="text" name="grade" id="grade" placeholder="Grade" value="<?php if($havePost && $errors != '') { echo $grade; } ?>"/></div>
     <br/>
     <input type="submit"  value="save" id="save" name="save" />
   </fieldset>
@@ -91,37 +90,40 @@
 </body>
 </html>
 
-
+<h3>Average grade each course</h3>
+<table>
 <?php
-$sql = "SELECT CRN, AVG(grade) FROM grades Group by CRN";
-if($result = mysqli_query($db, $sql)){
-    if(mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_array($result)){
-            echo "The average grade of ". $row['CRN']. " is ".$row['AVG(grade)'];
-            echo "<br />";
-        }
-    } 
-    else{
-        echo "No records matching your query were found.";
+$q = "SELECT CRN, AVG(grade) FROM grades Group by CRN";
+$result = mysqli_query($db, $q);
+echo '<tr>
+<th>CRN</th>
+<th>Average</th>
+</tr>';
+while($row = $result->fetch_assoc()) {
+    echo '<tr>';
+    foreach ($row as $key => $value) {
+        echo "<td>$value </td>";
     }
-} 
-else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);
-}
-
-$query = "SELECT CRN, COUNT(RIN) as TotalStudent FROM grades Group by CRN";
-if($result = mysqli_query($db, $query)){
-    if(mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_array($result)){
-            echo "Class ". $row['CRN']. " have ".$row['TotalStudent']." student";
-            echo "<br />";
-        }
-    } 
-    else{
-        echo "No records matching your query were found.";
-    }
-} 
-else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);
+    echo '</tr>';
 }
 ?>
+</table>
+
+<h3>Number of student each course</h3>
+<table>
+<?php
+$qu = "SELECT CRN, COUNT(RIN) as TotalStudent FROM grades Group by CRN";
+$result = mysqli_query($db, $qu);
+echo '<tr>
+<th>RIN</th>
+<th>Totalnumber</th>
+</tr>';
+while($row = $result->fetch_assoc()) {
+    echo '<tr>';
+    foreach ($row as $key => $value) {
+        echo "<td>$value </td>";
+    }
+    echo '</tr>';
+}
+?>
+</table>
