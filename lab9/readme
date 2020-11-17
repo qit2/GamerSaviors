@@ -1,1 +1,5 @@
 
+Eric Zhang:
+I created the HTML base web page to house all of the PHP that David would be writing. I interpreted the directions as being able to add the columns through the 
+page itself, so I created buttons to add columns to rows as well as create new tables. I also created an input for each part of the forms that would need to be filled
+when adding students, courses, or grades. I then created another section underneath the forms where the information in the tables could be displayed.
