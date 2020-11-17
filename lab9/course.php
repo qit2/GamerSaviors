@@ -1,6 +1,6 @@
 <?php
   $dbOk = false;
-  $db=mysqli_connect("localhost","root","qtt0210", "websyslab9");
+  $db=mysqli_connect("localhost","root","username", "password");
   // Check connection
   if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -82,6 +82,7 @@
 </head>
 <body>
   <div id='main'>
+
 
   <form method="post" action="course.php" method="post" onsubmit="return validate(this);">
     <fieldset>

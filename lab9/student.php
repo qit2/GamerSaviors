@@ -110,7 +110,12 @@
 </head>
 <body>
     <h1>Student Information</h1>
-<div id='main'>
+<div id="main">
+<nav id = "bar">
+    <a href = "course.php" class = "navlink">Courses</a>
+    <a href = "#" class = "navlink">Students</a>
+    <a href = "grade.php" class = "navlink">Grades</a>
+</nav>
 <form method="post" action="student.php">
   <fieldset>
     <label class="field" for="rin">RIN:</label>

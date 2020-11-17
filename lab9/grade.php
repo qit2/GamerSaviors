@@ -64,10 +64,15 @@
 <html>
 <head>
     <link rel="stylesheet" type= "text/css" href="gradebook.css">
-    <title>SQL Gradebook - Students</title>
+    <title>SQL Gradebook - Grades</title>
 </head>
 <body>
-    <div id='main'>
+    <div id="main">
+    <nav id = "bar">
+    <a href = "course.php" class = "navlink">Courses</a>
+    <a href = "student.php" class = "navlink">Students</a>
+    <a href = "#" class = "navlink">Grades</a>
+    </nav>
     <form method="post" action="grade.php">
     <fieldset>
     <label class="field" for="rin">CRN:</label>
