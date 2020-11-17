@@ -1,6 +1,6 @@
 <?php
   $dbOk = false;
-  $db=mysqli_connect("localhost","root","username", "password");
+  $db=mysqli_connect("localhost","root","qtt0210", "websyslab9");
   // Check connection
   if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -78,26 +78,30 @@
 <html>
 <head>
     <link rel="stylesheet" type= "text/css" href="gradebook.css">
-    <title>SQL Gradebook - courses</title>
+    <title>SQL Gradebook - Courses</title>
 </head>
 <body>
-  <div id='main'>
-
-
+  <nav id = "bar">
+    <a href = "#" class = "navlink">Courses</a>
+    <a href = "student.php" class = "navlink">Students</a>
+    <a href = "grade.php" class = "navlink">Grades</a>
+  </nav>
+  <h1>Course Information</h1>
+  <div class = "overall" id="main">
   <form method="post" action="course.php" method="post" onsubmit="return validate(this);">
     <fieldset>
     <label class="field" for="crn">CRN:</label>
-    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div>
+    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div><br/>
     <label class="field" for="prefix">Prefix:</label>
-    <div class="value"><input type="text" name="prefix" id="prefix" placeholder="Prefix" value="<?php if($havePost && $errors != '') { echo $prefix; } ?>"/></div>
+    <div class="value"><input type="text" name="prefix" id="prefix" placeholder="Prefix" value="<?php if($havePost && $errors != '') { echo $prefix; } ?>"/></div><br/>
     <label class="field" for="number">Number:</label>
-    <div class="value"><input type="text" name="number" id="number" placeholder="Number" value="<?php if($havePost && $errors != '') { echo $number; } ?>"/></div>
+    <div class="value"><input type="text" name="number" id="number" placeholder="Number" value="<?php if($havePost && $errors != '') { echo $number; } ?>"/></div><br/>
     <label class="field" for="title">Title:</label>
-    <div class="value"><input type="text" name="title" id="title" placeholder="Title" value="<?php if($havePost && $errors != '') { echo $title; } ?>"/></div>
+    <div class="value"><input type="text" name="title" id="title" placeholder="Title" value="<?php if($havePost && $errors != '') { echo $title; } ?>"/></div><br/>
     <label class="field" for="section">Section:</label>
-    <div class="value"><input type="text" name="section" id="section" placeholder="Section" value="<?php if($havePost && $errors != '') { echo $section; } ?>"/></div>
+    <div class="value"><input type="text" name="section" id="section" placeholder="Section" value="<?php if($havePost && $errors != '') { echo $section; } ?>"/></div><br/>
     <label class="field" for="year">Year:</label>
-    <div class="value"><input type="text" name="year" id="year" placeholder="Year" value="<?php if($havePost && $errors != '') { echo $year; } ?>"/></div>
+    <div class="value"><input type="text" name="year" id="year" placeholder="Year" value="<?php if($havePost && $errors != '') { echo $year; } ?>"/></div><br/>
     <br/>
     <input type="submit"  value="save" id="save" name="save" />
     </fieldset>
@@ -121,7 +125,7 @@
   </form>
       
     </div>
-    <div id="lists">
+    <div class = "overall" id="lists">
       <p id="lexicographic">
         <?php 
 

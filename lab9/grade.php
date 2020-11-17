@@ -67,20 +67,21 @@
     <title>SQL Gradebook - Grades</title>
 </head>
 <body>
-    <div id="main">
-    <nav id = "bar">
+  <nav id = "bar">
     <a href = "course.php" class = "navlink">Courses</a>
     <a href = "student.php" class = "navlink">Students</a>
     <a href = "#" class = "navlink">Grades</a>
-    </nav>
+  </nav>
+  <h1>Grades Information</h1>
+    <div class = "overall" id='main'>
     <form method="post" action="grade.php">
     <fieldset>
     <label class="field" for="rin">CRN:</label>
-    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div>
+    <div class="value"><input type="text" name="crn" id="crn" placeholder="Course&nbsp;Registration&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $crn; } ?>"/></div><br/>
     <label class="field" for="rin">RIN of Student:</label>
-    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div>
+    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div><br/>
     <label class="field" for="grade">Grade of the class:</label>
-    <div class="value"><input type="text" name="grade" id="grade" placeholder="Grade" value="<?php if($havePost && $errors != '') { echo $grade; } ?>"/></div>
+    <div class="value"><input type="text" name="grade" id="grade" placeholder="Grade" value="<?php if($havePost && $errors != '') { echo $grade; } ?>"/></div><br/>
     <br/>
     <input type="submit"  value="save" id="save" name="save" />
   </fieldset>

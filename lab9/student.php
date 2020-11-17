@@ -109,35 +109,35 @@
     <title>SQL Gradebook - Students</title>
 </head>
 <body>
-    <h1>Student Information</h1>
-<div id="main">
-<nav id = "bar">
+    <nav id = "bar">
     <a href = "course.php" class = "navlink">Courses</a>
-    <a href = "#" class = "navlink">Students</a>
+    <a href = "#.php" class = "navlink">Students</a>
     <a href = "grade.php" class = "navlink">Grades</a>
-</nav>
+  </nav>
+    <h1>Student Information</h1>
+<div class = "overall" id='main'>
 <form method="post" action="student.php">
   <fieldset>
     <label class="field" for="rin">RIN:</label>
-    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div>
+    <div class="value"><input type="text" name="rin" id="rin" placeholder="RIN" value="<?php if($havePost && $errors != '') { echo $rin; } ?>"/></div><br/>
     <label class="field" for="rcsid">RCSID:</label>
-    <div class="value"><input type="text" name="rcsid" id="rcsid" placeholder="RCSID" value="<?php if($havePost && $errors != '') { echo $rcsid; } ?>"/></div>
+    <div class="value"><input type="text" name="rcsid" id="rcsid" placeholder="RCSID" value="<?php if($havePost && $errors != '') { echo $rcsid; } ?>"/></div><br/>
     <label class="field" for="firstName">First Name:</label>
-    <div class="value"><input type="text" name="firstName" id="firstName" placeholder="First&nbsp;Name" value="<?php if($havePost && $errors != '') { echo $firstName; } ?>"/></div>
+    <div class="value"><input type="text" name="firstName" id="firstName" placeholder="First&nbsp;Name" value="<?php if($havePost && $errors != '') { echo $firstName; } ?>"/></div><br/>
     <label class="field" for="lastName">Last Name:</label>
-    <div class="value"><input type="text" name="lastName" id="lastName" placeholder="Last&nbsp;Name" value="<?php if($havePost && $errors != '') { echo $lastName; } ?>"/></div>
+    <div class="value"><input type="text" name="lastName" id="lastName" placeholder="Last&nbsp;Name" value="<?php if($havePost && $errors != '') { echo $lastName; } ?>"/></div><br/>
     <label class="field" for="alias">Alias:</label>
-    <div class="value"><input type="text" name="alias" id="alias" placeholder="Alias" value="<?php if($havePost && $errors != '') { echo $alias; } ?>"/></div>
+    <div class="value"><input type="text" name="alias" id="alias" placeholder="Alias" value="<?php if($havePost && $errors != '') { echo $alias; } ?>"/></div><br/>
     <label class="field" for="phone">Phone:</label>
-    <div class="value"><input type="text" name="phone" id="phone" placeholder="Phone&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $phone; } ?>"/></div>
+    <div class="value"><input type="text" name="phone" id="phone" placeholder="Phone&nbsp;Number" value="<?php if($havePost && $errors != '') { echo $phone; } ?>"/></div><br/>
     <label class="field" for="street">Street:</label>
-    <div class="value"><input type="text" name="street" id="street" placeholder="Street" value="<?php if($havePost && $errors != '') { echo $street; } ?>"/></div>
+    <div class="value"><input type="text" name="street" id="street" placeholder="Street" value="<?php if($havePost && $errors != '') { echo $street; } ?>"/></div><br/>
     <label class="field" for="city">City:</label>
-    <div class="value"><input type="text" name="city" id="city" placeholder="City" value="<?php if($havePost && $errors != '') { echo $city; } ?>"/></div>
+    <div class="value"><input type="text" name="city" id="city" placeholder="City" value="<?php if($havePost && $errors != '') { echo $city; } ?>"/></div><br/>
     <label class="field" for="state">State:</label>
-    <div class="value"><input type="text" name="state" id="state" placeholder="State" value="<?php if($havePost && $errors != '') { echo $state; } ?>"/></div>
+    <div class="value"><input type="text" name="state" id="state" placeholder="State" value="<?php if($havePost && $errors != '') { echo $state; } ?>"/></div><br/>
     <label class="field" for="zip">Zip:</label>
-    <div class="value"><input type="text" name="zip" id="zip" placeholder="Zip" value="<?php if($havePost && $errors != '') { echo $zip; } ?>"/></div>
+    <div class="value"><input type="text" name="zip" id="zip" placeholder="Zip" value="<?php if($havePost && $errors != '') { echo $zip; } ?>"/></div><br/>
     <br/>
     <input type="submit"  value="save" id="save" name="save" />
   </fieldset>
