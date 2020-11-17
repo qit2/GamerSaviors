@@ -47,7 +47,7 @@ CREATE TABLE grades (
  ) 
     COLLATE utf8_general_ci;
 
-//INSERT 4 courses into the courses table
+//INSERT 5 courses into the courses table
 INSERT INTO courses VALUES
 (40262, 'MGMT', 2100, 'STATISTICAL METHODS', 01, 2021),
 (40149, 'MATH', 2400, 'INTRO DIFF EQUATIONS', 11, 2021),
