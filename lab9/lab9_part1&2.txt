@@ -61,11 +61,43 @@ INSERT INTO students VALUES
 (661987547,'suny2', 'Yixuan', 'Sun', 'Anna', 5189665785, '007 RPI CS street', 'Troy', 'NY' ,12180),
 (661698745,'thomasr5', 'Ryan', 'Thomas', 'Ryan', 4136589878, '007 RPI CS street', 'Troy', 'NY' ,12180),
 (661987563,'friedd', 'David', 'Fried', 'David', 2089987523, '007 RPI CS street', 'Troy', 'NY' ,12180),
-(661879621,'zhangs9', 'su', 'Zhang', 'Tom', 5188912545, '007 RPI CS street', 'Troy', 'NY' ,12180);
+(661879621,'zhangs9', 'Su', 'Zhang', 'Tom', 5188912545, '007 RPI CS street', 'Troy', 'NY' ,12180);
+
+//Insert 10 grades into the grade table
+INSERT INTO grades(CRN, RIN, grade) VALUES
+(40262, 661987547, 98),
+(40262, 661987563, 65),
+(40262, 661698745, 80),
+(43854, 661987547, 78),
+(43854, 661987563, 95),
+(42799, 661879621, 86),
+(42799, 661987563, 96),
+(40149, 661987547, 83),
+(40149, 661879621, 76),
+(40149, 661987563, 48)
+
+//List all students in the following sequences; in lexicographical order by RIN, last name, RCSID, and first name. 
+SELECT * FROM students
+ORDER BY RIN, Last_Name, RCSID, First_Name;
+
+//List all students RIN, name, and address if their grade in any course was higher than a 90
+SELECT RIN, name, street,city, state, zip
+FROM students
+WHERE RIN in (
+SELECT DISTINCT RIN 
+FROM grades
+WHERE grade > 90
+)
 
 
+//List out the average grade in each course
+SELECT CRN, AVG(grade) as AvgGrade
+FROM grades
+Group by CRN
 
-
-
+// List out the number of students in each course
+SELECT CRN, COUNT(RIN) as TotalStudent
+FROM grades
+Group by CRN
 
 
