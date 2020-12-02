@@ -144,11 +144,16 @@ h2 {
 
 .mode {
     border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 1px solid grey;
+    border-right: 3px solid gray;
+    border-left: 3px solid gray;
     background-color: rgb(56, 104, 172);
     color: white;
-    height: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+#mode {
+    text-align: center;
 }
 
 .region {
@@ -186,10 +191,11 @@ h2 {
     color: white;
     height: 200px;
 }
+
 .marg {
     margin-left: 20px;
 }
-#datemax, #datemin, #quantity{
+#yearmax, #monthmax, #daymax, #yearmin, #monthmin, #daymin, #quantity {
     color: black;
 }
 
@@ -209,7 +215,7 @@ h2 {
 .games1 {
     border: 1px solid black;
     padding: 10px 10px;
-    margin: 10px 0 0 0;
+    margin: 10px 0 10px 0;
     color: white;
     background-color: #10b1b1; 
 }
@@ -231,3 +237,46 @@ h2 {
     -khtml-box-shadow: 0px 0px 0px rgba(0, 0, 0, .5);
 
 }
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  #dropdown {
+      float: right;
+  }
+
+  #rating, #price, #Rprice, #alpha, #Ralpha {
+      display: none;
+  }
