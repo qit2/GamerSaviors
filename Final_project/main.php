@@ -105,28 +105,24 @@
                   <label class="marg" for="Sports"> Sports </label><br>
               </div>
 
-              <div class="col-lg-6 mode">
-                <h2>Mode</h2>
+              <div class="col-lg-12 mode">
+                <h2 id="mode">Mode</h2>
+                <div class="col-lg-3">
                   <input type="checkbox" name="Singleplayer" value="singleplayer">
                   <label class="marg" for="Singleplayer"> Singleplayer </label><br>
+                </div>
+                <div class="col-lg-3">
                   <input type="checkbox" name="Multi" value="multi">
                   <label class="marg" for="Multi"> Multiplayer </label><br>
+                </div>
+                <div class="col-lg-3">
                   <input type="checkbox" name="Online" value="online">
                   <label class="marg" for="Online"> Online </label><br>
+                </div>
+                <div class="col-lg-3">
                   <input type="checkbox" name="Local" value="local">
                   <label class="marg" for="Local"> Local </label><br>
-              </div>
-
-              <div class="col-lg-6 region">
-                <h2>Region</h2>
-                  <input type="checkbox" name="NTSCJ" value="NTSCJ">
-                  <label class="marg" for="NTSC-J"> Japan and Asia (NTSC-J) </label><br>
-                  <input type="checkbox" name="NTSC-U" value="NTSC-U">
-                  <label class="marg" for="NTSC-U"> North America and South America (NTSC-U) </label><br>
-                  <input type="checkbox" name="PAL" value="PAL">
-                  <label class="marg" for="PAL"> Europe, New Zealand, Australia, Middle East, India, South Africa</label><br>
-                  <input type="checkbox" name="NTSC-C" value="NTSC-C">
-                  <label class="marg" for="NTSC-C"> China (NTSC-C) </label><br>
+                </div>
               </div>
 
               <div class="col-lg-4 rating">
@@ -144,36 +140,40 @@
               <div class="col-lg-4 price">
                 <h2>Price</h2>
                   <label class="fix" for="quantity">Amount:</label>
-                  <input type="text" placeholder="$0 - $100" id="quantity" name="quantity"><br>
+                  <input type="text" placeholder="0 - 100" id="quantity" name="quantity"><br>
                   <input type="checkbox" name="Price" value="price">
                   <label class="marg" for="Price"> Any Amount </label><br>
               </div>
 
               <div class="col-lg-4 date">
                 <h2>Release Date</h2>
-                  <label class="fix" for="yearmin">Enter a date after 2000-01-01:</label>
-                  <input type="text" id="datemin" name="yearmin" placeholder="YYYY"><br><br>
-                  <input type="text" id="datemin" name="monthmin" placeholder="MM"><br><br>
-                  <input type="text" id="datemin" name="daymin" placeholder="DD"><br><br>
-                  <label class="fix" for="datemax">Enter a date before 2021-01-01:</label>
-                  <input type="text" id="datemax" name="yearmax" placeholder="YYYY"><br><br>
-                  <input type="text" id="datemax" name="monthmax" placeholder="MM"><br><br>
-                  <input type="text" id="datemax" name="daymax" placeholder="DD"><br><br>
+                  <label class="fix" for="yearmin">Enter a year after 2000:</label>
+                  <input type="text" class="dates" id="yearmin" name="yearmin" placeholder="YYYY"><br><br>
+                  <label class="fix" for="yearmax">Enter a year before 2021:</label>
+                  <input type="text" class="dates" id="yearmax" name="yearmax" placeholder="YYYY"><br><br>
               </div>
             </div>
           </form>
         </div>
       </div>
 
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+      <div class="container">
+        <div class="row">
+          <div class="dropdown" id="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+              <a href="#" onclick="myFunction1();">Rating Ascending</a>
+              <a href="#" onclick="myFunction2();">Rating Descending</a>
+              <a href="#" onclick="myFunction3();">Price Ascending</a>
+              <a href="#" onclick="myFunction4();">Price Descending</a>
+              <a href="#" onclick="myFunction5();">Title Ascending</a>
+              <a href="#" onclick="myFunction6();">Title Descending</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
 
 
 
@@ -189,285 +189,128 @@
 ?>
 <?php
   if ($dbOk) {
-    $array = [];
-    $query = "";
-    if (isset($_POST['PC'])) {
-      array_push($array, "`PC` LIKE 1");
-    }
-    if (isset($_POST['XBOX1'])) {
-      array_push($array, "`Xbox One` LIKE 1");
-    }
-    if (isset($_POST['Playstation4'])) {
-      array_push($array, "`Playstation 4` LIKE 1");
-    }
-    if (isset($_POST['Switch'])) {
-      array_push($array, "`Nintendo Switch` LIKE 1");
-    } 
-    if (isset($_POST['Action'])) {
-      array_push($array, "`Action` LIKE 1");
-    } 
-    if (isset($_POST['Adventure'])) {
-      array_push($array, "`Adventure` LIKE 1");
-    } 
-    if (isset($_POST['Battleroyale'])) {
-      array_push($array, "`Battle Royale` LIKE 1");
-    } 
-    if (isset($_POST['Fighting'])) {
-      array_push($array, "`Fighting` LIKE 1");
-    } 
-    if (isset($_POST['Shooter'])) {
-      array_push($array, "`Shooter` LIKE 1");
-    } 
-    if (isset($_POST['Racing'])) {
-      array_push($array, "`Racing` LIKE 1");
-    } 
-    if (isset($_POST['RTS'])) {
-      array_push($array, "`Real-Time Strategy` LIKE 1");
-    } 
-    if (isset($_POST['RolePlaying'])) {
-      array_push($array, "`Role-Playing` LIKE 1");
-    } 
-    if (isset($_POST['Simulation'])) {
-      array_push($array, "`Simulation` LIKE 1");
-    } 
-    if (isset($_POST['Sports'])) {
-      array_push($array, "`Sports` LIKE 1");
-    } 
-    if (isset($_POST['Singleplayer'])) {
-      array_push($array, "`Singleplayer` LIKE 1");
-    } 
-    if (isset($_POST['Multiplayer'])) {
-      array_push($array, "`Multiplayer` LIKE 1");
-    } 
-    if (isset($_POST['Online'])) {
-      array_push($array, "`Online` LIKE 1");
-    } 
-    if (isset($_POST['Local'])) {
-      array_push($array, "`Local` LIKE 1");
-    } 
-    if (isset($_POST['Everyone'])) {
-      array_push($array, "`E` LIKE 1");
-    } 
-    if (isset($_POST['Everyone10'])) {
-      array_push($array, "`E10` LIKE 1");
-    } 
-    if (isset($_POST['Teen'])) {
-      array_push($array, "`T` LIKE 1");
-    } 
-    if (isset($_POST['Mature'])) {
-      array_push($array, "`M` LIKE 1");
-    } 
-    if (isset($_POST['quantity']) && $_POST['quantity'] != 0) {
-      array_push($array, "`Price` BETWEEN " . ($_POST['quantity']-5) . " AND " . ($_POST['quantity']+5));
-    }
-    if (isset($_POST['Price'])) {
-      array_push($array, "`Price` LIKE '%%'");
-    }
-    if (isset($_POST['yearmin']) && isset($_POST['monthmin']) && isset($_POST['daymin']) && isset($_POST['yearmax']) && isset($_POST['monthmax']) && isset($_POST['daymax']) && ($_POST['yearmin'] != '') && ($_POST['monthmin'] != '') && ($_POST['daymin'] != '') && ($_POST['yearmax'] != '') && ($_POST['monthmax'] != '') && ($_POST['daymax'] != '')) {
-      array_push($array, "`Year` BETWEEN " . $_POST['yearmin'] . " AND " . $_POST['yearmax'] . " AND " . "`Month` BETWEEN " . $_POST['monthmin'] . " AND " . $_POST['monthmax'] . " AND " . "`Day` BETWEEN " . $_POST['daymin'] . " AND " . $_POST['daymax']);
-    }
-    
-    if (isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price']) && isset($_POST['quantity']) && $_POST['quantity'] == 0 && isset($_POST['yearmin']) && isset($_POST['monthmin']) && isset($_POST['daymin']) && isset($_POST['yearmax']) && isset($_POST['monthmax']) && isset($_POST['daymax']) && ($_POST['yearmin'] == '') && ($_POST['monthmin'] == '') && ($_POST['daymin'] == '') && ($_POST['yearmax'] == '') && ($_POST['monthmax'] == '') && ($_POST['daymax'] == '')){
-      $search = $_POST['gameSearch'];
-      array_push($array, "`Title` LIKE '%$search%'");
-    }
-    if (!isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price'])){
-      array_push($array, "`Title` Like '%%'");
-    }
 
-    //SELECT DISTINCT * FROM `TABLE 1` WHERE `Nintendo Switch` LIKE 1 AND `Action` Like 1 ORDER BY `Rating` desc
-    if (count($array) == 1) {
-      $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[0] . " ORDER BY `Price` desc";
-    } else {
-      for ($j=0; $j < count($array); $j++) {
-        if ($j == 0) {
-          $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
-        }
-        else if ($j == (count($array) - 1)) {
-          $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
-        }else {
-          $query .= " And " . $array[$j];
+    //This section is all the games ordered by rating
+    ?>
+    <section id="rating">
+      <?php
+      $array = [];
+      $query = "";
+      if (isset($_POST['PC'])) {
+        array_push($array, "`PC` LIKE 1");
+      }
+      if (isset($_POST['XBOX1'])) {
+        array_push($array, "`Xbox One` LIKE 1");
+      }
+      if (isset($_POST['Playstation4'])) {
+        array_push($array, "`Playstation 4` LIKE 1");
+      }
+      if (isset($_POST['Switch'])) {
+        array_push($array, "`Nintendo Switch` LIKE 1");
+      } 
+      if (isset($_POST['Action'])) {
+        array_push($array, "`Action` LIKE 1");
+      } 
+      if (isset($_POST['Adventure'])) {
+        array_push($array, "`Adventure` LIKE 1");
+      } 
+      if (isset($_POST['Battleroyale'])) {
+        array_push($array, "`Battle Royale` LIKE 1");
+      } 
+      if (isset($_POST['Fighting'])) {
+        array_push($array, "`Fighting` LIKE 1");
+      } 
+      if (isset($_POST['Shooter'])) {
+        array_push($array, "`Shooter` LIKE 1");
+      } 
+      if (isset($_POST['Racing'])) {
+        array_push($array, "`Racing` LIKE 1");
+      } 
+      if (isset($_POST['RTS'])) {
+        array_push($array, "`Real-Time Strategy` LIKE 1");
+      } 
+      if (isset($_POST['RolePlaying'])) {
+        array_push($array, "`Role-Playing` LIKE 1");
+      } 
+      if (isset($_POST['Simulation'])) {
+        array_push($array, "`Simulation` LIKE 1");
+      } 
+      if (isset($_POST['Sports'])) {
+        array_push($array, "`Sports` LIKE 1");
+      } 
+      if (isset($_POST['Singleplayer'])) {
+        array_push($array, "`Singleplayer` LIKE 1");
+      } 
+      if (isset($_POST['Multiplayer'])) {
+        array_push($array, "`Multiplayer` LIKE 1");
+      } 
+      if (isset($_POST['Online'])) {
+        array_push($array, "`Online` LIKE 1");
+      } 
+      if (isset($_POST['Local'])) {
+        array_push($array, "`Local` LIKE 1");
+      } 
+      if (isset($_POST['Everyone'])) {
+        array_push($array, "`E` LIKE 1");
+      } 
+      if (isset($_POST['Everyone10'])) {
+        array_push($array, "`E10` LIKE 1");
+      } 
+      if (isset($_POST['Teen'])) {
+        array_push($array, "`T` LIKE 1");
+      } 
+      if (isset($_POST['Mature'])) {
+        array_push($array, "`M` LIKE 1");
+      } 
+      if (isset($_POST['quantity']) && $_POST['quantity'] != 0 && $_POST['quantity'] <= 100 && $_POST['quantity'] >= 0) {
+        array_push($array, "`Price` BETWEEN " . ($_POST['quantity']-5) . " AND " . ($_POST['quantity']+5));
+      }
+      if (isset($_POST['quantity']) && ($_POST['quantity'] > 100 || $_POST['quantity'] < 0)) {
+        echo '<script>alert("INVALID AMOUNT ENTERED")</script>';
+        array_push($array, "`Title` Like '%%'");
+      }
+      if (isset($_POST['Price'])) {
+        array_push($array, "`Price` LIKE '%%'");
+      }
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && ($_POST['yearmin'] >= 2000) && ($_POST['yearmax'] <= 2020)) {
+        array_push($array, "`Year` BETWEEN " . $_POST['yearmin'] . " AND " . $_POST['yearmax']);
+      } 
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && (($_POST['yearmin'] < 2000) || ($_POST['yearmax'] > 2020)) ) {
+        echo '<script>alert("INVALID DATE ENTERED")</script>';
+        array_push($array, "`Title` Like '%%'");
+      }
+      
+      if (isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price']) && isset($_POST['quantity']) && $_POST['quantity'] == 0 && isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] == '') && ($_POST['yearmax'] == '')){
+        $search = $_POST['gameSearch'];
+        array_push($array, "`Title` LIKE '%$search%'");
+      }
+      if (!isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price'])){
+        array_push($array, "`Title` Like '%%'");
+      }
+      ?>
+
+      <?php
+      if (count($array) == 1) {
+        $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[0] . " ORDER BY `Rating`";
+      } else {
+        for ($j=0; $j < count($array); $j++) {
+          if ($j == 0) {
+            $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
+          }
+          else if ($j == (count($array) - 1)) {
+            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+          }else {
+            $query .= " And " . $array[$j];
+          }
         }
       }
-    }
 
-    echo $query;
-    $result = $db->query($query);
-    $numRecords = $result->num_rows;
-    
-    for ($i=0; $i < $numRecords; $i++) {
-      $record = $result->fetch_assoc(); ?>
+      $result = $db->query($query);
+      $numRecords = $result->num_rows;
 
-      <div class="container">
-        <?php 
-        if ($i % 2 == 0) {?>
-          <div class="row games">
-        <?php
-        } else {?>
-          <div class="row games1">
-        <?php
-        }
-        ?>
-        
-          <div class="col-lg-2 image">
-            <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
-          </div>
-          <div class="col-lg-2">
-            <h3>Platform(s):</h3>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['PC']) == 1) {
-                  echo "PC";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Xbox One']) == 1) {
-                  echo "Xbox One";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Playstation 4']) == 1) {
-                  echo "Playstation 4";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Nintendo Switch']) == 1) {
-                  echo "Nintendo Switch";
-                }
-              ?>
-            </p>
-          </div>
-          <div class="col-lg-2">
-            <h3>Genre(s):</h3> 
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Action']) == 1) {
-                  echo "Action";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Adventure']) == 1) {
-                  echo "Adventure";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Battle Royale']) == 1) {
-                  echo "Battle Royale";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Fighting']) == 1) {
-                  echo "Fighting";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Shooter']) == 1) {
-                  echo "Shooter";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Racing']) == 1) {
-                  echo "Racing";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Real-Time Strategy']) == 1) {
-                  echo "Real-Time Strategy";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Role-Playing']) == 1) {
-                  echo "Role-Playing";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Simulation']) == 1) {
-                  echo "Simulation";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if (htmlspecialchars($record['Sports']) == 1) {
-                  echo "Sports";
-                }
-              ?>
-            </p>
-          </div>
-          <div class="col-lg-2">
-            <h3>Rating:</h3> 
-            <p><?php echo htmlspecialchars($record['Rating']);?></p>
-          </div>
-          <div class="col-lg-2">
-            <h3>Price:</h3> 
-            <p><?php echo htmlspecialchars($record['Price']);?></p>
-          </div>
-          <div class="col-lg-2">
-            <h3>Description:</h3> 
-            <p style="height: 200px; overflow: auto;"><?php echo htmlspecialchars($record['Description']);?></p>
-          </div>
-        </div>
-      </div>
+      for ($i=0; $i < $numRecords; $i++) {
+        $record = $result->fetch_assoc(); ?>
 
-
-    <?php
-    
-      
-    }
-
-
-
-
-
-/*
-    $id = [];
-    $i = 0;
-    if (mysqli_multi_query($db, $query)) {
-      $full = [];
-      do {
-        // Store first result set
-        if ($result = mysqli_store_result($db)) {
-          while ($row = mysqli_fetch_row($result)) {
-            if (!in_array($row[30], $id)) {
-              array_push($id, $row[30]);
-              array_push($full, [$row[22], $row[29], $row[1], $row[3], $row[5], $row[7], $row[8], $row[9], $row[10], $row[11], $row[12], $row[13], $row[14], $row[15], $row[16], $row[17], $row[27], $row[30]]);
-            }
-          }
-          mysqli_free_result($result);
-        }
-        // if there are more result-sets, the print a divider
-        if (mysqli_more_results($db)) {
-          continue;
-        }
-         //Prepare next result set
-      } while (mysqli_next_result($db));
-    }
-
-    rsort($full);
-
-    for ($m = 0; $m < count($full); $m++) {?>
         <div class="container">
           <?php 
           if ($i % 2 == 0) {?>
@@ -477,149 +320,1431 @@
             <div class="row games1">
           <?php
           }
-          $i += 1;
           ?>
-
-          <div class="col-lg-2 image">
-            <a href="gamePage.html"><img src="<?php echo $full[$m][1];?>" height="250" width="180"></a>
-          </div>
-          <div class="col-lg-2">
-            <h3>Platform(s):</h3>
-            <p>
-              <?php 
-                if ($full[$m][2] == 1) {
-                  echo "PC";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][3] == 1) {
-                  echo "Xbox One";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][4] == 1) {
-                  echo "Playstation 4";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][5] == 1) {
-                  echo "Nintendo Switch";
-                }
-              ?>
-            </p>
-          </div>
-          <div class="col-lg-2">
-            <h3>Genre(s):</h3> 
-            <p>
-              <?php 
-                if ($full[$m][6] == 1) {
-                  echo "Action";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][7] == 1) {
-                  echo "Adventure";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][8] == 1) {
-                  echo "Battle Royale";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][9] == 1) {
-                  echo "Fighting";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][10] == 1) {
-                  echo "Shooter";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][11] == 1) {
-                  echo "Racing";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][12] == 1) {
-                  echo "Real-Time Strategy";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][13] == 1) {
-                  echo "Role-Playing";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][14] == 1) {
-                  echo "Simulation";
-                }
-              ?>
-            </p>
-            <p>
-              <?php 
-                if ($full[$m][15] == 1) {
-                  echo "Sports";
-                }
-              ?>
-            </p>
-          </div>
-          <div class="col-lg-2">
-            <h3>Rating:</h3> 
-            <p><?php echo $full[$m][0];?></p>
-          </div>
-          <div class="col-lg-2">
-            <h3>Price:</h3> 
-            <p><?php echo $full[$m][16];?></p>
-          </div>
-          <div class="col-lg-2">
-            <h3>Description:</h3> 
-            <p style="height: 200px; overflow: auto;"><?php echo $full[$m][17];?></p>
+          
+            <div class="col-lg-2 image">
+              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+            </div>
+            <div class="col-lg-2">
+              <h3>Platform(s):</h3>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['PC']) == 1) {
+                    echo "PC";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Xbox One']) == 1) {
+                    echo "Xbox One";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Playstation 4']) == 1) {
+                    echo "Playstation 4";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Nintendo Switch']) == 1) {
+                    echo "Nintendo Switch";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Genre(s):</h3> 
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Action']) == 1) {
+                    echo "Action";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Adventure']) == 1) {
+                    echo "Adventure";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Battle Royale']) == 1) {
+                    echo "Battle Royale";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Fighting']) == 1) {
+                    echo "Fighting";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Shooter']) == 1) {
+                    echo "Shooter";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Racing']) == 1) {
+                    echo "Racing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Real-Time Strategy']) == 1) {
+                    echo "Real-Time Strategy";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Role-Playing']) == 1) {
+                    echo "Role-Playing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Simulation']) == 1) {
+                    echo "Simulation";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Sports']) == 1) {
+                    echo "Sports";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Rating:</h3> 
+              <p><?php echo htmlspecialchars($record['Rating']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Price:</h3> 
+              <p><?php echo htmlspecialchars($record['Price']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Description:</h3> 
+              <p style="height: 200px; overflow: auto;"><?php echo htmlspecialchars($record['Description']);?></p>
+            </div>
           </div>
         </div>
-      </div>
+
+        <?php 
+        }
+        ?>
+    </section>
+
+
+    <!--This section is all the games ordered by reverse rating-->
+    <section id="Rrating">
+    <?php
+      $array = [];
+      $query = "";
+      if (isset($_POST['PC'])) {
+        array_push($array, "`PC` LIKE 1");
+      }
+      if (isset($_POST['XBOX1'])) {
+        array_push($array, "`Xbox One` LIKE 1");
+      }
+      if (isset($_POST['Playstation4'])) {
+        array_push($array, "`Playstation 4` LIKE 1");
+      }
+      if (isset($_POST['Switch'])) {
+        array_push($array, "`Nintendo Switch` LIKE 1");
+      } 
+      if (isset($_POST['Action'])) {
+        array_push($array, "`Action` LIKE 1");
+      } 
+      if (isset($_POST['Adventure'])) {
+        array_push($array, "`Adventure` LIKE 1");
+      } 
+      if (isset($_POST['Battleroyale'])) {
+        array_push($array, "`Battle Royale` LIKE 1");
+      } 
+      if (isset($_POST['Fighting'])) {
+        array_push($array, "`Fighting` LIKE 1");
+      } 
+      if (isset($_POST['Shooter'])) {
+        array_push($array, "`Shooter` LIKE 1");
+      } 
+      if (isset($_POST['Racing'])) {
+        array_push($array, "`Racing` LIKE 1");
+      } 
+      if (isset($_POST['RTS'])) {
+        array_push($array, "`Real-Time Strategy` LIKE 1");
+      } 
+      if (isset($_POST['RolePlaying'])) {
+        array_push($array, "`Role-Playing` LIKE 1");
+      } 
+      if (isset($_POST['Simulation'])) {
+        array_push($array, "`Simulation` LIKE 1");
+      } 
+      if (isset($_POST['Sports'])) {
+        array_push($array, "`Sports` LIKE 1");
+      } 
+      if (isset($_POST['Singleplayer'])) {
+        array_push($array, "`Singleplayer` LIKE 1");
+      } 
+      if (isset($_POST['Multiplayer'])) {
+        array_push($array, "`Multiplayer` LIKE 1");
+      } 
+      if (isset($_POST['Online'])) {
+        array_push($array, "`Online` LIKE 1");
+      } 
+      if (isset($_POST['Local'])) {
+        array_push($array, "`Local` LIKE 1");
+      } 
+      if (isset($_POST['Everyone'])) {
+        array_push($array, "`E` LIKE 1");
+      } 
+      if (isset($_POST['Everyone10'])) {
+        array_push($array, "`E10` LIKE 1");
+      } 
+      if (isset($_POST['Teen'])) {
+        array_push($array, "`T` LIKE 1");
+      } 
+      if (isset($_POST['Mature'])) {
+        array_push($array, "`M` LIKE 1");
+      } 
+      if (isset($_POST['quantity']) && $_POST['quantity'] != 0 && $_POST['quantity'] <= 100 && $_POST['quantity'] >= 0) {
+        array_push($array, "`Price` BETWEEN " . ($_POST['quantity']-5) . " AND " . ($_POST['quantity']+5));
+      }
+      if (isset($_POST['quantity']) && ($_POST['quantity'] > 100 || $_POST['quantity'] < 0)) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      if (isset($_POST['Price'])) {
+        array_push($array, "`Price` LIKE '%%'");
+      }
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && ($_POST['yearmin'] >= 2000) && ($_POST['yearmax'] <= 2020)) {
+        array_push($array, "`Year` BETWEEN " . $_POST['yearmin'] . " AND " . $_POST['yearmax']);
+      } 
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && (($_POST['yearmin'] < 2000) || ($_POST['yearmax'] > 2020)) ) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      
+      if (isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price']) && isset($_POST['quantity']) && $_POST['quantity'] == 0 && isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] == '') && ($_POST['yearmax'] == '')){
+        $search = $_POST['gameSearch'];
+        array_push($array, "`Title` LIKE '%$search%'");
+      }
+      if (!isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price'])){
+        array_push($array, "`Title` Like '%%'");
+      }
+      ?>
       <?php
-    }
-    $full = [];
-    ?>
-    */
-    
+      if (count($array) == 1) {
+        $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[0] . " ORDER BY `Rating` desc";
+      } else {
+        for ($j=0; $j < count($array); $j++) {
+          if ($j == 0) {
+            $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
+          }
+          else if ($j == (count($array) - 1)) {
+            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+          }else {
+            $query .= " And " . $array[$j];
+          }
+        }
+      }
+      ?>
+
+      <?php
+
+      $result = $db->query($query);
+      $numRecords = $result->num_rows;
+
+      for ($i=0; $i < $numRecords; $i++) {
+        $record = $result->fetch_assoc(); ?>
+
+        <div class="container">
+          <?php 
+          if ($i % 2 == 0) {?>
+            <div class="row games">
+          <?php
+          } else {?>
+            <div class="row games1">
+          <?php
+          }
+          ?>
+          
+            <div class="col-lg-2 image">
+              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+            </div>
+            <div class="col-lg-2">
+              <h3>Platform(s):</h3>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['PC']) == 1) {
+                    echo "PC";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Xbox One']) == 1) {
+                    echo "Xbox One";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Playstation 4']) == 1) {
+                    echo "Playstation 4";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Nintendo Switch']) == 1) {
+                    echo "Nintendo Switch";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Genre(s):</h3> 
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Action']) == 1) {
+                    echo "Action";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Adventure']) == 1) {
+                    echo "Adventure";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Battle Royale']) == 1) {
+                    echo "Battle Royale";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Fighting']) == 1) {
+                    echo "Fighting";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Shooter']) == 1) {
+                    echo "Shooter";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Racing']) == 1) {
+                    echo "Racing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Real-Time Strategy']) == 1) {
+                    echo "Real-Time Strategy";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Role-Playing']) == 1) {
+                    echo "Role-Playing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Simulation']) == 1) {
+                    echo "Simulation";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Sports']) == 1) {
+                    echo "Sports";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Rating:</h3> 
+              <p><?php echo htmlspecialchars($record['Rating']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Price:</h3> 
+              <p><?php echo htmlspecialchars($record['Price']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Description:</h3> 
+              <p style="height: 200px; overflow: auto;"><?php echo htmlspecialchars($record['Description']);?></p>
+            </div>
+          </div>
+        </div>
+
+        <?php 
+        }
+        ?>
+    </section>
+
+    <!--This section is all the games ordered by price-->
+    <section id="price">
+    <?php
+      $array = [];
+      $query = "";
+      if (isset($_POST['PC'])) {
+        array_push($array, "`PC` LIKE 1");
+      }
+      if (isset($_POST['XBOX1'])) {
+        array_push($array, "`Xbox One` LIKE 1");
+      }
+      if (isset($_POST['Playstation4'])) {
+        array_push($array, "`Playstation 4` LIKE 1");
+      }
+      if (isset($_POST['Switch'])) {
+        array_push($array, "`Nintendo Switch` LIKE 1");
+      } 
+      if (isset($_POST['Action'])) {
+        array_push($array, "`Action` LIKE 1");
+      } 
+      if (isset($_POST['Adventure'])) {
+        array_push($array, "`Adventure` LIKE 1");
+      } 
+      if (isset($_POST['Battleroyale'])) {
+        array_push($array, "`Battle Royale` LIKE 1");
+      } 
+      if (isset($_POST['Fighting'])) {
+        array_push($array, "`Fighting` LIKE 1");
+      } 
+      if (isset($_POST['Shooter'])) {
+        array_push($array, "`Shooter` LIKE 1");
+      } 
+      if (isset($_POST['Racing'])) {
+        array_push($array, "`Racing` LIKE 1");
+      } 
+      if (isset($_POST['RTS'])) {
+        array_push($array, "`Real-Time Strategy` LIKE 1");
+      } 
+      if (isset($_POST['RolePlaying'])) {
+        array_push($array, "`Role-Playing` LIKE 1");
+      } 
+      if (isset($_POST['Simulation'])) {
+        array_push($array, "`Simulation` LIKE 1");
+      } 
+      if (isset($_POST['Sports'])) {
+        array_push($array, "`Sports` LIKE 1");
+      } 
+      if (isset($_POST['Singleplayer'])) {
+        array_push($array, "`Singleplayer` LIKE 1");
+      } 
+      if (isset($_POST['Multiplayer'])) {
+        array_push($array, "`Multiplayer` LIKE 1");
+      } 
+      if (isset($_POST['Online'])) {
+        array_push($array, "`Online` LIKE 1");
+      } 
+      if (isset($_POST['Local'])) {
+        array_push($array, "`Local` LIKE 1");
+      } 
+      if (isset($_POST['Everyone'])) {
+        array_push($array, "`E` LIKE 1");
+      } 
+      if (isset($_POST['Everyone10'])) {
+        array_push($array, "`E10` LIKE 1");
+      } 
+      if (isset($_POST['Teen'])) {
+        array_push($array, "`T` LIKE 1");
+      } 
+      if (isset($_POST['Mature'])) {
+        array_push($array, "`M` LIKE 1");
+      } 
+      if (isset($_POST['quantity']) && $_POST['quantity'] != 0 && $_POST['quantity'] <= 100 && $_POST['quantity'] >= 0) {
+        array_push($array, "`Price` BETWEEN " . ($_POST['quantity']-5) . " AND " . ($_POST['quantity']+5));
+      }
+      if (isset($_POST['quantity']) && ($_POST['quantity'] > 100 || $_POST['quantity'] < 0)) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      if (isset($_POST['Price'])) {
+        array_push($array, "`Price` LIKE '%%'");
+      }
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && ($_POST['yearmin'] >= 2000) && ($_POST['yearmax'] <= 2020)) {
+        array_push($array, "`Year` BETWEEN " . $_POST['yearmin'] . " AND " . $_POST['yearmax']);
+      } 
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && (($_POST['yearmin'] < 2000) || ($_POST['yearmax'] > 2020)) ) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      
+      if (isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price']) && isset($_POST['quantity']) && $_POST['quantity'] == 0 && isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] == '') && ($_POST['yearmax'] == '')){
+        $search = $_POST['gameSearch'];
+        array_push($array, "`Title` LIKE '%$search%'");
+      }
+      if (!isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price'])){
+        array_push($array, "`Title` Like '%%'");
+      }
+      ?>
+      <?php
+      if (count($array) == 1) {
+        $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[0] . " ORDER BY `Price`";
+      } else {
+        for ($j=0; $j < count($array); $j++) {
+          if ($j == 0) {
+            $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
+          }
+          else if ($j == (count($array) - 1)) {
+            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+          }else {
+            $query .= " And " . $array[$j];
+          }
+        }
+      }
+      ?>
+
+      <?php
+
+      $result = $db->query($query);
+      $numRecords = $result->num_rows;
+
+      for ($i=0; $i < $numRecords; $i++) {
+        $record = $result->fetch_assoc(); ?>
+
+        <div class="container">
+          <?php 
+          if ($i % 2 == 0) {?>
+            <div class="row games">
+          <?php
+          } else {?>
+            <div class="row games1">
+          <?php
+          }
+          ?>
+          
+            <div class="col-lg-2 image">
+              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+            </div>
+            <div class="col-lg-2">
+              <h3>Platform(s):</h3>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['PC']) == 1) {
+                    echo "PC";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Xbox One']) == 1) {
+                    echo "Xbox One";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Playstation 4']) == 1) {
+                    echo "Playstation 4";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Nintendo Switch']) == 1) {
+                    echo "Nintendo Switch";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Genre(s):</h3> 
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Action']) == 1) {
+                    echo "Action";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Adventure']) == 1) {
+                    echo "Adventure";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Battle Royale']) == 1) {
+                    echo "Battle Royale";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Fighting']) == 1) {
+                    echo "Fighting";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Shooter']) == 1) {
+                    echo "Shooter";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Racing']) == 1) {
+                    echo "Racing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Real-Time Strategy']) == 1) {
+                    echo "Real-Time Strategy";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Role-Playing']) == 1) {
+                    echo "Role-Playing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Simulation']) == 1) {
+                    echo "Simulation";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Sports']) == 1) {
+                    echo "Sports";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Rating:</h3> 
+              <p><?php echo htmlspecialchars($record['Rating']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Price:</h3> 
+              <p><?php echo htmlspecialchars($record['Price']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Description:</h3> 
+              <p style="height: 200px; overflow: auto;"><?php echo htmlspecialchars($record['Description']);?></p>
+            </div>
+          </div>
+        </div>
+
+        <?php 
+        }
+        ?>
+    </section>
+
+    <!--This section is all the games ordered by reverse price-->
+    <section id="Rprice">
+    <?php
+      $array = [];
+      $query = "";
+      if (isset($_POST['PC'])) {
+        array_push($array, "`PC` LIKE 1");
+      }
+      if (isset($_POST['XBOX1'])) {
+        array_push($array, "`Xbox One` LIKE 1");
+      }
+      if (isset($_POST['Playstation4'])) {
+        array_push($array, "`Playstation 4` LIKE 1");
+      }
+      if (isset($_POST['Switch'])) {
+        array_push($array, "`Nintendo Switch` LIKE 1");
+      } 
+      if (isset($_POST['Action'])) {
+        array_push($array, "`Action` LIKE 1");
+      } 
+      if (isset($_POST['Adventure'])) {
+        array_push($array, "`Adventure` LIKE 1");
+      } 
+      if (isset($_POST['Battleroyale'])) {
+        array_push($array, "`Battle Royale` LIKE 1");
+      } 
+      if (isset($_POST['Fighting'])) {
+        array_push($array, "`Fighting` LIKE 1");
+      } 
+      if (isset($_POST['Shooter'])) {
+        array_push($array, "`Shooter` LIKE 1");
+      } 
+      if (isset($_POST['Racing'])) {
+        array_push($array, "`Racing` LIKE 1");
+      } 
+      if (isset($_POST['RTS'])) {
+        array_push($array, "`Real-Time Strategy` LIKE 1");
+      } 
+      if (isset($_POST['RolePlaying'])) {
+        array_push($array, "`Role-Playing` LIKE 1");
+      } 
+      if (isset($_POST['Simulation'])) {
+        array_push($array, "`Simulation` LIKE 1");
+      } 
+      if (isset($_POST['Sports'])) {
+        array_push($array, "`Sports` LIKE 1");
+      } 
+      if (isset($_POST['Singleplayer'])) {
+        array_push($array, "`Singleplayer` LIKE 1");
+      } 
+      if (isset($_POST['Multiplayer'])) {
+        array_push($array, "`Multiplayer` LIKE 1");
+      } 
+      if (isset($_POST['Online'])) {
+        array_push($array, "`Online` LIKE 1");
+      } 
+      if (isset($_POST['Local'])) {
+        array_push($array, "`Local` LIKE 1");
+      } 
+      if (isset($_POST['Everyone'])) {
+        array_push($array, "`E` LIKE 1");
+      } 
+      if (isset($_POST['Everyone10'])) {
+        array_push($array, "`E10` LIKE 1");
+      } 
+      if (isset($_POST['Teen'])) {
+        array_push($array, "`T` LIKE 1");
+      } 
+      if (isset($_POST['Mature'])) {
+        array_push($array, "`M` LIKE 1");
+      } 
+      if (isset($_POST['quantity']) && $_POST['quantity'] != 0 && $_POST['quantity'] <= 100 && $_POST['quantity'] >= 0) {
+        array_push($array, "`Price` BETWEEN " . ($_POST['quantity']-5) . " AND " . ($_POST['quantity']+5));
+      }
+      if (isset($_POST['quantity']) && ($_POST['quantity'] > 100 || $_POST['quantity'] < 0)) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      if (isset($_POST['Price'])) {
+        array_push($array, "`Price` LIKE '%%'");
+      }
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && ($_POST['yearmin'] >= 2000) && ($_POST['yearmax'] <= 2020)) {
+        array_push($array, "`Year` BETWEEN " . $_POST['yearmin'] . " AND " . $_POST['yearmax']);
+      } 
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && (($_POST['yearmin'] < 2000) || ($_POST['yearmax'] > 2020)) ) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      
+      if (isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price']) && isset($_POST['quantity']) && $_POST['quantity'] == 0 && isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] == '') && ($_POST['yearmax'] == '')){
+        $search = $_POST['gameSearch'];
+        array_push($array, "`Title` LIKE '%$search%'");
+      }
+      if (!isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price'])){
+        array_push($array, "`Title` Like '%%'");
+      }
+      ?>
+      <?php
+      if (count($array) == 1) {
+        $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[0] . " ORDER BY `Price` desc";
+      } else {
+        for ($j=0; $j < count($array); $j++) {
+          if ($j == 0) {
+            $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
+          }
+          else if ($j == (count($array) - 1)) {
+            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+          }else {
+            $query .= " And " . $array[$j];
+          }
+        }
+      }
+      ?>
+      <?php
+
+      $result = $db->query($query);
+      $numRecords = $result->num_rows;
+
+      for ($i=0; $i < $numRecords; $i++) {
+        $record = $result->fetch_assoc(); ?>
+
+        <div class="container">
+          <?php 
+          if ($i % 2 == 0) {?>
+            <div class="row games">
+          <?php
+          } else {?>
+            <div class="row games1">
+          <?php
+          }
+          ?>
+          
+            <div class="col-lg-2 image">
+              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+            </div>
+            <div class="col-lg-2">
+              <h3>Platform(s):</h3>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['PC']) == 1) {
+                    echo "PC";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Xbox One']) == 1) {
+                    echo "Xbox One";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Playstation 4']) == 1) {
+                    echo "Playstation 4";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Nintendo Switch']) == 1) {
+                    echo "Nintendo Switch";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Genre(s):</h3> 
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Action']) == 1) {
+                    echo "Action";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Adventure']) == 1) {
+                    echo "Adventure";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Battle Royale']) == 1) {
+                    echo "Battle Royale";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Fighting']) == 1) {
+                    echo "Fighting";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Shooter']) == 1) {
+                    echo "Shooter";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Racing']) == 1) {
+                    echo "Racing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Real-Time Strategy']) == 1) {
+                    echo "Real-Time Strategy";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Role-Playing']) == 1) {
+                    echo "Role-Playing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Simulation']) == 1) {
+                    echo "Simulation";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Sports']) == 1) {
+                    echo "Sports";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Rating:</h3> 
+              <p><?php echo htmlspecialchars($record['Rating']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Price:</h3> 
+              <p><?php echo htmlspecialchars($record['Price']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Description:</h3> 
+              <p style="height: 200px; overflow: auto;"><?php echo htmlspecialchars($record['Description']);?></p>
+            </div>
+          </div>
+        </div>
+
+        <?php 
+        }
+        ?>
+    </section>
+
+    <!--This section is all the games ordered by title name-->
+    <section id="alpha">
+    <?php
+      $array = [];
+      $query = "";
+      if (isset($_POST['PC'])) {
+        array_push($array, "`PC` LIKE 1");
+      }
+      if (isset($_POST['XBOX1'])) {
+        array_push($array, "`Xbox One` LIKE 1");
+      }
+      if (isset($_POST['Playstation4'])) {
+        array_push($array, "`Playstation 4` LIKE 1");
+      }
+      if (isset($_POST['Switch'])) {
+        array_push($array, "`Nintendo Switch` LIKE 1");
+      } 
+      if (isset($_POST['Action'])) {
+        array_push($array, "`Action` LIKE 1");
+      } 
+      if (isset($_POST['Adventure'])) {
+        array_push($array, "`Adventure` LIKE 1");
+      } 
+      if (isset($_POST['Battleroyale'])) {
+        array_push($array, "`Battle Royale` LIKE 1");
+      } 
+      if (isset($_POST['Fighting'])) {
+        array_push($array, "`Fighting` LIKE 1");
+      } 
+      if (isset($_POST['Shooter'])) {
+        array_push($array, "`Shooter` LIKE 1");
+      } 
+      if (isset($_POST['Racing'])) {
+        array_push($array, "`Racing` LIKE 1");
+      } 
+      if (isset($_POST['RTS'])) {
+        array_push($array, "`Real-Time Strategy` LIKE 1");
+      } 
+      if (isset($_POST['RolePlaying'])) {
+        array_push($array, "`Role-Playing` LIKE 1");
+      } 
+      if (isset($_POST['Simulation'])) {
+        array_push($array, "`Simulation` LIKE 1");
+      } 
+      if (isset($_POST['Sports'])) {
+        array_push($array, "`Sports` LIKE 1");
+      } 
+      if (isset($_POST['Singleplayer'])) {
+        array_push($array, "`Singleplayer` LIKE 1");
+      } 
+      if (isset($_POST['Multiplayer'])) {
+        array_push($array, "`Multiplayer` LIKE 1");
+      } 
+      if (isset($_POST['Online'])) {
+        array_push($array, "`Online` LIKE 1");
+      } 
+      if (isset($_POST['Local'])) {
+        array_push($array, "`Local` LIKE 1");
+      } 
+      if (isset($_POST['Everyone'])) {
+        array_push($array, "`E` LIKE 1");
+      } 
+      if (isset($_POST['Everyone10'])) {
+        array_push($array, "`E10` LIKE 1");
+      } 
+      if (isset($_POST['Teen'])) {
+        array_push($array, "`T` LIKE 1");
+      } 
+      if (isset($_POST['Mature'])) {
+        array_push($array, "`M` LIKE 1");
+      } 
+      if (isset($_POST['quantity']) && $_POST['quantity'] != 0 && $_POST['quantity'] <= 100 && $_POST['quantity'] >= 0) {
+        array_push($array, "`Price` BETWEEN " . ($_POST['quantity']-5) . " AND " . ($_POST['quantity']+5));
+      }
+      if (isset($_POST['quantity']) && ($_POST['quantity'] > 100 || $_POST['quantity'] < 0)) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      if (isset($_POST['Price'])) {
+        array_push($array, "`Price` LIKE '%%'");
+      }
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && ($_POST['yearmin'] >= 2000) && ($_POST['yearmax'] <= 2020)) {
+        array_push($array, "`Year` BETWEEN " . $_POST['yearmin'] . " AND " . $_POST['yearmax']);
+      } 
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && (($_POST['yearmin'] < 2000) || ($_POST['yearmax'] > 2020)) ) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      
+      if (isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price']) && isset($_POST['quantity']) && $_POST['quantity'] == 0 && isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] == '') && ($_POST['yearmax'] == '')){
+        $search = $_POST['gameSearch'];
+        array_push($array, "`Title` LIKE '%$search%'");
+      }
+      if (!isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price'])){
+        array_push($array, "`Title` Like '%%'");
+      }
+      ?>
+      <?php
+      if (count($array) == 1) {
+        $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[0] . " ORDER BY `Title`";
+      } else {
+        for ($j=0; $j < count($array); $j++) {
+          if ($j == 0) {
+            $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
+          }
+          else if ($j == (count($array) - 1)) {
+            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+          }else {
+            $query .= " And " . $array[$j];
+          }
+        }
+      }
+      ?>
+
+      <?php
+
+      $result = $db->query($query);
+      $numRecords = $result->num_rows;
+
+      for ($i=0; $i < $numRecords; $i++) {
+        $record = $result->fetch_assoc(); ?>
+
+        <div class="container">
+          <?php 
+          if ($i % 2 == 0) {?>
+            <div class="row games">
+          <?php
+          } else {?>
+            <div class="row games1">
+          <?php
+          }
+          ?>
+          
+            <div class="col-lg-2 image">
+              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+            </div>
+            <div class="col-lg-2">
+              <h3>Platform(s):</h3>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['PC']) == 1) {
+                    echo "PC";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Xbox One']) == 1) {
+                    echo "Xbox One";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Playstation 4']) == 1) {
+                    echo "Playstation 4";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Nintendo Switch']) == 1) {
+                    echo "Nintendo Switch";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Genre(s):</h3> 
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Action']) == 1) {
+                    echo "Action";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Adventure']) == 1) {
+                    echo "Adventure";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Battle Royale']) == 1) {
+                    echo "Battle Royale";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Fighting']) == 1) {
+                    echo "Fighting";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Shooter']) == 1) {
+                    echo "Shooter";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Racing']) == 1) {
+                    echo "Racing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Real-Time Strategy']) == 1) {
+                    echo "Real-Time Strategy";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Role-Playing']) == 1) {
+                    echo "Role-Playing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Simulation']) == 1) {
+                    echo "Simulation";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Sports']) == 1) {
+                    echo "Sports";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Rating:</h3> 
+              <p><?php echo htmlspecialchars($record['Rating']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Price:</h3> 
+              <p><?php echo htmlspecialchars($record['Price']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Description:</h3> 
+              <p style="height: 200px; overflow: auto;"><?php echo htmlspecialchars($record['Description']);?></p>
+            </div>
+          </div>
+        </div>
+
+        <?php 
+        }
+        ?>
+    </section>
+
+    <!--This section is all the games ordered by reverse title name-->
+    <section id="Ralpha">
+    <?php
+      $array = [];
+      $query = "";
+      if (isset($_POST['PC'])) {
+        array_push($array, "`PC` LIKE 1");
+      }
+      if (isset($_POST['XBOX1'])) {
+        array_push($array, "`Xbox One` LIKE 1");
+      }
+      if (isset($_POST['Playstation4'])) {
+        array_push($array, "`Playstation 4` LIKE 1");
+      }
+      if (isset($_POST['Switch'])) {
+        array_push($array, "`Nintendo Switch` LIKE 1");
+      } 
+      if (isset($_POST['Action'])) {
+        array_push($array, "`Action` LIKE 1");
+      } 
+      if (isset($_POST['Adventure'])) {
+        array_push($array, "`Adventure` LIKE 1");
+      } 
+      if (isset($_POST['Battleroyale'])) {
+        array_push($array, "`Battle Royale` LIKE 1");
+      } 
+      if (isset($_POST['Fighting'])) {
+        array_push($array, "`Fighting` LIKE 1");
+      } 
+      if (isset($_POST['Shooter'])) {
+        array_push($array, "`Shooter` LIKE 1");
+      } 
+      if (isset($_POST['Racing'])) {
+        array_push($array, "`Racing` LIKE 1");
+      } 
+      if (isset($_POST['RTS'])) {
+        array_push($array, "`Real-Time Strategy` LIKE 1");
+      } 
+      if (isset($_POST['RolePlaying'])) {
+        array_push($array, "`Role-Playing` LIKE 1");
+      } 
+      if (isset($_POST['Simulation'])) {
+        array_push($array, "`Simulation` LIKE 1");
+      } 
+      if (isset($_POST['Sports'])) {
+        array_push($array, "`Sports` LIKE 1");
+      } 
+      if (isset($_POST['Singleplayer'])) {
+        array_push($array, "`Singleplayer` LIKE 1");
+      } 
+      if (isset($_POST['Multiplayer'])) {
+        array_push($array, "`Multiplayer` LIKE 1");
+      } 
+      if (isset($_POST['Online'])) {
+        array_push($array, "`Online` LIKE 1");
+      } 
+      if (isset($_POST['Local'])) {
+        array_push($array, "`Local` LIKE 1");
+      } 
+      if (isset($_POST['Everyone'])) {
+        array_push($array, "`E` LIKE 1");
+      } 
+      if (isset($_POST['Everyone10'])) {
+        array_push($array, "`E10` LIKE 1");
+      } 
+      if (isset($_POST['Teen'])) {
+        array_push($array, "`T` LIKE 1");
+      } 
+      if (isset($_POST['Mature'])) {
+        array_push($array, "`M` LIKE 1");
+      } 
+      if (isset($_POST['quantity']) && $_POST['quantity'] != 0 && $_POST['quantity'] <= 100 && $_POST['quantity'] >= 0) {
+        array_push($array, "`Price` BETWEEN " . ($_POST['quantity']-5) . " AND " . ($_POST['quantity']+5));
+      }
+      if (isset($_POST['quantity']) && ($_POST['quantity'] > 100 || $_POST['quantity'] < 0)) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      if (isset($_POST['Price'])) {
+        array_push($array, "`Price` LIKE '%%'");
+      }
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && ($_POST['yearmin'] >= 2000) && ($_POST['yearmax'] <= 2020)) {
+        array_push($array, "`Year` BETWEEN " . $_POST['yearmin'] . " AND " . $_POST['yearmax']);
+      } 
+      if (isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] != '') && ($_POST['yearmax'] != '') && (($_POST['yearmin'] < 2000) || ($_POST['yearmax'] > 2020)) ) {
+        array_push($array, "`Title` Like '%%'");
+      }
+      
+      if (isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price']) && isset($_POST['quantity']) && $_POST['quantity'] == 0 && isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] == '') && ($_POST['yearmax'] == '')){
+        $search = $_POST['gameSearch'];
+        array_push($array, "`Title` LIKE '%$search%'");
+      }
+      if (!isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price'])){
+        array_push($array, "`Title` Like '%%'");
+      }
+      ?>
+      <?php
+      if (count($array) == 1) {
+        $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[0] . " ORDER BY `Title` desc";
+      } else {
+        for ($j=0; $j < count($array); $j++) {
+          if ($j == 0) {
+            $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
+          }
+          else if ($j == (count($array) - 1)) {
+            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+          }else {
+            $query .= " And " . $array[$j];
+          }
+        }
+      }
+      ?>
+
+      <?php
+
+      $result = $db->query($query);
+      $numRecords = $result->num_rows;
+
+      for ($i=0; $i < $numRecords; $i++) {
+        $record = $result->fetch_assoc(); ?>
+
+        <div class="container">
+          <?php 
+          if ($i % 2 == 0) {?>
+            <div class="row games">
+          <?php
+          } else {?>
+            <div class="row games1">
+          <?php
+          }
+          ?>
+          
+            <div class="col-lg-2 image">
+              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+            </div>
+            <div class="col-lg-2">
+              <h3>Platform(s):</h3>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['PC']) == 1) {
+                    echo "PC";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Xbox One']) == 1) {
+                    echo "Xbox One";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Playstation 4']) == 1) {
+                    echo "Playstation 4";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Nintendo Switch']) == 1) {
+                    echo "Nintendo Switch";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Genre(s):</h3> 
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Action']) == 1) {
+                    echo "Action";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Adventure']) == 1) {
+                    echo "Adventure";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Battle Royale']) == 1) {
+                    echo "Battle Royale";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Fighting']) == 1) {
+                    echo "Fighting";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Shooter']) == 1) {
+                    echo "Shooter";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Racing']) == 1) {
+                    echo "Racing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Real-Time Strategy']) == 1) {
+                    echo "Real-Time Strategy";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Role-Playing']) == 1) {
+                    echo "Role-Playing";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Simulation']) == 1) {
+                    echo "Simulation";
+                  }
+                ?>
+              </p>
+              <p>
+                <?php 
+                  if (htmlspecialchars($record['Sports']) == 1) {
+                    echo "Sports";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Rating:</h3> 
+              <p><?php echo htmlspecialchars($record['Rating']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Price:</h3> 
+              <p><?php echo htmlspecialchars($record['Price']);?></p>
+            </div>
+            <div class="col-lg-2">
+              <h3>Description:</h3> 
+              <p style="height: 200px; overflow: auto;"><?php echo htmlspecialchars($record['Description']);?></p>
+            </div>
+          </div>
+        </div>
+
+        <?php 
+        }
+        ?>
+    </section>
+
+  <?php
     // Finally, let's close the database
     $result->free();
     $db->close();
-  }
-  
-?>
-    </section>
-    
-  <?php
-    $a= [[8,"hello"],[8,"bye"],[5,"te"]];
-    rsort($a);
-    print_r($a);
-
+  }  
   ?>
+    </section>
 </body>
   </html>
