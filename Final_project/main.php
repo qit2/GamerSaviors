@@ -298,7 +298,7 @@
             $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
           }
           else if ($j == (count($array) - 1)) {
-            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+            $query .= " AND " . $array[$j] . " ORDER BY `Rating`";
           }else {
             $query .= " And " . $array[$j];
           }
@@ -812,7 +812,7 @@
             $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
           }
           else if ($j == (count($array) - 1)) {
-            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+            $query .= " AND " . $array[$j] . " ORDER BY `Price`";
           }else {
             $query .= " And " . $array[$j];
           }
@@ -1070,7 +1070,7 @@
             $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
           }
           else if ($j == (count($array) - 1)) {
-            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+            $query .= " AND " . $array[$j] . " ORDER BY `Price` desc";
           }else {
             $query .= " And " . $array[$j];
           }
@@ -1327,7 +1327,7 @@
             $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
           }
           else if ($j == (count($array) - 1)) {
-            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+            $query .= " AND " . $array[$j] . " ORDER BY `Title`";
           }else {
             $query .= " And " . $array[$j];
           }
@@ -1585,7 +1585,7 @@
             $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[$j];
           }
           else if ($j == (count($array) - 1)) {
-            $query .= " AND " . $array[$j] . " ORDER BY `Rating` desc";
+            $query .= " AND " . $array[$j] . " ORDER BY `Title` desc";
           }else {
             $query .= " And " . $array[$j];
           }
