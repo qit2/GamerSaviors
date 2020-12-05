@@ -15,6 +15,8 @@
    <!-- Latest compiled JavaScript -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
    <script type="text/javascript" src="main.js"></script>
   </head>
 
@@ -305,12 +307,57 @@
         }
       }
 
+      /*
+      $results = $db->query("SELECT * FROM `TABLE 1` WHERE `id` = 1");
+      $row = $results->fetch_assoc();
+      echo ($row['Title']);
+      */
+
+      ?>
+      <script>
+        function redirect() {
+          window.location.replace("gamePage.php");
+          return false;
+        }
+      </script>
+      
+      <?php
+
+      function updates1($id2, $numRecords) {
+
+        // Create connection
+        $conn = new mysqli('localhost', 'root', '123root', 'Literally Games');
+        // Check connection
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        } 
+
+        $sql = "UPDATE `TABLE 1` SET newpage=1 WHERE id=$id2";
+        if ($conn->query($sql) === TRUE) {
+          echo "Record updated successfully";
+        } else {
+          echo "Error updating record: " . $conn->error;
+        }
+
+        for ($d=1; $d < $numRecords; $d++) {
+          if ($d != $id2) {
+            $sql = "UPDATE `TABLE 1` SET newpage=0 WHERE id=$d";
+          }
+          if ($conn->query($sql) != TRUE) {
+            echo "Error updating record: " . $conn->error;
+          }
+        }
+
+        $conn->close();
+      }
+
+      $arr = [];
       $result = $db->query($query);
       $numRecords = $result->num_rows;
 
       for ($i=0; $i < $numRecords; $i++) {
-        $record = $result->fetch_assoc(); ?>
-
+        $record = $result->fetch_assoc();
+        ?>
         <div class="container">
           <?php 
           if ($i % 2 == 0) {?>
@@ -323,7 +370,15 @@
           ?>
           
             <div class="col-lg-2 image">
-              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+              <a href="gamePage.php"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"/></a>
+              <form method="post" action="main.php"> 
+                <input type="submit" name="<?php echo $i?>" class="button" value="Button1" href="gamePage.php">
+              </form>
+              <?php
+                if(array_key_exists($i, $_POST)) { 
+                  updates1(htmlspecialchars($record['id']), $numRecords); 
+                } 
+              ?>
             </div>
             <div class="col-lg-2">
               <h3>Platform(s):</h3>
