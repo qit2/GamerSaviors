@@ -111,3 +111,13 @@ function myFunction6() {
   b.style.display = "none";
   c.style.display = "block";
 }
+
+function getTitle(image){
+  var title = $(image).attr("alt");
+  $.ajax({
+    url: "main.php",
+  method: "POST",
+  data: { "title": title }
+  });
+}
+
