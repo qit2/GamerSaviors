@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
  <html lang="en-us">
   <head>
@@ -185,7 +186,7 @@
   
   /* Create a new database connection object, passing in the host, username,
      password, and database to use. The "@" suppresses errors. */
-  @ $db = new mysqli('localhost', 'root', '123root', 'Literally Games');
+  @ $db = new mysqli('localhost', 'root', 'ITWSnewpass77', 'Literally Games');
     
   $dbOk = true; 
 ?>
@@ -326,7 +327,7 @@
       function updates1($id2, $numRecords) {
 
         // Create connection
-        $conn = new mysqli('localhost', 'root', '123root', 'Literally Games');
+        $conn = new mysqli('localhost', 'root', 'ITWSnewpass77', 'Literally Games');
         // Check connection
         if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
@@ -351,12 +352,12 @@
         $conn->close();
       }
 
-      $arr = [];
       $result = $db->query($query);
       $numRecords = $result->num_rows;
 
       for ($i=0; $i < $numRecords; $i++) {
         $record = $result->fetch_assoc();
+
         ?>
         <div class="container">
           <?php 
@@ -370,10 +371,8 @@
           ?>
           
             <div class="col-lg-2 image">
-              <a href="gamePage.php"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"/></a>
-              <form method="post" action="main.php"> 
-                <input type="submit" name="<?php echo $i?>" class="button" value="Button1" href="gamePage.php">
-              </form>
+              <a href="gamePage.php" onclick="<?php $_SESSION['title'] = $_POST['title']; ?>"><img src="<?php echo htmlspecialchars($record['Picture']);?>"  alt="<?php echo htmlspecialchars($record['Title']); ?>" onmouseover="getTitle(this)" height="250" width="180"/></a>
+              
               <?php
                 if(array_key_exists($i, $_POST)) { 
                   updates1(htmlspecialchars($record['id']), $numRecords); 
@@ -637,7 +636,7 @@
           ?>
           
             <div class="col-lg-2 image">
-              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+              <a href="gamePage.php" onclick="<?php $_SESSION['title'] = $_POST['title']; ?>"><img src="<?php echo htmlspecialchars($record['Picture']);?>"  alt="<?php echo htmlspecialchars($record['Title']); ?>" onmouseover="getTitle(this)" height="250" width="180"/></a>
             </div>
             <div class="col-lg-2">
               <h3>Platform(s):</h3>
@@ -895,7 +894,7 @@
           ?>
           
             <div class="col-lg-2 image">
-              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+             <a href="gamePage.php" onclick="<?php $_SESSION['title'] = $_POST['title']; ?>"><img src="<?php echo htmlspecialchars($record['Picture']);?>"  alt="<?php echo htmlspecialchars($record['Title']); ?>" onmouseover="getTitle(this)" height="250" width="180"/></a>
             </div>
             <div class="col-lg-2">
               <h3>Platform(s):</h3>
@@ -1152,7 +1151,7 @@
           ?>
           
             <div class="col-lg-2 image">
-              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+              <a href="gamePage.php" onclick="<?php $_SESSION['title'] = $_POST['title']; ?>"><img src="<?php echo htmlspecialchars($record['Picture']);?>"  alt="<?php echo htmlspecialchars($record['Title']); ?>" onmouseover="getTitle(this)" height="250" width="180"/></a>
             </div>
             <div class="col-lg-2">
               <h3>Platform(s):</h3>
@@ -1410,7 +1409,7 @@
           ?>
           
             <div class="col-lg-2 image">
-              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+              <a href="gamePage.php" onclick="<?php $_SESSION['title'] = $_POST['title']; ?>"><img src="<?php echo htmlspecialchars($record['Picture']);?>"  alt="<?php echo htmlspecialchars($record['Title']); ?>" onmouseover="getTitle(this)" height="250" width="180"/></a>
             </div>
             <div class="col-lg-2">
               <h3>Platform(s):</h3>
@@ -1668,7 +1667,7 @@
           ?>
           
             <div class="col-lg-2 image">
-              <a href="gamePage.html"><img src="<?php echo htmlspecialchars($record['Picture']);?>" height="250" width="180"></a>
+             <a href="gamePage.php" onclick="<?php $_SESSION['title'] = $_POST['title']; ?>"><img src="<?php echo htmlspecialchars($record['Picture']);?>"  alt="<?php echo htmlspecialchars($record['Title']); ?>" onmouseover="getTitle(this)" height="250" width="180"/></a>
             </div>
             <div class="col-lg-2">
               <h3>Platform(s):</h3>
@@ -1796,7 +1795,7 @@
 
   <?php
     // Finally, let's close the database
-    $result->free();
+    // $result->free();
     $db->close();
   }  
   ?>
