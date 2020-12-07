@@ -11,35 +11,16 @@
   $havePost = isset($_POST["save"]);
   $errors = '';
   if ($havePost){
-    $email = htmlspecialchars(trim($_POST["email"]));
-    $username = htmlspecialchars(trim($_POST["username"]));
-    $password = htmlspecialchars(trim($_POST["password"]));
-    $re_password = htmlspecialchars(trim($_POST["re_password"]));
-    $focusId = '';
-    if ($email == '') {
-      $errors .= '<li>Email may not be blank</li>';
-      if ($focusId == '') $focusId = '#email';
-    }
-    if ($username == '') {
-      $errors .= '<li>Username may not be blank</li>';
-      if ($focusId == '') $focusId = '#username';
-    }
-    if ($password == '') {
-      $errors .= '<li>Password may not be blank</li>';
-      if ($focusId == '') $focusId = '#password';
+    if ($_POST['password']!= $_POST['re_password'])
+    {
+        $errors .= '<li>Oops! Password did not match! Try again.</li>';
     }
     if ($errors != '') {
-      echo '<div class="messages"><h4>Please correct the following errors:</h4><ul>';
+      echo '<div class="mege"><h2>Please correct the following errors:</h2><ul>';
       echo $errors;
       echo '</ul></div>';
-      echo '<script type="text/javascript">';
-      echo '  $(document).ready(function() {';
-      echo '    $("' . $focusId . '").focus();';
-      echo '  });';
-      echo '</script>';
     }
-    
-    else { 
+    if ($errors == ''){
       if ($dbOk) {
         $emailForDb = trim($_POST["email"]);  
         $usernameForDb = trim($_POST["username"]);
@@ -48,8 +29,9 @@
         $statement = $db->prepare($insQuery);
         $statement->bind_param("sss",$emailForDb,$usernameForDb,$passwordForDb);
         $statement->execute();
-        echo '<div class="messages"><h4> Success! Congratulation to join literlyGame!</h4>';
-        echo '</div>';
+        header("Location: success.html");
+        //echo '<div class="messages"><h4> Success! Congratulation to join literlyGame!</h4>';
+        //echo '</div>';
         $statement->close();
       }
     }
@@ -74,10 +56,10 @@
     <form method="post" action="sign_up.php" method="post" onsubmit="return validate(this);">
 
             <h1>Sign Up</h1>
-            <div class="value"><input class="boxx" type = "text" name="email" id="email" placeholder="Enter Email" required  value="<?php if($havePost && $errors != '') { echo $email; } ?>"/></div>
-            <div class="value"><input class="boxx" type = "text" name="username" id="username" placeholder="Enter Username" required  value="<?php if($havePost && $errors != '') { echo $username; } ?>"/></div>
-            <div class="value"><input class="boxx" type = "password" name="password" id="password" placeholder="Enter Password" required  value="<?php if($havePost && $errors != '') { echo $password; } ?>"/></div>
-            <div class="value"><input class="boxx" type = "password" name="re_password" id="re_password" placeholder="Re-enter Password" required  value="<?php if($havePost && $errors != '') { echo $password; } ?>"/></div>
+            <div class="value"><input class="boxx" type = "text" name="email" id="email" placeholder="Enter Email" required ></div>
+            <div class="value"><input class="boxx" type = "text" name="username" id="username" placeholder="Enter Username" required  ></div>
+            <div class="value"><input class="boxx" type = "password" name="password" id="password" placeholder="Enter Password" required ></div>
+            <div class="value"><input class="boxx" type = "password" name="re_password" id="re_password" placeholder="Re-enter Password" required  ></div>
             <input type="submit"  value="Sign up" id="save" name="save" />
             <pre> Have an account already? <a class = "sign_up" href = "sign_in.html">SIGN IN</a></pre>
 
