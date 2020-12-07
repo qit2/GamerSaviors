@@ -186,7 +186,7 @@
   
   /* Create a new database connection object, passing in the host, username,
      password, and database to use. The "@" suppresses errors. */
-  @ $db = new mysqli('localhost', 'root', 'ITWSnewpass77', 'Literally Games');
+  @ $db = new mysqli('localhost', 'root', '123root', 'Literally Games');
     
   $dbOk = true; 
 ?>
@@ -327,7 +327,7 @@
       function updates1($id2, $numRecords) {
 
         // Create connection
-        $conn = new mysqli('localhost', 'root', 'ITWSnewpass77', 'Literally Games');
+        $conn = new mysqli('localhost', 'root', '123root', 'Literally Games');
         // Check connection
         if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
