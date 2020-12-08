@@ -102,7 +102,7 @@ h2 {
     border-bottom: 1px solid black;
     border-radius: 10px 0 0 10px;
     font-size: 15px;
-    height: 67px;
+    height: 65px;
     padding: 5px;
     background-color: rgb(255, 182, 230);
     text-shadow: 2px 2px white;
@@ -239,7 +239,8 @@ h2 {
 }
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #10b1b1;
+    width: 177px;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -271,7 +272,7 @@ h2 {
   
   .dropdown:hover .dropdown-content {display: block;}
   
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  .dropdown:hover .dropbtn {background-color: #12d4d4;}
 
   #dropdown {
       float: right;

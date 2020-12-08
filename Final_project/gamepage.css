@@ -125,6 +125,7 @@ h2 {
     background: white;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: 30px;
 
 }
 
@@ -132,4 +133,80 @@ h2 {
     margin: 20px 15px 10px 15px;
     font-size: 24px;
     padding-left: 12px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    resize: none;
+    margin-top: 30px;
+}
+
+.sub {
+    width: 200px;
+    height: 30px;
+    background-color: #282828;
+    border: none;
+    color: white;
+    font-family: arial;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 60px;
+    float: right;
+}
+
+.comment-box {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 4px;
+    background-color: white;
+    border-radius: 4px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.comment-box p{
+    font-family: arial;
+    font-size: 20px;
+    color: #282828;
+    font-weight: 100;
+}
+
+.edit-form {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.edit-form button {
+    width: 40px;
+    height: 20px;
+    color: #282828;
+    background-color: #fff;
+    opacity: 0.7;
+    border: none;
+}
+
+.edit-form button:hover {
+    opacity: 1;
+}
+
+.delete-form {
+    position: absolute;
+    top: 0px;
+    right: 60px;
+}
+
+.delete-form button {
+    width: 40px;
+    height: 20px;
+    color: #282828;
+    background-color: #fff;
+    opacity: 0.7;
+    border: none;
+}
+
+.delete-form button:hover {
+    opacity: 1;
 }

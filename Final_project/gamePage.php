@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php 
+  session_start();
+  date_default_timezone_set('US/Eastern');
+  include 'dbh.php';
+  include 'comments.php';
+?>
 <!DOCTYPE html>
  <html lang="en-us">
   <head>
@@ -240,6 +245,21 @@
       echo "Hades: " . $steamPrice[$steamID]["data"]["price_overview"]["final_formatted"] . " \n";
 
       //Need to change so that the game title can change dynamically using the database, or hardcode each page with their names
+    ?>
+
+    <?php
+    echo "
+    <div class='container'>
+      <div class='row'>
+        <form method='POST' action='".setComments($conn)."'>
+          <input type='hidden' name='uid' value='Anonymous'>
+          <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+          <textarea name='message'> </textarea></br>
+          <button class='sub' type='submit' name='commentSubmit'>Comment</button>
+        </form>
+      </div>
+    </div>";
+    getComments($conn);
     ?>
   </body>
 </html>

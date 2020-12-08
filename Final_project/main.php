@@ -46,7 +46,7 @@
     <section id="search">
       <div class="container">
         <div class="row search">
-          <button id="asbutton" onclick="myFunction()">Advanced Search &#9660;</button>
+        <button id="asbutton" onclick="myFunction()">Advanced Search &#9660;</button>
           <form method="post" action="main.php">
             <input class="gameSearch" name="gameSearch" placeholder="Search for a Game" type="text" />
             <input id="submit" type="submit" value="Submit">
