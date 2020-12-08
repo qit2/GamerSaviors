@@ -27,10 +27,10 @@
       <nav>
         <ul class = "navs">
           <li id = "teamname" onclick = "Prankfunction()">LiterallyGames</li>
-          <li><a href="index.html">Home</a></li>
-          <li><a id = "about" onmouseover = "prankfunction()" onmouseout = "prankrestored()" href="">About Us</a><img id = "cyan" src = "cyan.png"></img></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a id = "about" onmouseover = "prankfunction()" onmouseout = "prankrestored()" href="http://www.innersloth.com/gameAmongUs.php">About Us</a><img id = "cyan" src = "cyan.png"></img></li>
           <li><a href = "sign_out.php" id = "Logout">Logout</a></li>
-          <a href="sign_in.php"><img id = "navimg" src = "unknow.jpg"></a>
+          <a href="UserSett.php"><img id = "navimg" src = "unknow.jpg"></a>
         </ul>
       </nav>
     </header>
@@ -39,7 +39,7 @@
       
   /* Create a new database connection object, passing in the host, username,
         password, and database to use. The "@" suppresses errors. */
-      @ $db = new mysqli('localhost', 'root', '123root', 'Literally Games');
+      @ $db = new mysqli('localhost', 'root', '', 'Literally Games');
         
       $dbOk = true; 
     ?>

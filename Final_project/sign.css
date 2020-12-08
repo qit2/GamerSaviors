@@ -63,3 +63,23 @@ button{
     border: 0px;
     border-radius: 5px;
 }
+#save{
+    background: aqua;
+}
+.errormsg{
+    height: 28px;
+    width: 80%;
+    color: orangered;
+    margin: 9px 0 9px 0;
+    font-size: 15px;
+    text-align: left;
+}
+/*Reset Password Settings*/
+.set{
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 17%;
+}
