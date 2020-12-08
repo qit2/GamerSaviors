@@ -1,12 +1,12 @@
 <?php
 // Initialize the session
-session_start();
+//session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: welcome.php");
-  exit;
-}
+//if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+//  header("location: welcome.php");
+//  exit;
+//}
 $link = mysqli_connect("localhost","root","qtt0210", "final_project");
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -16,10 +16,9 @@ $username_err = $password_err = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   $username = trim($_POST["username"]);
   $password = trim($_POST["password"]);
-  
   // Validate credentials
       // Prepare a select statement
-      $sql = "SELECT Email, Username, Password FROM customer WHERE username = ?";
+      $sql = "SELECT Email, Username, hashed FROM customer WHERE username = ?";
       
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -27,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         // Set parameters
         $param_username = $username;
-        $param_password = password_hash($password, PASSWORD_DEFAULT);
+        //$param_password = password_hash($password, PASSWORD_DEFAULT);
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
             // Store result
@@ -46,9 +45,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         $_SESSION["loggedin"] = true;
                         $_SESSION["email"] = $email;
                         $_SESSION["username"] = $username;                            
-                        
+                        //echo "Success!";
                         // Redirect user to welcome page
-                        header("location: welcome.php");
+                        header("location: index.html");
                     } else{
                         // Display an error message if password is not valid
                         $password_err = "The password you entered was not valid.";
