@@ -1,5 +1,5 @@
 <?php 
-  session_start();
+  session_start(); 
   date_default_timezone_set('US/Eastern');
   include 'dbh.php';
   include 'comments.php';
@@ -9,7 +9,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
    <title>LiterallyGames Search</title>
-   <link rel="stylesheet" type= "text/css" href="gamepage.css">
+   <link rel="stylesheet" type= "text/css" href="gamepage3.css">
    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,18 +32,57 @@
       <nav>
         <ul class = "navs">
           <li id = "teamname" onclick = "Prankfunction()">LiterallyGames</li>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="main.php">Home</a></li>
           <li><a id = "about" onmouseover = "prankfunction()" onmouseout = "prankrestored()" href="">About Us</a><img id = "cyan" src = "cyan.png"></img></li>
           <a href="sign_in.html"><img id = "navimg" src = "unknow.jpg"></a>
         </ul>
       </nav>
     </header>
+     <?php
+      //Functions to get prices from different sites
+     function getTargetPrice($targetID) {
+      $target = file_get_contents("https://redsky.target.com/web/pdp_location/v1/tcin/" . $targetID . "?pricing_store_id=0000&key=");
+      $targetPrice = json_decode($target, true);
+      
+      //Sets Target price 
+      $price = $targetPrice["price"]["current_retail"];
+      return $price;
+     }
+
+     function getGameStopPrice($gameStopID) {
+      $gameStop = file_get_contents("http://www.gamestop.com/" . $gameStopID . ".html");
+      
+      //Scrape the price from the GameStop web page using regular expressions - selects the shortest match between the 
+      //given string and the $ character, then selects the shortest match between the $ character and a </span> tag. Without the 
+      //? character, the expression selects the largest match and outputs 90% of the html.
+      $gameStopMatched = preg_match('/<div class="condition-prices">(.*?)\$(.*?)<\/span>/s', $gameStop, $match);
+      
+      //Initialize GameStop price variable
+      $gameStopPrice = 0;
+      
+      //If block to check if the connection was successful, then echoes onto page
+      if ($gameStopMatched and isset($match[2])) {
+
+        $gameStopPrice = $match[2];
+      }
+      return $gameStopPrice;
+     }
+
+     function getSteamPrice($steamID) {
+      $steam = file_get_contents("http://store.steampowered.com/api/appdetails/?appids=" . $steamID);
+      $steamPrice = json_decode($steam, true);
+      //Sets Steam price 
+      $price = $steamPrice[strval($steamID)]["data"]["price_overview"]["final_formatted"];
+      return $price;
+     }
+
+    ?>
 
     <?php
       
   /* Create a new database connection object, passing in the host, username,
         password, and database to use. The "@" suppresses errors. */
-      @ $db = new mysqli('localhost', 'root', '123root', 'Literally Games');
+      @ $db = new mysqli('localhost', 'root', 'ITWSnewpass77', 'Literally Games');
         
       $dbOk = true; 
     ?>
@@ -65,11 +104,53 @@
               </div>
               <div class="prices">
                 <h2> Compare All Prices </h2>
-                <ul>
-                  <li><a class="store" href="https://store.steampowered.com/app/582160/Assassins_Creed_Origins/">Steam: $11.99</a></li>
-                  <li><a class="store" href="https://store.ubi.com/us/game/?lang=en_US&pid=592450934e0165f46c8b4568&dwvar_592450934e0165f46c8b4568_Platform=pcdl&edition=Standard%20Edition&source=detail">UPlay: $12.00</a></li>
-                  <li><a class="store" href="https://www.origin.com/usa/en-us/store/assassins-creed/assassins-creed-origins">Origin: $60.00</a></li>
-                </ul>
+                  <?php 
+                  echo '<ul>';
+                    if ($row['Title'] == 'Minecraft'){
+                      echo '<li><a href="https://www.minecraft.net/en-us/store/minecraft-java-edition">PC Java: $26.95</a></li>';
+                      echo '<li><a href="https://www.minecraft.net/en-us/store/minecraft-windows10">PC Windows 10: $29.99</a></li>';
+                    }
+                    else if ($row['Title'] == 'Call of Duty: Modern Warfare'){
+                      echo '<li><a href="https://us.shop.battle.net/en-us/product/call-of-duty-modern-warfare?p=68930">PC Blizzard: $59.99</a></li>';
+                    }
+                    else if ($row['Title'] == 'Call of Duty: Black Ops Cold War'){
+                      echo '<li><a href="https://us.shop.battle.net/en-us/product/call-of-duty-black-ops-cold-war?p=73929">PC Blizzard: $59.99</a></li>';
+                    }
+                    if ($row['steamid'] != 0){
+                      echo '<li><a href="https://store.steampowered.com/app/' . $row['steamid'] . '">Steam: ' . getSteamPrice($row['steamid']) . '</a></li>';
+                    }
+                    if ($row['targetps4'] != 0){
+                      echo '<li><a href="https://www.target.com/p/-/A-' . $row['targetps4'] . '">PS4 (Target): $' . getTargetPrice($row['targetps4']) . '</a></li>';
+                    } 
+                    if ($row['targetxone'] != 0){
+                      echo '<li><a href="https://www.target.com/p/-/A-' . $row['targetxone'] . '">Xbox One (Target): $' . getTargetPrice($row['targetps4']) . '</a></li>';
+                    } 
+                    if ($row['targetswitch'] != 0){
+                      echo '<li><a class="switch" href="https://www.target.com/p/-/A-' . $row['targetswitch'] . '">Nintendo Switch (Target): $' . getTargetPrice($row['targetswitch']) . '</a></li>';
+                    } 
+                    if ($row['gamestopps3'] != 0){
+                      echo '<li><a href="http://www.gamestop.com/' . $row['gamestopps3'] . '.html">PS3 (GameStop): $' . getGameStopPrice($row['gamestopps4']) . '</a></li>';
+                    } 
+                    if ($row['gamestopps4'] != 0){
+                      echo '<li><a href="http://www.gamestop.com/' . $row['gamestopps4'] . '.html">PS4 (GameStop): $' . getGameStopPrice($row['gamestopps4']) . '</a></li>';
+                    } 
+                    if ($row['gamestopx360'] != 0){
+                      echo '<li><a href="http://www.gamestop.com/' . $row['gamestopx360'] . '.html">Xbox 360 (GameStop): $' . getGameStopPrice($row['gamestopx360']) . '</a></li>';
+                    } 
+                    if ($row['gamestopxone'] != 0){
+                      echo '<li><a href="http://www.gamestop.com/' . $row['gamestopxone'] . '.html">Xbox One (GameStop): $' . getGameStopPrice($row['gamestopxone']) . '</a></li>';
+                    } 
+                    if ($row['gamestopwiiu'] != 0){
+                      echo '<li><a href="http://www.gamestop.com/' . $row['gamestopwiiu'] . '.html">Wii U (GameStop): $' . getGameStopPrice($row['gamestopwiiu']) . '</a></li>';
+                    }
+                    if ($row['gamestopswitch'] != 0){
+                      echo '<li><a class="switch" href="http://www.gamestop.com/' . $row['gamestopswitch'] . '.html">Nintendo Switch (GameStop): $' . getGameStopPrice($row['gamestopswitch']) . '</a></li>';
+                    }
+                  // <li><a class="store" href="https://store.steampowered.com/app/582160/Assassins_Creed_Origins/">Steam: $11.99</a></li>
+                  // <li><a class="store" href="https://store.ubi.com/us/game/?lang=en_US&pid=592450934e0165f46c8b4568&dwvar_592450934e0165f46c8b4568_Platform=pcdl&edition=Standard%20Edition&source=detail">UPlay: $12.00</a></li>
+                  // <li><a class="store" href="https://www.origin.com/usa/en-us/store/assassins-creed/assassins-creed-origins">Origin: $60.00</a></li>
+                echo '</ul>';
+                  ?>
                 <h2> Platforms </h2>
                 <?php
                   if ($row['PC'] == 1) {?>
@@ -209,44 +290,9 @@
       <?php
       }
     ?>
-     <?php
-      //Initialize ID variables - with database linked up, we should be able to fetch the id from the database given the name
-      //Not sure how to separate based on console yet, will think
-      $gameStopID = 10141904;
-      $targetID = 51328402;
-      $steamID = 1145360;
-
-      //GET requests to the GameStop web page, the Target data API, and the Steam info API.
-      $gameStop = file_get_contents("http://www.gamestop.com/" . $gameStopID . ".html");
-      $target = file_get_contents("https://redsky.target.com/web/pdp_location/v1/tcin/" . $targetID . "?pricing_store_id=0000&key=");
-      $steam = file_get_contents("http://store.steampowered.com/api/appdetails/?appids=" . $steamID);
-      
-      //Scrape the price from the GameStop web page using regular expressions - selects the shortest match between the 
-      //given string and the $ character, then selects the shortest match between the $ character and a </span> tag. Without the 
-      //? character, the expression selects the largest match and outputs 90% of the html.
-      $isMatched = preg_match('/<div class="condition-prices">(.*?)\$(.*?)<\/span>/s', $gameStop, $match);
-
-      //Initialize GameStop price variable
-      $gameStopPrice = 0;
-      
-      //If block to check if the connection was successful, then echoes onto page
-      if ($isMatched and isset($match[2])) {
-
-        $gameStopPrice = $match[2];
-        echo "The Legend of Zelda: Breath of the Wild: $" . $gameStopPrice . '<br>';
-      }
-      
-      //Sets Target price and echoes onto page
-      $targetPrice = json_decode($target, true);
-      echo "Death Stranding: $" . $targetPrice["price"]["current_retail"] . " \n";
-
-      //Sets Steam price and echoes onto page
-      $steamPrice = json_decode($steam, true);
-      echo "Hades: " . $steamPrice[$steamID]["data"]["price_overview"]["final_formatted"] . " \n";
-
-      //Need to change so that the game title can change dynamically using the database, or hardcode each page with their names
-    ?>
-
+    <div class="commentSlog">
+      <h1>Comments</h1>
+    </div>
     <?php
     echo "
     <div class='container'>
