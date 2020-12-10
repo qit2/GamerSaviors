@@ -86,6 +86,14 @@ header{
     height: 1110px;
 }
 
+.prices ul li {
+    font-size: 17.9px;
+}
+
+.prices ul li .switch {
+    font-size: 15px;
+}
+
 a.store {
     color: black;
 }
@@ -101,6 +109,14 @@ h2 {
     text-align: center;
     border-radius: 10px;
     margin: 90px 0px 50px 0;
+    color: lightblue;
+}
+
+.commentSlog {
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin: 90px 350px 50px 350px;
     color: lightblue;
 }
 
@@ -209,4 +225,4 @@ textarea {
 
 .delete-form button:hover {
     opacity: 1;
-}
+} 
