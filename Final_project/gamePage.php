@@ -9,7 +9,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
    <title>LiterallyGames Search</title>
-   <link rel="stylesheet" type= "text/css" href="gamepage3.css">
+   <link rel="stylesheet" type= "text/css" href="gamepage.css">
    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,7 +32,7 @@
       <nav>
         <ul class = "navs">
           <li id = "teamname" onclick = "Prankfunction()">LiterallyGames</li>
-          <li><a href="main.php">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a id = "about" onmouseover = "prankfunction()" onmouseout = "prankrestored()" href="">About Us</a><img id = "cyan" src = "cyan.png"></img></li>
           <a href="sign_in.html"><img id = "navimg" src = "unknow.jpg"></a>
         </ul>
