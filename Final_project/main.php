@@ -26,7 +26,7 @@
         <nav>
             <ul class = "navs">
                 <li id = "teamname" onclick = "Prankfunction()">LiterallyGames</li>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="main.php">Home</a></li>
                 <li><a id = "about" onmouseover = "prankfunction()" onmouseout = "prankrestored()" href="">About Us</a><img id = "cyan" src = "cyan.png"></img></li>
                 <a href="sign_in.html"><img id = "navimg" src = "unknow.jpg"></a>
             </ul>
@@ -46,7 +46,7 @@
     <section id="search">
       <div class="container">
         <div class="row search">
-        <button id="asbutton" onclick="myFunction()">Advanced Search &#9660;</button>
+          <button id="asbutton" onclick="myFunction()">Advanced Search &#9660;</button>
           <form method="post" action="main.php">
             <input class="gameSearch" name="gameSearch" placeholder="Search for a Game" type="text" />
             <input id="submit" type="submit" value="Submit">
@@ -56,30 +56,10 @@
                 <h2>Platform</h2>
                   <input type="checkbox" name="PC" value="pc">
                   <label class="marg" for="PC"> PC </label><br>
-                  <input type="checkbox" name="XBOX" value="xbox">
-                  <label class="marg" for="XBOX"> XBOX </label><br>
-                  <input type="checkbox" name="XBOX360" value="xbox360">
-                  <label class="marg" for="XBOX360"> XBOX 360 </label><br>
                   <input type="checkbox" name="XBOX1" value="xbox1">
                   <label class="marg" for="XBOX1"> XBOX One </label><br>
-                  <input type="checkbox" name="Playstation" value="playstation">
-                  <label class="marg" for="Playstation"> Playstation </label><br>
-                  <input type="checkbox" name="Playstation2" value="playstation2">
-                  <label class="marg" for="Playstation2"> Playstation 2 </label><br>
-                  <input type="checkbox" name="Playstation3" value="playstation3">
-                  <label class="marg" for="Playstation3"> Playstation 3 </label><br>
                   <input type="checkbox" name="Playstation4" value="playstation4">
                   <label class="marg" for="Playstation4"> Playstation 4 </label><br>
-                  <input type="checkbox" name="Nintendo" value="nintendo">
-                  <label class="marg" for="Nintendo"> Nintendo Entertainment System </label><br>
-                  <input type="checkbox" name="Nintendo64" value="nintendo64">
-                  <label class="marg" for="Nintendo64"> Nintendo 64 </label><br>
-                  <input type="checkbox" name="GameCube" value="GameCube">
-                  <label class="marg" for="GameCube"> GameCube </label><br>
-                  <input type="checkbox" name="Wii" value="wii">
-                  <label class="marg" for="Wii"> Wii </label><br>
-                  <input type="checkbox" name="WiiU" value="wiiu">
-                  <label class="marg" for="WiiU"> Wii U </label><br>
                   <input type="checkbox" name="Switch" value="switch">
                   <label class="marg" for="Switch"> Nintendo Switch </label><br>
               </div>
@@ -186,7 +166,7 @@
   
   /* Create a new database connection object, passing in the host, username,
      password, and database to use. The "@" suppresses errors. */
-  @ $db = new mysqli('localhost', 'root', '123root', 'Literally Games');
+  @ $db = new mysqli('localhost', 'root', 'ITWSnewpass77', 'Literally Games');
     
   $dbOk = true; 
 ?>
@@ -324,33 +304,7 @@
       
       <?php
 
-      function updates1($id2, $numRecords) {
-
-        // Create connection
-        $conn = new mysqli('localhost', 'root', '123root', 'Literally Games');
-        // Check connection
-        if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-        } 
-
-        $sql = "UPDATE `TABLE 1` SET newpage=1 WHERE id=$id2";
-        if ($conn->query($sql) === TRUE) {
-          echo "Record updated successfully";
-        } else {
-          echo "Error updating record: " . $conn->error;
-        }
-
-        for ($d=1; $d < $numRecords; $d++) {
-          if ($d != $id2) {
-            $sql = "UPDATE `TABLE 1` SET newpage=0 WHERE id=$d";
-          }
-          if ($conn->query($sql) != TRUE) {
-            echo "Error updating record: " . $conn->error;
-          }
-        }
-
-        $conn->close();
-      }
+      
 
       $result = $db->query($query);
       $numRecords = $result->num_rows;
@@ -373,11 +327,7 @@
             <div class="col-lg-2 image">
               <a href="gamePage.php" onclick="<?php $_SESSION['title'] = $_POST['title']; ?>"><img src="<?php echo htmlspecialchars($record['Picture']);?>"  alt="<?php echo htmlspecialchars($record['Title']); ?>" onmouseover="getTitle(this)" height="250" width="180"/></a>
               
-              <?php
-                if(array_key_exists($i, $_POST)) { 
-                  updates1(htmlspecialchars($record['id']), $numRecords); 
-                } 
-              ?>
+              
             </div>
             <div class="col-lg-2">
               <h3>Platform(s):</h3>
@@ -1795,7 +1745,7 @@
 
   <?php
     // Finally, let's close the database
-    // $result->free();
+    $result->free();
     $db->close();
   }  
   ?>
