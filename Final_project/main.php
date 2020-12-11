@@ -22,6 +22,7 @@
   </head>
 
   <body id="main">
+    <!-- This is the header and the nav bar at the top of the page.-->
     <header>
         <nav>
             <ul class = "navs">
@@ -46,12 +47,16 @@
     <section id="search">
       <div class="container">
         <div class="row search">
+        <!-- I included this button and made it so everything in the as class would be hidden until this button was clicked. I did so by using the myfunction() function that I created in javascript -->
           <button id="asbutton" onclick="myFunction()">Advanced Search &#9660;</button>
+          <!-- This form was used for all of the buttons on the page and called the main.php to run as the action when ever the submit button was clicked-->
           <form method="post" action="main.php">
             <input class="gameSearch" name="gameSearch" placeholder="Search for a Game" type="text" />
             <input id="submit" type="submit" value="Submit">
-
+            <!-- I used bootstrap grids to be able to center and align everything in the form and also all of the games on the page.-->
+            <!-- I basically used bootstrap grid for everything on this page -->
             <div id="as">
+              <!-- This listed all the platforms and were all checkboxes-->
               <div class="col-lg-6 platform">
                 <h2>Platform</h2>
                   <input type="checkbox" name="PC" value="pc">
@@ -65,6 +70,7 @@
               </div>
 
               <div class="col-lg-6 genre">
+                <!-- This was all of the genres and they were also all checkbox type-->
                 <h2>Genre</h2>
                   <input type="checkbox" name="Action" value="action">
                   <label class="marg" for="Action"> Action </label><br>
@@ -87,7 +93,7 @@
                   <input type="checkbox" name="Sports" value="sports">
                   <label class="marg" for="Sports"> Sports </label><br>
               </div>
-
+              <!-- This was the modes and also used checkboxes here -->    
               <div class="col-lg-12 mode">
                 <h2 id="mode">Mode</h2>
                 <div class="col-lg-3">
@@ -108,6 +114,7 @@
                 </div>
               </div>
 
+              <!-- There were all of the esrb ratings and were also checkboxes-->
               <div class="col-lg-4 rating">
                 <h2>Rating</h2>
                   <input type="checkbox" name="Everyone" value="everyone">
@@ -120,6 +127,7 @@
                   <label class="marg" for="Mature"> M = Mature </label><br>
               </div>
 
+              <!-- This was the price section and I had a text box to be able to enter a price and also check any amount to list games of all prices-->
               <div class="col-lg-4 price">
                 <h2>Price</h2>
                   <label class="fix" for="quantity">Amount:</label>
@@ -128,6 +136,7 @@
                   <label class="marg" for="Price"> Any Amount </label><br>
               </div>
 
+              <!-- This was the release date section where the user could enter two years and find all the games inbetween those two years.-->
               <div class="col-lg-4 date">
                 <h2>Release Date</h2>
                   <label class="fix" for="yearmin">Enter a year after 2000:</label>
@@ -143,6 +152,8 @@
       <div class="container">
         <div class="row">
           <div class="dropdown" id="dropdown">
+            <!-- This is the code to get the dropdown working-->
+            <!-- all the functions included were the same just made different id's toggle on and off-->
             <button class="dropbtn">Dropdown</button>
             <div class="dropdown-content">
               <a href="#" onclick="myFunction1();">Rating Ascending</a>
@@ -179,6 +190,8 @@
       <?php
       $array = [];
       $query = "";
+
+      //here I checked to make sure all the chekboxes were cheecked and if they were then there specific query would be added to the query array called array
       if (isset($_POST['PC'])) {
         array_push($array, "`PC` LIKE 1");
       }
@@ -245,6 +258,9 @@
       if (isset($_POST['Mature'])) {
         array_push($array, "`M` LIKE 1");
       } 
+
+      //It was more difficult with the text boxes to check for them
+      //I also had to add error checkings with these
       if (isset($_POST['quantity']) && $_POST['quantity'] != 0 && $_POST['quantity'] <= 100 && $_POST['quantity'] >= 0) {
         array_push($array, "`Price` BETWEEN " . ($_POST['quantity']-5) . " AND " . ($_POST['quantity']+5));
       }
@@ -263,16 +279,21 @@
         array_push($array, "`Title` Like '%%'");
       }
       
+      //this was added to run this specific query when the game search searched for nothing
       if (isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price']) && isset($_POST['quantity']) && $_POST['quantity'] == 0 && isset($_POST['yearmin']) && isset($_POST['yearmax']) && ($_POST['yearmin'] == '') && ($_POST['yearmax'] == '')){
         $search = $_POST['gameSearch'];
         array_push($array, "`Title` LIKE '%$search%'");
       }
+
+      //this was he query to run when the page first opened
       if (!isset($_POST['gameSearch']) && !isset($_POST['PC']) && !isset($_POST['XBOX1']) && !isset($_POST['Playstation4']) && !isset($_POST['Switch']) && !isset($_POST['Action']) && !isset($_POST['Adventure']) && !isset($_POST['Battleroyale']) && !isset($_POST['Fighting']) && !isset($_POST['Shooter']) && !isset($_POST['Racing']) && !isset($_POST['RTS']) && !isset($_POST['RolePlaying']) && !isset($_POST['Simulation']) && !isset($_POST['Sports']) && !isset($_POST['Singleplayer']) && !isset($_POST['Multiplayer']) && !isset($_POST['Online']) && !isset($_POST['Local']) && !isset($_POST['Everyone']) && !isset($_POST['Everyone10']) && !isset($_POST['Teen']) && !isset($_POST['Mature']) && !isset($_POST['Price'])){
         array_push($array, "`Title` Like '%%'");
       }
       ?>
 
       <?php
+
+      //this code looped through the array created from the above code and created a query with it
       if (count($array) == 1) {
         $query .= "SELECT DISTINCT * FROM `TABLE 1` WHERE " . $array[0] . " ORDER BY `Rating`";
       } else {
@@ -305,7 +326,8 @@
       <?php
 
       
-
+      //This part based on the query made above ran through the database and printed out all of the games
+      //here it is mainly html and I also used bootstrap grids to align everything nicely
       $result = $db->query($query);
       $numRecords = $result->num_rows;
 
@@ -453,7 +475,7 @@
         ?>
     </section>
 
-
+    <!-- From here down all the code is the same besides what the ordering will be of so I will not comment all of it because it will be the same as above -->
     <!--This section is all the games ordered by reverse rating-->
     <section id="Rrating">
     <?php
