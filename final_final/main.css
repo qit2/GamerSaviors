@@ -1,0 +1,283 @@
+/*Environmental settings*/
+*{
+    cursor:url(favicon.ico),auto;
+}
+
+html, body{
+    width: 100%;
+    height: 165%;
+    background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);
+}
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+h2 {
+    text-align: left;
+}
+
+/*Navigation Bar & Top-Right Image settings*/
+.navs{
+    list-style: none;
+}
+.navs li{
+    display: inline-block;
+    padding: 23px 130px 0 0;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 600;
+    font-size: 46px;
+    color: white;
+    
+}
+.navs li a{
+    transition: all 0.3s ease 0s;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+#cyan{
+    width: 20px;
+    height: 23px;
+    margin-left: 5px;
+    display: none;
+    float: right;
+    margin: 25px 0 0 5px;
+}
+#navimg{
+    width: 114px;
+    height: 114px;
+    background-color: white;
+}
+#dropbton{
+    padding: 0;
+}
+
+/*Game Search Slogan & Form settings*/
+.slog {
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin: 90px 0px 50px 0;
+    color: lightblue;
+}
+.gameSearch {
+    width: 75%;
+    padding: 11.25px 0 11.25px 20px;
+    font-size: 30px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+#submit {
+    width: 15%;
+    padding: 11.25px 0px;
+    margin-left:-6px;
+    font-size: 30px;
+    border-radius: 0 10px 0 0;
+    border: none;
+    border-bottom: 1px solid black;
+}
+#submit:hover {
+    color: white;
+}
+#as {
+    display: none;
+    text-align: left;
+}
+#asbutton {
+    width: 10%;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 10px 0 0 10px;
+    font-size: 15px;
+    height: 65.9px;
+    padding: 5px;
+    background-color: rgb(255, 182, 230);
+    text-shadow: 2px 2px white;
+    float: left;
+}
+#asbutton:hover {
+    background-color: lightpink;
+}
+#bor {
+    display: none;
+    border: 1px solid;
+    border-radius: 0;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+}
+
+/*Advanced Search settings*/
+.search {
+    background-color: white;
+    border-radius: 10px 10px 0 10px;
+    text-align: center;
+}
+.platform {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 3px solid grey;
+    background-color: rgb(56, 104, 172);
+    color: white;
+    height: 450px;
+}
+
+.genre {
+    border-top: 1px solid black;
+    border-right: 3px solid gray;
+    background-color: rgb(56, 104, 172);
+    color: white;
+    height: 450px;
+}
+
+.mode {
+    border-top: 1px solid black;
+    border-right: 3px solid gray;
+    border-left: 3px solid gray;
+    background-color: rgb(56, 104, 172);
+    color: white;
+    height: 100px;
+    text-align: center;
+}
+
+#mode {
+    text-align: center;
+}
+
+.region {
+    border-top: 1px solid black;
+    border-right: 3px solid gray;
+    background-color: rgb(56, 104, 172);
+    color: white;
+    height: 200px;
+}
+
+.rating {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 3px solid grey;
+    border-bottom: 3px solid gray;
+    background-color: rgb(56, 104, 172);
+    color: white;
+    height: 200px;
+}
+
+.price {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 3px solid gray;
+    background-color: rgb(56, 104, 172);
+    color: white;
+    height: 200px;
+}
+
+.date {
+    border-top: 1px solid black;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
+    background-color: rgb(56, 104, 172);
+    color: white;
+    height: 200px;
+}
+
+.marg {
+    margin-left: 20px;
+}
+#yearmax, #monthmax, #daymax, #yearmin, #monthmin, #daymin, #quantity {
+    color: black;
+}
+
+/*Row of Games settings*/
+#games {
+    margin: 50px 0;
+    padding-bottom: 200px;
+}
+
+.games {
+    border: 1px solid black;
+    padding: 10px 10px;
+    color: white;
+    background-color: #12d4d4;
+}
+
+.games1 {
+    border: 1px solid black;
+    padding: 10px 10px;
+    margin: 10px 0 10px 0;
+    color: white;
+    background-color: #10b1b1; 
+}
+
+.image img {
+    border:2px solid #fff;
+    box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
+    -khtml-box-shadow: -10px 10px 5px rgba(0, 0, 0, .5);
+}
+
+.image img:hover {
+    margin-left: -10px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, .5);
+    -khtml-box-shadow: 0px 0px 0px rgba(0, 0, 0, .5);
+
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  #dropdown {
+      float: right;
+  }
+
+  #rating, #price, #Rprice, #alpha, #Ralpha {
+      display: none;
+  }

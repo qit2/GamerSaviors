@@ -1,0 +1,235 @@
+/*Environmental settings*/
+*{
+    cursor:url(favicon.ico),auto;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);
+}
+
+/*Navigation Bar & Top-Right Image settings*/
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+.navs{
+    list-style: none;
+}
+.navs li{
+    display: inline-block;
+    padding: 0px 130px;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 600;
+    font-size: 46px;
+    color: white;
+}
+.navs li a{
+    transition: all 0.3s ease 0s;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+#navimg{
+    width: 130px;
+    height: 130px;
+    right: 55px;
+    float: right;
+    padding: 0 0 0 25px;
+}
+#cyan{
+    width: 20px;
+    height: 23px;
+    margin-left: 5px;
+    display: none;
+    float: right;
+    padding: 25px 0 0 5px;
+}
+
+/*Join Button settings*/
+.button{
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    top: 72.5%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    background: linear-gradient(60deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    width: 250px;
+    height: 75px;
+    margin: 700px, 0, 0, 200px;
+    line-height: 65px;
+    color: aliceblue;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+.button::before{
+    content:"";
+    left:-5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    background: linear-gradient(60deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 50px;
+    filter:blur(20px);
+    z-index: -1;
+}
+.button a{
+  text-decoration: none;
+  color:white;
+}
+.button:hover::before{
+    animation: func 8s infinite;
+}
+.button:hover{
+    animation: func 8s infinite;
+}
+@keyframes func{
+    100%{
+        background-position: -400% 0;
+    }
+}
+
+/*Team Slogan with Animation settings*/
+.rainbow-text {
+  /* Create a conic gradient. */
+  background: #CA4246;
+  background-color: #CA4246;
+  background: conic-gradient(
+    #CA4246 16.666%, 
+    #E16541 16.666%, 
+    #E16541 33.333%, 
+    #F18F43 33.333%, 
+    #F18F43 50%, 
+    #8B9862 50%, 
+    #8B9862 66.666%, 
+    #476098 66.666%, 
+    #476098 83.333%, 
+    #A7489B 83.333%);
+  /* Set thee background size and repeat properties. */
+  background-size: 57%;
+  background-repeat: repeat;    
+  /* This will show the gradient as a text color. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  /* This animates the text on page load and when hovering out. */
+  animation: rainbow-text-animation-rev 0.5s ease forwards;
+  cursor: pointer;
+}
+  /* Add slogan animation on hover. */
+.rainbow-text:hover {
+  animation: rainbow-text-animation 0.5s ease forwards;
+}
+  /* Move the background and make it larger. */
+  /* Animation shown when hovering over the text. */
+@keyframes rainbow-text-animation{
+  0% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 200%;
+    background-position: -8em 1em;
+  }
+}
+  /* Move the background and make it smaller. */
+  /* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-animation-rev{
+  0% {
+    background-size: 200%;
+    background-position: -8em 1em;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+}
+.teamslogan{
+font-size: 6rem;
+top: 10px;
+font-weight: 900;
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+cursor: pointer;
+width: 950px;
+}
+
+/*Bottom of Page Wave with Animation settings*/
+.wave{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 208px;
+    width: 200%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.buttom_1{
+    opacity: 0.3;
+    z-index: 15;
+}
+.buttom_2{
+    opacity: 0.6;
+    z-index: 10;
+}
+.buttom_3{
+    z-index: 5;
+    opacity: 0.8;
+}
+.wave_1{
+    background-image: url(1.png);
+    -webkit-backgroud-size: 50% 80px;
+    background-size: 50% 80px;
+}
+.wave_2{
+    background-image: url(2.png);
+    -webkit-backgroud-size: 60% 100px;
+    background-size: 50% 100px;
+    animation: move_wave 12s linear infinite;
+}
+.wave_3{
+    background-image: url(3.png);
+    -webkit-backgroud-size: 50% 80px;
+    background-size: 50% 80px;
+    animation: move_wave 18s linear infinite;
+}
+@keyframes move_wave{
+    0%{
+        transform: translateX(0) translateZ(0) scaleY(1) ;
+    }
+    50%{
+        transform: translateX(-25%) translateZ(0) scaleY(0.5) ;
+    }
+    100%{
+        transform: translateX(-50%) translateZ(0) scaleY(1) ;
+    }
+}
+

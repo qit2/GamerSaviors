@@ -1,0 +1,497 @@
+#main{
+    /*background: url("background.jpg") ;
+    background-repeat: no-repeat;*/
+    width:100%;
+    height:400px;
+    background: linear-gradient(-45deg, #9a22a7 , rgba(252,176,69,1), #E73C7E,#23A6D5);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change_background 13s ease-in-out infinite;
+}
+
+@keyframes change_background{
+    0%{
+        background-position: 100% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+.word{
+    font-size: 6rem;
+}
+.box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Indie Flower', cursive;
+    margin: 0;
+    padding: 0;
+    left: 25%;
+    top:100px;
+    align-items: center;
+    position: relative;
+    width: 800px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    background: white;
+    /*background: linear-gradient(30deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);*/
+    opacity: 0.85;
+}
+
+.teamslogan{
+    font-size: 3rem;
+    color: rgb(167, 156, 156);
+}
+
+
+.box:before{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    right: -2px;
+    bottom: -2px;
+    background: white;
+    z-index: -2;
+    filter: blur(40px);
+}
+.box:after{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    right: -2px;
+    bottom: -2px;
+    background: white;
+    z-index: -2;
+    filter: blur(50px);
+}
+.box:before, .box:after{
+    background: linear-gradient(45deg,#89ff00,yellow,#89ff00);
+}
+.button{
+    text-decoration: none;
+    position: absolute;
+    left: 50%;
+    top:150%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    background: linear-gradient(60deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    width:300px;
+    height: 100px;
+    line-height: 90px;
+    color: aliceblue;
+    text-transform: uppercase;
+    border-radius: 50px;
+    z-index: -1;
+}
+.button::before{
+    content:"";
+    position: absolute;
+    left:-5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    background: linear-gradient(60deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 50px;
+    filter:blur(20px);
+    z-index: -1;
+}
+
+.button a{
+  text-decoration: none;
+  color:white;
+}
+
+.button:hover::before{
+    animation: func 8s infinite;
+}
+.button:hover{
+    animation: func 8s infinite;
+}
+@keyframes func{
+    100%{
+        background-position: -400% 0;
+    }
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.navs{
+    list-style: none;
+}
+
+.navs li{
+    display: inline-block;
+    padding: 0px 80px;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 600;
+    font-size: 46px;
+    color: white;
+    
+}
+
+.navs li a{
+    transition: all 0.3s ease 0s;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.navs li a:hover{
+    color: #0088a9;
+}
+
+.dropdown .dropbutton{
+    font-size: 20px;
+    border: none;
+    outline:none;
+    padding: 14px 16px;
+   
+    margin: 0;
+    background-color: inherit;
+    color:white;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.intro_project{
+    display:none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.intro_project a{
+    float:none;
+    color:white;
+    padding:12px 16px;
+    display:block;
+    text-align: left;
+}
+
+.dropdown:hover .intro_project {
+    display: block;
+  }
+
+.project_img{
+    margin-left:40px;
+    width: 420px;
+    height: 250px;
+    float: left;
+}
+
+.project_img_spe{
+    margin-top: 200px;
+    margin-right:50px;
+    width: 420px;
+    height: 250px;
+    float: right;
+}
+
+.text{
+    margin-top: 100px;
+    margin-left:550px;
+    margin-right:100px;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;
+}
+
+.text_spe{
+    margin-top: 30px;
+    margin-left:480px;
+    margin-right:100px;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;
+}
+
+.title{
+    font-size: 25px;
+    margin-left: 50px;
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;
+}
+
+/*css for new_project.html*/
+.intro_title{
+  font-size: 25px;
+  margin-top: -30px;
+  margin-left: 50px;
+  font-family: 'Lobster', cursive;
+  color: whitesmoke;
+}
+
+.pro_content{
+  font-size: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  font-family: 'Lobster', cursive;
+  color: whitesmoke;
+}
+
+.the_end{
+  font-size: 50px;
+  margin-left: 550px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  font-family: 'Lobster', cursive;
+  color: whitesmoke;
+}
+
+.introup{
+  display: block;
+  padding: 80px 0 80px 0;
+  text-align: center;
+  font-size: 150px;
+  font-family: 'Bangers', cursive;
+}
+
+.new_pro_img{
+  margin-left: 30px;
+  margin-right: 70px;
+  float: right;
+  width:350px;
+  height: 200px;
+}
+
+.intro{
+  margin-top: 20px;
+  font-size: 100px;
+  color: white;
+  font-family: 'Anton', sans-serif;
+}
+
+/*New*/
+/*Environmental Settings*/
+#team{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /*background color: rainbow-ish?*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+.indexup{
+    display: block;
+    padding: 30px 0 30px 0;
+    text-align: center;
+    font-size: 150px;
+    font-family: 'Bangers', cursive;
+    color:white;
+}
+h2{
+  display: block;
+  font-family: Georgia,serif;
+  margin-bottom: 40px;
+}
+  
+  
+/*Overall Flip Card Settings*/
+.card{
+  cursor: pointer;
+  width: 20%;
+  height: 400px;
+}
+.middle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.front,.back{
+  width: 30%;
+  height: 175%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform .6s linear;
+}
+/*Card Front Settings*/
+.front img{
+  height: 100%;
+  width: 100%;
+}
+.front{
+  transform: perspective(600px) rotateY(0deg);
+}
+/*Card Back Settings*/
+.back{
+  background: #f1f1f1;
+  transform: perspective(600px) rotateY(-180deg);
+}
+.back-content{
+  color: #2c3e50;
+  text-align: center;
+  width: 100%;
+}
+.sm{
+  margin: 20px 0;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.sm i{
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: #2c3e50;
+  font-size: 18px;
+  border-radius: 50%;
+}
+/*Card Animation Settings*/
+.sm:hover{
+  color: yellowgreen;
+}
+/*h1:hover{
+  Apply Rainbow Gradient Effect;
+}*/
+.card:hover > .front{
+  transform: perspective(2500px) rotateY(180deg);
+}
+.card:hover > .back{
+  transform: perspective(2500px) rotateY(0deg);
+}
+  
+  
+/*Individual Card Settings*/
+.one{
+  float: left;
+  margin: 190px 0px 500px 225px;
+}
+.two{
+  float: right;
+  margin: 190px 415px 500px 0px;
+}
+.three{
+  float: left;
+  margin: 100px 0px 555px 225px;
+}
+.four{
+  float: right;
+  margin: 100px 415px 555px 0px;
+}
+
+/* CSS for Resumés */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#name {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-variant: small-caps;
+  color: white;
+  font-size: 3em;
+  background-color: rgb(71, 71, 71);
+  line-height:46.2px;
+  position: relative;
+}
+
+#header {
+  height: 150px;
+  padding: 20px 0px 20px 20px;
+  background-color: rgb(71, 71, 71);
+}
+
+#header img {
+  float: right;
+  padding-right: 20px;
+}
+
+.resumeTitle {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: bolder;
+  border-bottom: 1px black solid;
+}
+
+.col-lg-3 li {
+  font-size: 1em;
+  list-style-type: none;
+  margin-left: 0px;
+}
+
+aside ul {
+  margin: 0;
+  padding: 0 0 10px 20px;
+}
+
+article ul {
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+.header{
+  list-style-type: none;
+  margin-left: 0px;
+}
+
+.date {
+  padding-left: 5px;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.col-lg-3 p {
+  padding-left: 5px;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+article li {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+aside li {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.bottom {
+  margin-left: 0px;
+  list-style-type: none;
+}
+
+#objective {
+  margin-left: 20px;
+  padding-top: 10px;
+} 
+
+.adr, .tel, .email{
+  color: white;
+  list-style-type: none;
+  display: block;  
+  margin: 0;
+  padding-left: 0;
+}
+
+.email a{
+  color: white;
+  text-decoration: underline;
+}
+
+aside section{
+  background-color: rgba(128, 128, 128, .3); 
+  height: 1000px;
+}

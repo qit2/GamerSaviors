@@ -1,0 +1,228 @@
+/*Environmental settings*/
+*{
+    cursor:url(favicon.ico),auto;
+}
+
+html, body{
+    width: 100%;
+    height: 185%;
+    background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);
+}
+
+/*Navigation Bar & Top-Right Image settings*/
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4.5%;
+}
+.navs{
+    list-style: none;
+}
+.navs li{
+    display: inline-block;
+    padding: 0 0 0 300px;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 600;
+    font-size: 46px;
+    color: white;
+    
+}
+.navs li a{
+    transition: all 0.3s ease 0s;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+#cyan{
+    width: 20px;
+    height: 23px;
+    margin-left: 5px;
+    display: none;
+    float: right;
+    margin: 25px 0 0 5px;
+}
+#navimg{
+    width: 110px;
+    height: 90px;
+    right: 55px;
+    float: right;
+    padding: 0 0 0 25px;
+}
+#teamname{
+    padding: 0 0 0 22px;
+}
+
+/*Game Information Display settings*/
+.title {
+    color: white;
+    width: 60.25%;
+    height: 1110px;
+    float: left;
+}
+
+.gameImage {
+    width: 800px; 
+    height: 1110px;
+}
+
+.prices {
+    text-align:center;
+    padding: 10px 41.5px 0 41.5px;
+    display: inline-block;
+    font-size: 30px;
+    background-color: white;
+    width: 39.75%;
+    height: 1110px;
+}
+
+.prices ul li {
+    font-size: 30px;
+}
+
+.prices ul li .switch {
+    font-size: 15px;
+}
+
+a.store {
+    color: black;
+}
+
+h2 {
+    background-color: rgba(173, 216, 230, .8);
+    border-radius: 15px;
+    padding: 8px 8px 8px 8px;
+}
+
+.slog {
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin: 90px 0px 50px 0;
+    color: lightblue;
+}
+
+.commentSlog {
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin: 90px 350px 50px 350px;
+    color: lightblue;
+}
+
+.checked {
+    color: orange;
+}
+
+.rating {
+    text-align: center;
+    background-color: gray;
+    color: white;
+}
+
+.des h2 {
+    text-align: center;
+    margin: 10px 15px 10px 15px;
+}
+
+.des {
+    background: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+
+}
+
+.des p {
+    margin: 20px 15px 10px 15px;
+    font-size: 24px;
+    padding-left: 12px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    resize: none;
+    margin-top: 30px;
+}
+
+.sub {
+    width: 200px;
+    height: 30px;
+    background-color: #282828;
+    border: none;
+    color: white;
+    font-family: arial;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 60px;
+    float: right;
+}
+
+.comment-box {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 4px;
+    background-color: white;
+    border-radius: 4px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.comment-box p{
+    font-family: arial;
+    font-size: 20px;
+    color: #282828;
+    font-weight: 100;
+}
+
+.edit-form {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.edit-form button {
+    width: 40px;
+    height: 20px;
+    color: #282828;
+    background-color: #fff;
+    opacity: 0.7;
+    border: none;
+}
+
+.edit-form button:hover {
+    opacity: 1;
+}
+
+.delete-form {
+    position: absolute;
+    top: 0px;
+    right: 60px;
+}
+
+.delete-form button {
+    width: 40px;
+    height: 20px;
+    color: #282828;
+    background-color: #fff;
+    opacity: 0.7;
+    border: none;
+}
+
+.delete-form button:hover {
+    opacity: 1;
+} 
