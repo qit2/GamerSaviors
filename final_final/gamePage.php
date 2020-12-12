@@ -32,7 +32,7 @@
       <nav>
         <ul class = "navs">
           <li id = "teamname" onclick = "Prankfunction()">LiterallyGames</li>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="main.php">Home</a></li>
           <li><a id = "about" onmouseover = "prankfunction()" onmouseout = "prankrestored()" href="">About Us</a><img id = "cyan" src = "cyan.png"></img></li>
           <a href="sign_in.html"><img id = "navimg" src = "unknow.jpg"></a>
         </ul>
