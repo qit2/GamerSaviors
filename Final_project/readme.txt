@@ -1,6 +1,6 @@
 David Finck:
 
-On this projct I focused on the main.php page which was the search and advanced search section of the website. I first had challenges with this because I couldn't find a large
+On this project I focused on the main.php page which was the search and advanced search section of the website. I first had challenges with this because I couldn't find a large
 enough database online and I also couldn't find an easy to use API. Due to this I decided to just create my own database so it would have everything I needed to make this site.
 The main issue with this however is the database is really small and could not compare to the competitors sites. This made our website more of just a demo to show off what the site
 can do with just a small amount of video games on it and in the future we would look to partner with a retail store that already has a large database of all of their video games.
@@ -17,3 +17,7 @@ I also worked on the css and html for the main.php and some of the gamepage.php.
 Ryan Qi:
 
 On this project I was focused in the registration - sign in sytem and disccusion forum. 
+
+Ryan Zhou:
+
+My main focus on this project is overall CSS + overall optimization, but I also helped on debugging on few php files, take care of necessary Javascript for the navigation bar animations/links, as well as coming up with the general idea of a game search website.
