@@ -36,6 +36,14 @@ pre{
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
+
+.back_signin{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
 .boxx{
     display: block;
     width: 320px;
@@ -50,9 +58,11 @@ pre{
     margin-bottom: 10px;
     padding-left: 10px;
 }
+
 .sign_up{
     color:yellowgreen;
 }
+
 button{
     width: 332px;
     height: 50px;
@@ -62,4 +72,38 @@ button{
     color:#fff;
     border: 0px;
     border-radius: 5px;
+}
+
+#save{
+    width: 332px;
+    height: 50px;
+    font-size: 16px;
+    background: #000;
+    font-weight: lighter;
+    color:#fff;
+    border: 0px;
+    border-radius: 5px;
+}
+
+h4{
+    color:#fff;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#back_sign_in{
+    left:50%;
+    border: 5px;
+    text-align: center;
+    color:#fff;
+    border-color: #fff;
+    border-radius: 5px;
+}
+
+.mege{
+    color:#fff;
 }
