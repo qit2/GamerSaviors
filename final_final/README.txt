@@ -42,6 +42,11 @@ In this section, I have an unsolved problem about reply.php. I tried to use the 
 methods to figure it out, but none of them really work. so the reply function does not work at this point. This will be a feature which I will work on more in the
 future. 
 
+Ryan Zhou:
+
+My main focus on this project is overall CSS + overall optimization, but I also helped on debugging on few php files, 
+take care of necessary Javascript for the navigation bar animations/links, as well as coming up with the general idea of a game search website.
+
 Eric Zhang:
 
 On this project I was focused on getting the prices from the different websites. Originally, I tried to use cURL to make a connection to the websites, but I had
