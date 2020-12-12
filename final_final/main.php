@@ -25,14 +25,22 @@
     <!-- This is the header and the nav bar at the top of the page.-->
     <header>
         <nav>
-            <ul class = "navs">
-                <li id = "teamname" onclick = "Prankfunction()">LiterallyGames</li>
-                <li><a href="main.php">Home</a></li>
-                <li><a id = "about" onmouseover = "prankfunction()" onmouseout = "prankrestored()" href="">About Us</a><img id = "cyan" src = "cyan.png"></img></li>
-                <a href="sign_in.html"><img id = "navimg" src = "unknow.jpg"></a>
-            </ul>
-            
-        </nav>
+      <ul class="navs">
+        <li id="teamname" onclick="Prankfunction()">LiterallyGames</li>
+        <li><a href="main.php"">Home</a></li>
+        <li><a href="forum.php">Discussion Forum</a></li>
+        <li><a id="about" onmouseover="prankfunction()" onmouseout="prankrestored()" href="http://www.innersloth.com/gameAmongUs.php">About Us</a><img id="cyan" src="cyan.png"></img></li>
+        <div class="dropdown">
+          <button class="dropbtn" id="dropbton"><img id="navimg" src="unknow.jpg"></button>
+          <div class="dropdown-content">
+            <a href="#"><span class="settings" id="usernamehere"><?php echo $_SESSION["username"] ?></span></a>
+            <a class="settings" href="sign_out.php">Logout</a>
+          </div>
+        </div>
+
+      </ul>
+
+    </nav>
         
     </header>
 
