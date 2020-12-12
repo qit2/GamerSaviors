@@ -112,6 +112,8 @@ function myFunction6() {
   c.style.display = "block";
 }
 
+//The function gets the title from the alt text of the image that is moused over
+//AJAX request to post the title of the game to the title variable
 function getTitle(image){
   var title = $(image).attr("alt");
   $.ajax({
