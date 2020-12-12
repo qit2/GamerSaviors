@@ -14,48 +14,35 @@ if (mysqli_connect_errno()) {
 else {
 $dbOk = true;
 }
-$post_topic = $_GET['id'];
-if ($dbOk){
-    $sql = "INSERT INTO posts(post_date, post_topic, post_by) VALUES(?,?,?)";
-    if ($stmt = mysqli_prepare($db, $sql)) {
-        mysqli_stmt_bind_param($stmt, "sss", $param_date, $param_topic_id, $param_by);
-        $param_date = date("Y-m-d H:i:s");
-        $param_topic_id =$post_topic;
+$topicsubject = $_GET['id'];
+$result = mysqli_query($db, "SELECT topic_id, topic_subject FROM topics WHERE topic_subject = '$topicsubject'");
+$row = $result->fetch_assoc();
+    foreach($row as $key => $value){
+        $topicid = $value;
         session_start();
-        $param_by = $_SESSION["username"];
-        if (mysqli_stmt_execute($stmt)) {
-            echo 'successfully added.';
-        } 
-        else {
-            echo "Something went wrong.";
-        }
-        mysqli_stmt_close($stmt);
+        $_SESSION["topicsubject"] = $topicid;
     }
-}
 $havePost = isset($_POST["save"]);
 if ($havePost) {
     if ($dbOk){
         $reply_content = trim($_POST["reply_content"]);
-        $result = mysqli_query($db, "SELECT MAX(post_id) FROM posts");
-        $row = $result->fetch_assoc();
-            foreach($row as $key => $value){
-                $postid = $value;
-            }
-        
-        $sql = "INSERT INTO posts(post_content) VALUES(?) WHERE post_topic = $postid";
+        $sql = "INSERT INTO posts(post_content, post_date, post_topic, post_by) VALUES(?,?,?,?)";
         if ($stmt = mysqli_prepare($db, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $param_topic_id);
-            $param_topic_id = $reply_content;
+            mysqli_stmt_bind_param($stmt, "ssss", $param_messsage, $param_date, $param_topic_id, $param_by);
+            $param_messsage = $reply_content;
+            $param_date = date("Y-m-d H:i:s");
+            $param_topic_id = $topicid;
+            //session_start();
+            $param_by = $_SESSION["username"];
+            echo $param_topic_id;
             if (mysqli_stmt_execute($stmt)) {
-                echo 'total successfully added.';
+                echo 'New message successfully added.';
+                echo '<a href = "forum.php">Back to Discussion forum</a>';
             } 
             else {
-                echo "total Something went wrong.";
+                echo "Something went wrong while inserting the post. Please try again later.";
             }
-            mysqli_stmt_close($stmt);
         }
-
-         
     }
 }  
 ?>
