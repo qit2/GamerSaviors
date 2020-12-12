@@ -20,4 +20,5 @@ On this project I was focused in the registration - sign in sytem and disccusion
 
 Ryan Zhou:
 
-My main focus on this project is overall CSS + overall optimization, but I also helped on debugging on few php files, take care of necessary Javascript for the navigation bar animations/links, as well as coming up with the general idea of a game search website.
+My main focus on this project is overall CSS + overall optimization, but I also helped on debugging on few php files, 
+take care of necessary Javascript for the navigation bar animations/links, as well as coming up with the general idea of a game search website.
