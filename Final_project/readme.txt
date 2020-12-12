@@ -14,3 +14,6 @@ for our site so I asked Eric to help me with this section and he was able to get
 
 I also worked on the css and html for the main.php and some of the gamepage.php.
 
+Ryan Qi:
+
+On this project I was focused in the registration - sign in sytem and disccusion forum. 
