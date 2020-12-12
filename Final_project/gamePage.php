@@ -41,6 +41,7 @@
      <?php
       //Functions to get prices from different sites
      function getTargetPrice($targetID) {
+      //Access the target data API and gets the information
       $target = file_get_contents("https://redsky.target.com/web/pdp_location/v1/tcin/" . $targetID . "?pricing_store_id=0000&key=");
       $targetPrice = json_decode($target, true);
       
@@ -50,6 +51,7 @@
      }
 
      function getGameStopPrice($gameStopID) {
+      //Get the html file from GameStop
       $gameStop = file_get_contents("http://www.gamestop.com/" . $gameStopID . ".html");
       
       //Scrape the price from the GameStop web page using regular expressions - selects the shortest match between the 
@@ -60,7 +62,7 @@
       //Initialize GameStop price variable
       $gameStopPrice = 0;
       
-      //If block to check if the connection was successful, then echoes onto page
+      //If block to check if the connection was successful, then sets GameStop price
       if ($gameStopMatched and isset($match[2])) {
 
         $gameStopPrice = $match[2];
@@ -69,6 +71,7 @@
      }
 
      function getSteamPrice($steamID) {
+      //Access the Steam data API and gets the game's information
       $steam = file_get_contents("http://store.steampowered.com/api/appdetails/?appids=" . $steamID);
       $steamPrice = json_decode($steam, true);
       //Sets Steam price 
@@ -93,6 +96,7 @@
         $row = $results->fetch_assoc();
 
         ?>
+        <!-- This section outputs the information from the database onto the page -->
         <section id=game>
           <div class="container">
             <div class="row">
@@ -104,8 +108,10 @@
               </div>
               <div class="prices">
                 <h2> Compare All Prices </h2>
+                  <!-- This PHP block generates links to the product on each webpage and attaches the price to them as well -->
                   <?php 
                   echo '<ul>';
+                    //Special cases for Minecraft and Call of Duty as they are on PC but not on Steam
                     if ($row['Title'] == 'Minecraft'){
                       echo '<li><a href="https://www.minecraft.net/en-us/store/minecraft-java-edition">PC Java: $26.95</a></li>';
                       echo '<li><a href="https://www.minecraft.net/en-us/store/minecraft-windows10">PC Windows 10: $29.99</a></li>';
@@ -146,11 +152,9 @@
                     if ($row['gamestopswitch'] != 0){
                       echo '<li><a class="switch" href="http://www.gamestop.com/' . $row['gamestopswitch'] . '.html">Nintendo Switch (GameStop): $' . getGameStopPrice($row['gamestopswitch']) . '</a></li>';
                     }
-                  // <li><a class="store" href="https://store.steampowered.com/app/582160/Assassins_Creed_Origins/">Steam: $11.99</a></li>
-                  // <li><a class="store" href="https://store.ubi.com/us/game/?lang=en_US&pid=592450934e0165f46c8b4568&dwvar_592450934e0165f46c8b4568_Platform=pcdl&edition=Standard%20Edition&source=detail">UPlay: $12.00</a></li>
-                  // <li><a class="store" href="https://www.origin.com/usa/en-us/store/assassins-creed/assassins-creed-origins">Origin: $60.00</a></li>
                 echo '</ul>';
                   ?>
+                <!-- Outputs the labels from the database onto the page -->
                 <h2> Platforms </h2>
                 <?php
                   if ($row['PC'] == 1) {?>
@@ -290,6 +294,7 @@
       <?php
       }
     ?>
+    <!-- Comments section -->
     <div class="commentSlog">
       <h1>Comments</h1>
     </div>
