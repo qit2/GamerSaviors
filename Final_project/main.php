@@ -347,6 +347,8 @@
           ?>
           
             <div class="col-lg-2 image">
+             <!-- The onclick function sets the session title variable to the posted title variable
+                  The mouseover function gets the title of the game from the alt text and posts it to the title variable-->
               <a href="gamePage.php" onclick="<?php $_SESSION['title'] = $_POST['title']; ?>"><img src="<?php echo htmlspecialchars($record['Picture']);?>"  alt="<?php echo htmlspecialchars($record['Title']); ?>" onmouseover="getTitle(this)" height="250" width="180"/></a>
               
               
