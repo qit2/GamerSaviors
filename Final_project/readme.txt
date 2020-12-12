@@ -18,6 +18,11 @@ Ryan Qi:
 
 On this project I was focused in the registration - sign in sytem and disccusion forum. 
 
+Ryan Zhou:
+
+My main focus on this project is overall CSS + overall optimization, but I also helped on debugging on few php files, 
+take care of necessary Javascript for the navigation bar animations/links, as well as coming up with the general idea of a game search website.
+
 Eric Zhang:
 
 On this project I was focused on getting the prices from the different websites. Originally, I tried to use cURL to make a connection to the websites, but I had
